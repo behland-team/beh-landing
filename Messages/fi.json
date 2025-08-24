@@ -1,5 +1,10 @@
 {
-  "HomePage": {
-    "title": "Hello world!fi"
+  "header": {
+    "home": "خانه",
+    "about": "درباره ما ",
+    "contact": "تماس با ما",
+    "FAQ": " سوالات متداول",
+    "news": "اخبار و مقالات",
+    "services": "خدمات ما"
   }
 }
