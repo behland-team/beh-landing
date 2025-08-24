@@ -14,13 +14,16 @@ const config: Config = {
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
+        text: {
+          black:"#1E1E1E"
+        },
         cream: {
          light:"#FEF2E4" 
         }
       },
     },
   },
-plugins: [
+  plugins: [
     require('./plugins/tw-icomoon')({
       selectionPath: path.resolve(process.cwd(), 'icomoon/selection.json'),
       fontFamily: 'icomoon',
