@@ -1,36 +1,33 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+## Updating Icons with Tailwind IcoMoon Plugin
 
-## Getting Started
+To update your icon set using the Tailwind IcoMoon plugin (TypeScript version), follow these steps:
 
-First, run the development server:
+1. **Open IcoMoon App**
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+   - Go to [IcoMoon](https://icomoon.io/app).
+   - Upload your existing `selection.json` to restore your current icon set and codepoints.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+2. **Modify Icons**
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+   - Add new icons or remove existing ones as needed.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+3. **Export Updated Font Pack**
 
-## Learn More
+   - Click "Generate Font" and download the new font pack.
 
-To learn more about Next.js, take a look at the following resources:
+4. **Update Project Files**
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+   - Replace font files (`icomoon.ttf`, `.woff`, `.svg`, `.eot`) in `/public/fonts/`.
+   - Replace the updated `selection.json` in `/icomoon/selection.json`.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+5. **Rebuild the Project**
 
-## Deploy on Vercel
+   - The Tailwind plugin reads `selection.json` at build time.
+   - Run `npm run dev` for local development or `next build` for production.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+6. **Usage**
+   - The plugin will auto-generate new `.icon-<name>` utilities with updated Unicode values.
+   - Use these classes in your components, e.g. `<span className="icon icon-home"></span>`.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+**Tip:**  
+Always commit both the updated font files and `selection.json

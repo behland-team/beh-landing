@@ -1,5 +1,5 @@
 import type { Config } from "tailwindcss";
-
+const path = require('path');
 const config: Config = {
   content: [
     "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
@@ -8,12 +8,25 @@ const config: Config = {
   ],
   theme: {
     extend: {
+        backgroundImage: {
+        'header': "url('/images/headerBg.svg')",
+      },
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
+        cream: {
+         light:"#FEF2E4" 
+        }
       },
     },
   },
-  plugins: [],
+plugins: [
+    require('./plugins/tw-icomoon')({
+      selectionPath: path.resolve(process.cwd(), 'icomoon/selection.json'),
+      fontFamily: 'icomoon',
+      cssFontPath: '/fonts',   // where the font files are served (under /public)
+      classPrefix: 'icon',     // results: .icon, .icon-home, etc.
+    }),
+  ],
 };
 export default config;
