@@ -57,7 +57,12 @@ export default function Header() {
           </a>
         </div>
         <div className="flex flex-row items-center gap-5 mt-5 sm:justify-end sm:mt-0 sm:ps-5">
-         
+          <span className="icon icon-language text-xl text-cream-medium border-2 rounded-full px-2 p-1 border-cream-medium bg-cream-light shadow-main"></span>
+
+          <button className="btn btn-xs sm:btn-sm md:btn-md lg:btn-lg xl:btn-xl shadow-main bg-cream-lighthover:bg-cream-medium/80 text-cream-medium font-bold p-2 rounded-2xl border-2 border-cream-medium bg-cream-light flex gap-2 items-center ">
+            <span className="icon icon-ranking"></span>
+            {t("login")}
+          </button>
         </div>
       </nav>
     </header>
