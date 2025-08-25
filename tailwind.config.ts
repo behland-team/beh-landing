@@ -23,10 +23,16 @@ const config: Config = {
         foreground: "var(--foreground)",
         text: {
           black: "#1E1E1E",
+          light_black:"#555555",
+          bg: "#CC6D144F",
+          orange:"#CC6D14",
+          dark_Orange:"#B83A36"
         },
         cream: {
           light: "#FEF2E4",
           medium: "#BD5300",
+          dark:"#CC6D14"
+
         },
       },
     },
