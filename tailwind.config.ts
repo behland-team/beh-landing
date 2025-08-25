@@ -17,6 +17,9 @@ const config: Config = {
       },
       backgroundImage: {
         header: "url('/images/headerBg.svg')",
+        roadMap: "url('/images/RoadBg.png')",
+        lumber:"url('/images/lumber.svg')",
+        nail:"url('/images/nail.svg')",
       },
       colors: {
         background: "var(--background)",
