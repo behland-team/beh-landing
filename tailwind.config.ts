@@ -1,5 +1,5 @@
 import type { Config } from "tailwindcss";
-const path = require('path');
+const path = require("path");
 const config: Config = {
   content: [
     "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
@@ -8,27 +8,35 @@ const config: Config = {
   ],
   theme: {
     extend: {
-        backgroundImage: {
-        'header': "url('/images/headerBg.svg')",
+      fontFamily: {
+        kalameh:"'Kalameh', 'sans-serif'",
+        // Add other custom fonts here
+      },
+      boxShadow: {
+        "main": "0px 4px 0px 0px rgba(0, 0, 0, 0.46)",
+      },
+      backgroundImage: {
+        header: "url('/images/headerBg.svg')",
       },
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
         text: {
-          black:"#1E1E1E"
+          black: "#1E1E1E",
         },
         cream: {
-         light:"#FEF2E4" 
-        }
+          light: "#FEF2E4",
+          medium: "#BD5300",
+        },
       },
     },
   },
   plugins: [
-    require('./plugins/tw-icomoon')({
-      selectionPath: path.resolve(process.cwd(), 'icomoon/selection.json'),
-      fontFamily: 'icomoon',
-      cssFontPath: '/fonts',   // where the font files are served (under /public)
-      classPrefix: 'icon',     // results: .icon, .icon-home, etc.
+    require("./plugins/tw-icomoon")({
+      selectionPath: path.resolve(process.cwd(), "icomoon/selection.json"),
+      fontFamily: "icomoon",
+      cssFontPath: "/fonts", // where the font files are served (under /public)
+      classPrefix: "icon", // results: .icon, .icon-home, etc.
     }),
   ],
 };
