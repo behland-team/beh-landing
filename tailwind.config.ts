@@ -14,12 +14,14 @@ const config: Config = {
       },
       boxShadow: {
         "main": "0px 4px 0px 0px rgba(0, 0, 0, 0.46)",
+        "roadMap":"0 4px 0 0 #BD5300;"
       },
       backgroundImage: {
         header: "url('/images/headerBg.svg')",
-        roadMap: "url('/images/RoadBg.png')",
+        roadMap: "url('/images/roadBG.svg')",
         lumber: "url('/images/lumber.svg')",
-        bannerBg:"url('/images/bannerBg.png')"
+        bannerBg:"url('/images/bannerBg.png')",
+        branch:"url('/images/borde.png')"
  
       },
       colors: {
@@ -30,10 +32,12 @@ const config: Config = {
           light_black:"#555555",
           bg: "#CC6D144F",
           orange:"#CC6D14",
-          dark_Orange:"#B83A36"
+          dark_Orange: "#B83A36",
+          dark_brown:"#893D1B"
         },
         cream: {
           light: "#FEF2E4",
+          dark_light:"#FFD9B1",
           medium: "#BD5300",
           dark:"#CC6D14"
 
