@@ -6,7 +6,7 @@ export default function Banner() {
   const tHeader = useTranslations("header");
 
   return (
-    <div className="w-full h-[70dvh] bg-cream-light pt-5 ">
+    <div className="w-full h-[100dvh] bg-cream-light pt-5 bg-bannerBg bg-cover  bg-no-repeat bg-center">
       <div className="h-1/2 flex flex-col items-center font-semibold">
         <h3 className=" text-3xl text-text-dark_Orange">{t("title1")}</h3>
         <span className="flex flex-row-reverse  text-4xl text-text-black mt-3">
