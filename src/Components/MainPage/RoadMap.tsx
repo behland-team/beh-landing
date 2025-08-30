@@ -57,7 +57,7 @@ export default function RoadMap() {
                   dir="rtl"
                   key={item}
                   tabIndex={0}
-                  className=" cursor-pointer p-3 rounded-3xl hover:bg-cream-dark_light focus:bg-cream-dark_light hover:shadow-roadMap focus:shadow-roadMap  flex justify-start items-center gap-5 z-0"
+                  className=" cursor-pointer p-1 rounded-3xl hover:bg-cream-dark_light focus:bg-cream-dark_light hover:shadow-roadMap focus:shadow-roadMap  flex justify-start items-center gap-5 z-0"
                 >
                   <span className="rounded-full border border-cream-dark text-cream-dark bg-cream-light font-semibold text-2xl p-1 px-3 ">
                     {item}

@@ -21,7 +21,9 @@ const config: Config = {
         roadMap: "url('/images/roadBG.svg')",
         lumber: "url('/images/lumber.svg')",
         bannerBg:"url('/images/bannerBg.png')",
-        branch:"url('/images/borde.png')"
+        branch:"url('/images/borde.png')",
+        CharBg:"url('/images/CharBg.png')",
+        card:"url('/images/card.svg')"
  
       },
       colors: {
