@@ -29,6 +29,7 @@ const config: Config = {
         foreground: "var(--foreground)",
         text: {
           black: "#1E1E1E",
+          gray:"#4D4D4D",
           light_black:"#555555",
           bg: "#CC6D144F",
           orange:"#CC6D14",
