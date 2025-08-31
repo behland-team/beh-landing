@@ -10,6 +10,7 @@ const config: Config = {
     extend: {
       fontFamily: {
         kalameh:"'Kalameh', 'sans-serif'",
+        yekan:"'YekanBakh', 'sans-serif'",
         // Add other custom fonts here
       },
       boxShadow: {

@@ -18,7 +18,7 @@
 body {
   color: var(--foreground);
   background: var(--background);
-  font-family: kalameh, Helvetica, sans-serif;
+  font-family: kalameh, YekanBakh,Helvetica, sans-serif;
 }
 
 @layer utilities {
@@ -26,7 +26,61 @@ body {
     text-wrap: balance;
   }
 }
+/* //! yekan Bakh */
 
+
+@font-face {
+  font-family: 'YekanBakh';
+  src: url('../app/fonts/YekanBakh/YekanBakh-Hairline.ttf') format('ttf');
+  font-weight: 200;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'YekanBakh';
+  src: url('../app/fonts/YekanBakh/YekanBakh-Light.ttf') format('ttf');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'YekanBakh';
+  src: url('../app/fonts/YekanBakh/YekanBakh-Regular.ttf') format('ttf');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'YekanBakh';
+  src: url('../app/fonts/YekanBakh/YekanBakh-Medium.ttf') format('ttf');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+
+
+@font-face {
+  font-family: 'YekanBakh';
+  src: url('../app/fonts/YekanBakh/YekanBakh-Bold.ttf') format('ttf');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'YekanBakh';
+  src: url('../app/fonts/YekanBakh/YekanBakh-Fat.ttf') format('ttf');
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+
+
+/* //! kalameh */
 @font-face {
   font-family: 'kalameh';
   src: url('../app/fonts/kalameh/KalamehWeb-Thin.woff2') format('woff2');
