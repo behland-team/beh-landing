@@ -23,7 +23,8 @@ const config: Config = {
         bannerBg:"url('/images/bannerBg.png')",
         branch:"url('/images/borde.png')",
         CharBg:"url('/images/CharBg.png')",
-        card:"url('/images/card.svg')"
+        card:"url('/images/card.svg')",
+        WhyBehBg:"url('/images/WhyBeh.png')"
  
       },
       colors: {
