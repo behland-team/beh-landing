@@ -1,8 +1,8 @@
 import Banner from "@/Components/MainPage/Banner";
 import Characters from "@/Components/MainPage/Characters";
 import RoadMap from "@/Components/MainPage/RoadMap";
+import Team from "@/Components/MainPage/Team";
 import WhyBeh from "@/Components/MainPage/WhyBeh";
-import Image from "next/image";
 
 export default function Home() {
 
@@ -12,7 +12,7 @@ export default function Home() {
       <RoadMap />
       <Characters />
       <WhyBeh />
-      <Characters />
+      <Team/>
 
     
      
