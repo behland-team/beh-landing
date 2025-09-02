@@ -31,6 +31,16 @@ const config: Config = {
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
+        chart: {
+          ranking: "#A6BD00",
+          people: "#FF7B00",
+          security: "#019F6F",
+          crown: "#8700FF",
+          award:"#FFBA00",
+          smile: "#00A6DE",
+          idCard:"#CF1D00"
+          
+        },
         text: {
           black: "#1E1E1E",
           gray:"#4D4D4D",

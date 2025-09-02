@@ -11,7 +11,10 @@ export default function Home() {
       <Banner/>
       <RoadMap />
       <Characters />
-      <WhyBeh/>
+      <WhyBeh />
+      <Characters />
+
+    
      
     </>
   );
