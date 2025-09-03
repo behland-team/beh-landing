@@ -7,7 +7,7 @@ import classNames from "classnames";
 export default function WhyBeh() {
   const t = useTranslations("WhyBeh");
   return (
-    <div className="w-full h-[45rem] p-10 border border-red-500 ">
+    <div className="w-full h-[45rem] p-10  ">
       <div className="w-full h-1/2  bg-WhyBehBg bg-no-repeat bg-contain bg-center flex flex-col  justify-end">
         <div className="h-2/3  flex flex-col items-center justify-center gap-5">
           <h3 className="text-black font-semibold text-xl">{t("title")}</h3>
