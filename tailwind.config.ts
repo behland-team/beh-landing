@@ -10,7 +10,7 @@ const config: Config = {
     extend: {
       fontFamily: {
         kalameh:"'Kalameh', 'sans-serif'",
-        yekan:"'YekanBakh'",
+        yekan:"'YekanBakh' ",
         // Add other custom fonts here
       },
       boxShadow: {
@@ -28,6 +28,9 @@ const config: Config = {
         WhyBehBg: "url('/images/WhyBeh.png')",
         teamBg: "url('/images/TeamBg.png')",
         teamInfoBg: "url('/images/TeamInfoBg.png')",
+        cardBg: "url('/images/cardBg.png')",
+        cardMiniBg: "url('/images/cardMiniBg.png')",
+        crown: "url('/images/crown.svg')",
  
       },
       colors: {

@@ -160,6 +160,7 @@ import Parham from "../assets/Images/TeamMemebers/parham.png";
 import Alireza from "../assets/Images/TeamMemebers/Alireza.png";
 import Yassaman from "../assets/Images/TeamMemebers/Yassaman.png";
 import Abbasi from "../assets/Images/TeamMemebers/Abbasi.png";
+import discount from "../assets/Images/discount.png";
 export const Teams = [
     {
         name: "امیرعلی نیرومند زال پور",
@@ -228,5 +229,54 @@ export const Teams = [
             "تدوین استراتژی‌های ورود به بازار",
         ],
         image: Yassaman,
+    },
+];
+
+
+export const saleStages = [
+    {
+        title: "مرحله اول – Private Sale 1",
+        tokens: "۲۰۰,۰۰۰ توکن",
+        price: "۰.۱۰ دلار",
+        description: "تخفیف ویژه برای خریداران داخلی؛ تعداد خریداران محدود (حدود ۷ نفر).",
+        badge: "تخفیف ویژه",
+        highlight: false,
+        discount: discount
+    },
+    {
+        title: "مرحله دوم – Private Sale 2",
+        tokens: "۱۵۰,۰۰۰ توکن",
+        price: "۰.۱۰ دلار",
+        description: "خرید بدون تخفیف؛ با محدودیت بین ۱,۰۰۰ تا ۲,۰۰۰ دلار و ۸ تا ۱۵ خریدار.",
+    },
+    {
+        title: "مرحله سوم – Private Sale 3",
+        tokens: "۱۵۰,۰۰۰ توکن",
+        price: "۰.۲۰ دلار",
+        description: "خرید با قیمت بالاتر، در بازه ۵۰۰ تا ۱,۰۰۰ دلار؛ مناسب برای ۳۰ تا ۶۰ خریدار.",
+    },
+    {
+        title: "مرحله چهارم – Pre–Public Sale",
+        tokens: "۱۰۰,۰۰۰ توکن",
+        price: "۰.۳۰ دلار",
+        description: "پل بین فروش خصوصی و عمومی؛ خرید از ۱۰۰ تا ۱,۰۰۰ دلار برای ۳۰ تا ۳۰۰ خریدار.",
+    },
+    {
+        title: "مرحله پنجم – DEX Listing (Stage 0)",
+        tokens: "۱۰۰,۰۰۰ توکن",
+        price: "۰.۴۰ دلار",
+        description: "لیست در صرافی TON با قیمت شناور؛ بدون محدودیت خرید یا ۱۰۰ تا ۲۰۰ خریدار فعال.",
+    },
+    {
+        title: "مرحله ششم – Public Sale Stage 1",
+        tokens: "۱۵۰,۰۰۰ توکن",
+        price: "۰.۵۰ تا ۱ دلار",
+        description: "فروش عمومی از طریق صرافی‌های ایرانی یا OTC؛ مناسب برای ۱۵۰ تا ۳۰۰ خریدار.",
+    },
+    {
+        title: "مرحله هفتم – Public Sale Stage 2",
+        tokens: "۱۵۰,۰۰۰ توکن",
+        price: "شناور",
+        description: "آخرین فرصت برای خرید توکن پیش از شروع بازار ثانویه است. فروش کاملاً آزاد و نهایی.",
     },
 ];
