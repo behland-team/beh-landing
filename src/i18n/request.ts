@@ -23,8 +23,8 @@ const DEFAULT_LOCALE: Locale = 'fi';
 
 // 2) پیام‌ها را استاتیک ایمپورت کن (tsconfig: "resolveJsonModule": true)
 
-import en from '../../messages/en.json';
-import fi from '../../messages/fi.json';
+import en from '../../Messages/en.json';
+import fi from '../../Messages/fi.json';
 
 const messagesMap: Record<Locale, AbstractIntlMessages> = {
   en,
