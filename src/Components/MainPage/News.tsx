@@ -84,10 +84,38 @@ export default function News() {
           {visibleImages.map((item, i) => (
             <div
               key={i}
-              className=" bg-newsMini bg-no-repeat bg-contain bg-center w-full h-[30rem]  overflow-hidden rounded-3xl"
+              className=" bg-[#FEECD8] shadow-news  w-full h-[25rem]  overflow-hidden rounded-3xl"
             >
+              <div className="h-2/4 p-2   ">
+                <Image
+                  src={news}
+                  alt="news"
+                  className="h-full w-full overflow-hidden rounded-[34px]"
+                />
+              </div>
+              <div className="h-2/4 p-5 flex flex-col justify-between items-start gap-4">
+                <h2 className="text-text-gray font-semibold text-base">
+                  بهلند یک مسیر آموزشی جدید برای کاربرانش راه‌اندازی کرد
+                </h2>
+                <p className="text-text-light_black text-sm font-normal ">
+                  تیم بهلند اخیراً یک وبینار رایگان برای آموزش تحلیل بازارهای مالی برگزار کرد. در این وبینار، کارشناسان به بررسی روندهای اخیر بازار، روش‌های مدیریت ریسک و...
+                </p>
 
-        
+                <div className="border-t border-dashed border-text-orange w-full flex justify-between items-center flex-row-reverse p-2">
+                  <div className=" flex justify-center items-center">
+                    <p className="font-normal text-text-orange text-base">
+                      1402/12/11
+                    </p>
+                    <span className="icon icon-calendar text-text-orange mr-2"></span>
+                  </div>
+                  <div className="flex justify-center items-center gap-4">
+                    <Image src={beed} alt="beed" className="h-5 w-5" />
+                    <p className="text-text-gray/50 font-normal text-sm">
+                      دوره آموزشی
+                    </p>
+                  </div>
+                </div>
+              </div>
             </div>
           ))}
         </div>
