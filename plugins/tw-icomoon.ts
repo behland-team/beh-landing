@@ -63,6 +63,7 @@ export default plugin.withOptions<IcoMoonOptions | undefined>(
           fontFamily: `'${fontFamily}'`,
           src: [
             `url('${cssFontPath}/icomoon.woff') format('woff')`,
+            `url('${cssFontPath}/icomoon.eot') format('eot')`,
             `url('${cssFontPath}/icomoon.ttf') format('truetype')`,
             `url('${cssFontPath}/icomoon.svg#${fontFamily}') format('svg')`,
           ].join(", "),
