@@ -16,7 +16,8 @@ const config: Config = {
       },
       boxShadow: {
         "main": "0px 4px 0px 0px rgba(0, 0, 0, 0.46)",
-        "roadMap":"0 4px 0 0 #BD5300;"
+        "roadMap": "0 4px 0 0 #BD5300;",
+        "news":"2px 4px 0px 0px #CC6D14"
       },
       backgroundImage: {
         header: "url('/images/headerBg.svg')",
@@ -32,6 +33,7 @@ const config: Config = {
         cardBg: "url('/images/cardBg.png')",
         cardMiniBg: "url('/images/cardMiniBg.png')",
         crown: "url('/images/crown.svg')",
+        newsMini:"url('/images/news/miniNews.png') "
  
       },
       colors: {

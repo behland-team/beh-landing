@@ -1,7 +1,6 @@
 "use client";
 import { useTranslations } from "next-intl";
 import React, { useState } from "react";
-import cow from "../../../public/images/cow.svg";
 import Image from "next/image";
 import { Teams } from "@/utils/data";
 
