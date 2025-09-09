@@ -479,3 +479,10 @@ export const SocialMedia = [
         link: "https://www.instagram.com/behland.official/",
     },
 ];
+
+
+export const faqs = [
+    { title: "چطور به مرحله بعد می‌روم؟", content: "با انجام تمرین‌ها و قبولی در آزمون..." },
+    { title: "پشتیبانی شامل چه چیزهایی میشه؟", content: "جلسات لایو هفتگی، تیکت نامحدود..." },
+    { title: "مناسب افراد مبتدی هست؟", content: "بله، از صفر شروع می‌کنیم..." },
+];

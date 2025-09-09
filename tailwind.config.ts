@@ -35,7 +35,9 @@ const config: Config = {
         cardMiniBg: "url('/images/cardMiniBg.png')",
         crown: "url('/images/crown.svg')",
         newsMini: "url('/images/news/miniNews.png') ",
-        faqa:"url('/images/island.svg')",
+        island:"url('/images/island.svg')",
+        boardFaq:"url('/images/Faq/boardFaq.svg')",
+        tree:"url('/images/Faq/tree.svg')",
 
       },
       colors: {

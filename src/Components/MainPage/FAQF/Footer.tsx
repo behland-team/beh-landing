@@ -6,7 +6,7 @@ import React from "react";
 export default function Footer() {
   const t = useTranslations("footer");
   return (
-    <footer dir="rtl" className="grid grid-cols-3 ">
+    <footer dir="rtl" className="grid grid-cols-3   ">
       <div className="grid col-span-1  gap-5">
         <h4 className="text-base font-extrabold text-balck">{t("aboutBeh")}</h4>
         <p className="text-sm font-normal text-text-gray">
@@ -81,11 +81,11 @@ export default function Footer() {
           ))}
         </div>
         <p className="text-base font-extrabold text-balck">{t("newslatter")}</p>
-        <div className="flex items-center justify-between md:w-4/6 w-full rounded-2xl overflow-hidden bg-[#FFFFFF26]/30 p-2 border border-gray-500 ">
+        <div className="flex items-center justify-between md:w-4/6 w-full rounded-2xl overflow-hidden  p-2 border border-gray-500 ">
           <input
             type="email"
             placeholder="ایمیل خود را وارد کنید"
-            className="rounded-full border-0"
+            className="rounded-full border-0 bg-[#54E2D9]"
           />
           <button className="text-black rounded-lg border border-cream-medium px-4 p-2 bg-cream-dark_light shadow-icon">
             ارسال
