@@ -37,7 +37,8 @@ const config: Config = {
         newsMini: "url('/images/news/miniNews.png') ",
         island:"url('/images/island.svg')",
         boardFaq:"url('/images/Faq/boardFaq.svg')",
-        tree:"url('/images/Faq/tree.svg')",
+        tree: "url('/images/Faq/tree.svg')",
+        boardFaq2:"url('/images/Faq/board.png')"
 
       },
       colors: {
