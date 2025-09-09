@@ -26,22 +26,22 @@ export default function FAQ() {
         <Image src={stone3} alt="stone2" className="absolute top-2/3 left-10"/>
         <Image src={stone3} alt="stone2" className="absolute bottom-10 left-1/3"/>
         <Image src={stone4} alt="stone2" className="absolute bottom-10 left-1/2"/>
-      <div className="w-7/12  h-2/3   ">
+      <div className="w-7/12  h-2/3 ">
         <div
           dir="ltr"
-          className="bg-boardFaq h-full w-full bg-no-repeat  bg-contain overflow-hidden relative rounded-xl"
+          className="bg-boardFaq h-full w-2/3  bg-no-repeat  bg-contain overflow-hidden relative rounded-xl  float-end"
         >
-          <Image src={tree} alt="tree" className="absolute right-1/4" />
-          <div className=" w-4/6 h-full z-10 flex p-5" dir="rtl">
+          <Image src={tree} alt="tree" className="absolute right-0" />
+          <div className=" w-11/12 h-full z-10 flex p-5 items-start justify-center" dir="rtl">
             <Accordion
-              className="w-11/12"
+              className="w-10/12"
               items={faqs}
               type="single"
               defaultOpen={[0]}
             />
           </div>
 
-          <Image src={alga} alt="alga" className="absolute -top-2 z-0" />
+          <Image src={alga} alt="alga" className="absolute -top-2  z-0" />
         </div>
       </div>
       <div className="w-3/12 h-2/3  flex justify-end px-5">
