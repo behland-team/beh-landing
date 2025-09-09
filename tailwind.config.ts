@@ -1,7 +1,7 @@
 import type { Config } from "tailwindcss";
 const path = require("path");
 const config: Config = {
- content: [
+  content: [
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
     "./pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./components/**/*.{js,ts,jsx,tsx,mdx}",
@@ -10,31 +10,32 @@ const config: Config = {
   theme: {
     extend: {
       fontFamily: {
-        kalameh:"'Kalameh', 'sans-serif'",
-        yekan:"'YekanBakh' ",
+        kalameh: "'Kalameh', 'sans-serif'",
+        yekan: "'YekanBakh' ",
         // Add other custom fonts here
       },
       boxShadow: {
-        "main": "0px 4px 0px 0px rgba(0, 0, 0, 0.46)",
-        "roadMap": "0 4px 0 0 #BD5300;",
-        "news":"2px 4px 0px 0px #CC6D14"
+        main: "0px 4px 0px 0px rgba(0, 0, 0, 0.46)",
+        roadMap: "0 4px 0 0 #BD5300;",
+        news: "2px 4px 0px 0px #CC6D14",
       },
       backgroundImage: {
         header: "url('/images/headerBg.svg')",
         roadMap: "url('/images/roadBG.svg')",
         lumber: "url('/images/lumber.svg')",
-        bannerBg:"url('/images/bannerBg.png')",
-        branch:"url('/images/borde.png')",
-        CharBg:"url('/images/CharBg.png')",
-        card:"url('/images/card.svg')",
+        bannerBg: "url('/images/bannerBg.png')",
+        branch: "url('/images/borde.png')",
+        CharBg: "url('/images/CharBg.png')",
+        card: "url('/images/card.svg')",
         WhyBehBg: "url('/images/WhyBeh.png')",
         teamBg: "url('/images/TeamBg.png')",
         teamInfoBg: "url('/images/TeamInfoBg.png')",
         cardBg: "url('/images/cardBg.png')",
         cardMiniBg: "url('/images/cardMiniBg.png')",
         crown: "url('/images/crown.svg')",
-        newsMini:"url('/images/news/miniNews.png') "
- 
+        newsMini: "url('/images/news/miniNews.png') ",
+        faqa:"url('/images/island.svg')",
+
       },
       colors: {
         background: "var(--background)",
@@ -44,26 +45,24 @@ const config: Config = {
           people: "#FF7B00",
           security: "#019F6F",
           crown: "#8700FF",
-          award:"#FFBA00",
+          award: "#FFBA00",
           smile: "#00A6DE",
-          idCard:"#CF1D00"
-          
+          idCard: "#CF1D00",
         },
         text: {
           black: "#1E1E1E",
-          gray:"#4D4D4D",
-          light_black:"#555555",
+          gray: "#4D4D4D",
+          light_black: "#555555",
           bg: "#CC6D144F",
-          orange:"#CC6D14",
+          orange: "#CC6D14",
           dark_Orange: "#B83A36",
-          dark_brown:"#893D1B"
+          dark_brown: "#893D1B",
         },
         cream: {
           light: "#FEF2E4",
-          dark_light:"#FFD9B1",
+          dark_light: "#FFD9B1",
           medium: "#BD5300",
-          dark:"#CC6D14"
-
+          dark: "#CC6D14",
         },
       },
     },
