@@ -3,7 +3,7 @@ import localFont from "next/font/local";
 import "./globals.css";
 import Header from "@/Components/Layout/Header";
 import { NextIntlClientProvider } from "next-intl";
-import Footer from "@/Components/Layout/Footer";
+import Footer from "@/Components/MainPage/FAQF/Footer";
 
 
 export const metadata: Metadata = {

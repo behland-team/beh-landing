@@ -12,14 +12,12 @@ export const ChartData = [
                     borderWidth: 0,
                 },
             ],
-
         },
         icon: "/images/charticon/ranking.svg",
         percentage: "۱۰%",
         color: "text-chart-ranking",
         bg: "bg-[#A6BD001A]",
-        description: " ۱۰٪ صندوق توسعه و رشد اکوسیستم"
-
+        description: " ۱۰٪ صندوق توسعه و رشد اکوسیستم",
     },
     {
         data: {
@@ -60,7 +58,6 @@ export const ChartData = [
         color: "text-chart-security",
         description: " ۱۰٪ بنیان‌گذار پروژه",
         bg: "bg-[#019F6F1A]",
-
     },
     {
         data: {
@@ -81,7 +78,6 @@ export const ChartData = [
         color: "text-chart-crown",
         description: " ۱۰٪ تبلیغات و توسعه برند",
         bg: "bg-[#8700FF1A]",
-
     },
     {
         data: {
@@ -102,8 +98,6 @@ export const ChartData = [
         color: "text-chart-award",
         description: " ۵٪  مدیران اصلی پروژه",
         bg: "bg-[#FFBA001A]",
-
-
     },
     {
         data: {
@@ -124,7 +118,6 @@ export const ChartData = [
         color: "text-chart-smile",
         description: " ۵٪ اعضای تیم اجرایی",
         bg: "bg-[#00A6DE1A]",
-
     },
     {
         data: {
@@ -145,10 +138,8 @@ export const ChartData = [
         color: "text-chart-idCard",
         description: "کاربران یادگیرنده و استخراج‌کننده",
         bg: "bg-[#CF1D001A]",
-
     },
-
-]
+];
 
 import Amirali from "../assets/Images/TeamMemebers/Amirali2.png";
 import Mehdi from "../assets/Images/TeamMemebers/Mehdi2.png";
@@ -232,55 +223,60 @@ export const Teams = [
     },
 ];
 
-
 export const saleStages = [
     {
         title: "مرحله اول – Private Sale 1",
         tokens: "۲۰۰,۰۰۰ توکن",
         price: "۰.۱۰ دلار",
-        description: "تخفیف ویژه برای خریداران داخلی؛ تعداد خریداران محدود (حدود ۷ نفر).",
+        description:
+            "تخفیف ویژه برای خریداران داخلی؛ تعداد خریداران محدود (حدود ۷ نفر).",
         badge: "تخفیف ویژه",
         highlight: false,
-        discount: discount
+        discount: discount,
     },
     {
         title: "مرحله دوم – Private Sale 2",
         tokens: "۱۵۰,۰۰۰ توکن",
         price: "۰.۱۰ دلار",
-        description: "خرید بدون تخفیف؛ با محدودیت بین ۱,۰۰۰ تا ۲,۰۰۰ دلار و ۸ تا ۱۵ خریدار.",
+        description:
+            "خرید بدون تخفیف؛ با محدودیت بین ۱,۰۰۰ تا ۲,۰۰۰ دلار و ۸ تا ۱۵ خریدار.",
     },
     {
         title: "مرحله سوم – Private Sale 3",
         tokens: "۱۵۰,۰۰۰ توکن",
         price: "۰.۲۰ دلار",
-        description: "خرید با قیمت بالاتر، در بازه ۵۰۰ تا ۱,۰۰۰ دلار؛ مناسب برای ۳۰ تا ۶۰ خریدار.",
+        description:
+            "خرید با قیمت بالاتر، در بازه ۵۰۰ تا ۱,۰۰۰ دلار؛ مناسب برای ۳۰ تا ۶۰ خریدار.",
     },
     {
         title: "مرحله چهارم – Pre–Public Sale",
         tokens: "۱۰۰,۰۰۰ توکن",
         price: "۰.۳۰ دلار",
-        description: "پل بین فروش خصوصی و عمومی؛ خرید از ۱۰۰ تا ۱,۰۰۰ دلار برای ۳۰ تا ۳۰۰ خریدار.",
+        description:
+            "پل بین فروش خصوصی و عمومی؛ خرید از ۱۰۰ تا ۱,۰۰۰ دلار برای ۳۰ تا ۳۰۰ خریدار.",
     },
     {
         title: "مرحله پنجم – DEX Listing (Stage 0)",
         tokens: "۱۰۰,۰۰۰ توکن",
         price: "۰.۴۰ دلار",
-        description: "لیست در صرافی TON با قیمت شناور؛ بدون محدودیت خرید یا ۱۰۰ تا ۲۰۰ خریدار فعال.",
+        description:
+            "لیست در صرافی TON با قیمت شناور؛ بدون محدودیت خرید یا ۱۰۰ تا ۲۰۰ خریدار فعال.",
     },
     {
         title: "مرحله ششم – Public Sale Stage 1",
         tokens: "۱۵۰,۰۰۰ توکن",
         price: "۰.۵۰ تا ۱ دلار",
-        description: "فروش عمومی از طریق صرافی‌های ایرانی یا OTC؛ مناسب برای ۱۵۰ تا ۳۰۰ خریدار.",
+        description:
+            "فروش عمومی از طریق صرافی‌های ایرانی یا OTC؛ مناسب برای ۱۵۰ تا ۳۰۰ خریدار.",
     },
     {
         title: "مرحله هفتم – Public Sale Stage 2",
         tokens: "۱۵۰,۰۰۰ توکن",
         price: "شناور",
-        description: "آخرین فرصت برای خرید توکن پیش از شروع بازار ثانویه است. فروش کاملاً آزاد و نهایی.",
+        description:
+            "آخرین فرصت برای خرید توکن پیش از شروع بازار ثانویه است. فروش کاملاً آزاد و نهایی.",
     },
 ];
-
 
 export const phases = [
     {
@@ -302,7 +298,6 @@ export const phases = [
                 status: true,
             },
 
-
             {
                 desc: "تهیه اسناد رسمی، پرزنتیشن‌ها و مطالب معرفی پروژه",
                 status: true,
@@ -316,7 +311,6 @@ export const phases = [
                 status: false,
             },
             { desc: "امنیت و انتشار توکن BEHT روی بلاک‌چین TON", status: false },
-
         ],
         active: true,
     },
@@ -357,7 +351,6 @@ export const phases = [
                 desc: "آماده‌سازی نسخه نهایی سایت و اتصال آن به ربات تلگرام",
                 status: false,
             },
-
         ],
     },
     {
@@ -400,16 +393,43 @@ export const phases = [
         number: 4,
         active: false,
         tasks: [
-            { desc: "آغاز فروش عمومی توکن BEHT در مراحل «استیج اول» و «استیج دوم» از طریق صرافی‌های ایرانی", status: false },
-            { desc: "فراهم‌سازی امکان خرید و فروش توکن توسط کاربران داخلی", status: false },
+            {
+                desc: "آغاز فروش عمومی توکن BEHT در مراحل «استیج اول» و «استیج دوم» از طریق صرافی‌های ایرانی",
+                status: false,
+            },
+            {
+                desc: "فراهم‌سازی امکان خرید و فروش توکن توسط کاربران داخلی",
+                status: false,
+            },
             { desc: "فعال‌سازی اشتراک VIP از طریق پرداخت توکن BEHT", status: false },
-            { desc: "انتشار رسمی NFTهای مسیر رشد و فراهم‌سازی امکان اشتراک‌گذاری آن‌ها در شبکه‌های اجتماعی", status: false },
-            { desc: "فعال‌سازی مسیرهای آموزشی سطوح VIP 0 تا 3 برای عموم کاربران", status: false },
-            { desc: "آغاز ترجمه و بارگذاری ویدیوهای آموزشی به زبان عربی", status: false },
-            { desc: "توسعه کیف پول اختصاصی با قابلیت‌های فریز و استیک توکن", status: false },
-            { desc: "راه‌اندازی نسخه وب با امکانات داشبورد مالی، رتبه‌بندی کاربران و مدیریت دارایی‌ها", status: false },
-            { desc: "انتشار نسخه پیشرفته مینی‌اپ تلگرام با قابلیت‌های تعاملی گسترده", status: false },
-            { desc: "شروع همکاری با صرافی‌ها و پارتنرهای داخلی و منطقه‌ای", status: false },
+            {
+                desc: "انتشار رسمی NFTهای مسیر رشد و فراهم‌سازی امکان اشتراک‌گذاری آن‌ها در شبکه‌های اجتماعی",
+                status: false,
+            },
+            {
+                desc: "فعال‌سازی مسیرهای آموزشی سطوح VIP 0 تا 3 برای عموم کاربران",
+                status: false,
+            },
+            {
+                desc: "آغاز ترجمه و بارگذاری ویدیوهای آموزشی به زبان عربی",
+                status: false,
+            },
+            {
+                desc: "توسعه کیف پول اختصاصی با قابلیت‌های فریز و استیک توکن",
+                status: false,
+            },
+            {
+                desc: "راه‌اندازی نسخه وب با امکانات داشبورد مالی، رتبه‌بندی کاربران و مدیریت دارایی‌ها",
+                status: false,
+            },
+            {
+                desc: "انتشار نسخه پیشرفته مینی‌اپ تلگرام با قابلیت‌های تعاملی گسترده",
+                status: false,
+            },
+            {
+                desc: "شروع همکاری با صرافی‌ها و پارتنرهای داخلی و منطقه‌ای",
+                status: false,
+            },
         ],
     },
     {
@@ -417,11 +437,45 @@ export const phases = [
         number: 5,
         active: false,
         tasks: [
-            { desc: "تکمیل دوره‌های آموزشی زبان عربی و آغاز تبلیغات در بازار عرب‌زبان", status: false },
-            { desc: "آغاز ترجمه و بارگذاری دوره‌های آموزشی به زبان انگلیسی", status: false },
-            { desc: "فعال‌سازی سیستم استیکینگ و ارائه پاداش به هولدرهای بلندمدت توکن BEHT", status: false },
-            { desc: "راه‌اندازی سیستم رأی‌گیری ساده (مدل DAO سبک) برای تصمیمات کلان پلتفرم", status: false },
-            { desc: "آغاز کمپین‌های تبلیغاتی بین‌المللی برای جذب کاربران جدید و توسعه بازار جهانی", status: false },
+            {
+                desc: "تکمیل دوره‌های آموزشی زبان عربی و آغاز تبلیغات در بازار عرب‌زبان",
+                status: false,
+            },
+            {
+                desc: "آغاز ترجمه و بارگذاری دوره‌های آموزشی به زبان انگلیسی",
+                status: false,
+            },
+            {
+                desc: "فعال‌سازی سیستم استیکینگ و ارائه پاداش به هولدرهای بلندمدت توکن BEHT",
+                status: false,
+            },
+            {
+                desc: "راه‌اندازی سیستم رأی‌گیری ساده (مدل DAO سبک) برای تصمیمات کلان پلتفرم",
+                status: false,
+            },
+            {
+                desc: "آغاز کمپین‌های تبلیغاتی بین‌المللی برای جذب کاربران جدید و توسعه بازار جهانی",
+                status: false,
+            },
         ],
+    },
+];
+
+export const SocialMedia = [
+    {
+        name: "instagram",
+        link: "https://www.instagram.com/behland.official/",
+    },
+    {
+        name: "twitter",
+        link: "https://www.instagram.com/behland.official/",
+    },
+    {
+        name: "facebook",
+        link: "https://www.instagram.com/behland.official/",
+    },
+    {
+        name: "linkedin",
+        link: "https://www.instagram.com/behland.official/",
     },
 ];

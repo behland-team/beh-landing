@@ -1,4 +1,4 @@
-import Footer from '@/Components/Layout/Footer'
+import Footer from '@/Components/MainPage/FAQF/Footer'
 import React from 'react'
 
 export default function FAQF() {
