@@ -21,7 +21,7 @@ export default function Banner() {
           {t("description")}
         </p>
 
-        <button className=" mt-5 lg:mt-7 px-5 font-medium z-10 text-sm lg:text-lg  shadow-main hover:bg-cream-medium/80 text-text-orange  p-2 rounded-2xl border-2 border-cream-medium bg-cream-light flex gap-2 items-center shadow-cream-dark ">
+        <button className=" mt-5 lg:mt-7 px-5 font-medium z-10 text-sm lg:text-lg  shadow-main hover:bg-cream-medium/80 hover:text-cream-light  text-text-orange  p-2 rounded-2xl border-2 border-cream-medium bg-cream-light flex gap-2 items-center shadow-cream-dark ">
           {tHeader("login")}
           <span className="icon icon-profile text-xl font-medium"></span>
         </button>

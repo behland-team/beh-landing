@@ -14,7 +14,7 @@ export default function Home() {
     <>
       <Banner/>
       <RoadMap />
-      {/*<Characters />*/}
+      <Characters />
       {/*<WhyBeh />*/}
       {/*<Token/>*/}
       {/*<Team />*/}

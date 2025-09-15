@@ -70,7 +70,7 @@ export default function Header() {
                         className="icon icon-language text-xl text-cream-medium border-2 rounded-full px-2 p-1 border-cream-medium bg-cream-light shadow-main"></span>
 
                     <button
-                        className=" shadow-main  hover:bg-cream-medium/80 text-text-orange font-medium text-sm p-2 rounded-xl border-2 border-cream-medium bg-cream-light flex gap-2 items-center ">
+                        className=" shadow-main  hover:bg-cream-medium/80 hover:text-cream-light text-text-orange font-medium text-sm p-2 rounded-xl border-2 border-cream-medium bg-cream-light flex gap-2 items-center ">
                         <span className="icon icon-ranking"></span>
                         {t("login")}
                     </button>
