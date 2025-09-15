@@ -7,12 +7,13 @@ import Team from "@/Components/MainPage/Team";
 import { Token } from "@/Components/MainPage/Token";
 import WhyBeh from "@/Components/MainPage/WhyBeh";
 
+
 export default function Home() {
 
   return (
     <>
       <Banner/>
-      {/*<RoadMap />*/}
+      <RoadMap />
       {/*<Characters />*/}
       {/*<WhyBeh />*/}
       {/*<Token/>*/}
