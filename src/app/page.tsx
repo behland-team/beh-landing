@@ -12,13 +12,13 @@ export default function Home() {
   return (
     <>
       <Banner/>
-      <RoadMap />
-      <Characters />
-      <WhyBeh />
-      <Token/>
-      <Team />
-      <News />
-      <FAQF/>
+      {/*<RoadMap />*/}
+      {/*<Characters />*/}
+      {/*<WhyBeh />*/}
+      {/*<Token/>*/}
+      {/*<Team />*/}
+      {/*<News />*/}
+      {/*<FAQF/>*/}
 
     
      

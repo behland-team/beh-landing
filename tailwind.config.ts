@@ -22,6 +22,7 @@ const config: Config = {
       },
       backgroundImage: {
         header: "url('/images/headerBg.svg')",
+        headerMobile: "url('/images/headerMobileBg.svg')",
         roadMap: "url('/images/roadBG.svg')",
         lumber: "url('/images/lumber.svg')",
         bannerBg: "url('/images/bannerBg.png')",
