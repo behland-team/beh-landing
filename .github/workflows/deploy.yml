@@ -1,4 +1,4 @@
-name: beh-landing
+name: CI/CD - Next.js + PM2 (beh-landing)
 
 on:
   push:
@@ -13,24 +13,17 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Copy source to server
-        uses: appleboy/scp-action@v0.1.7
+      # Deploy files via rsync over SSH (with excludes)
+      - name: Sync source to server (rsync)
+        uses: burnett01/rsync-deployments@7.0.1
         with:
-          host: ${{ secrets.SSH_HOST }}
-          username: ${{ secrets.SSH_USER }}
-          port: ${{ secrets.SSH_PORT }}
-          key: ${{ secrets.SSH_KEY }}
-          source: "."
-          target: "${{ secrets.APP_DIR }}"
-          rm: true
-          overwrite: true
-          exclude: |
-            .git
-            .github
-            node_modules
-            .next
-            .env*
-            **/.DS_Store
+          switches: -az --delete --chmod=Du=rwx,Dgo=rx,Fu=rw,Fgo=r --exclude '.git' --exclude '.github' --exclude 'node_modules' --exclude '.next' --exclude '.env*' --exclude '.DS_Store'
+          path: ./
+          remote_path: ${{ secrets.APP_DIR }}
+          remote_host: ${{ secrets.SSH_HOST }}
+          remote_user: ${{ secrets.SSH_USER }}
+          remote_port: ${{ secrets.SSH_PORT }}
+          remote_key: ${{ secrets.SSH_KEY }}
 
       - name: Install, build, and reload via PM2
         uses: appleboy/ssh-action@v1.0.3
