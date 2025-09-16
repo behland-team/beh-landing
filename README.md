@@ -31,3 +31,5 @@ To update your icon set using the Tailwind IcoMoon plugin (TypeScript version), 
 
 **Tip:**  
 Always commit both the updated font files and `selection.json
+
+## CI/CD
