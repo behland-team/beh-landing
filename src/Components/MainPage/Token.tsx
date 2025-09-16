@@ -40,7 +40,7 @@ export const Token: FunctionComponent<TokenProps> = () => {
             <div>
                 <div className="md:grid md:grid-cols-12 flex gap-4 overflow-x-auto md:overflow-visible w-full p-10 xl:p-20  ">
                     {saleStages.map((stage, index) => (
-                        <div className={classNames(" flex justify-end items-center relative flex-col shrink-0 w-72 md:w-full" , index <3 ? "md:col-span-6 xl:col-span-4 xl:h-60 h-72" : "xl:col-span-3 md:col-span-6 h-72")} key={index}>
+                        <div className={classNames(" flex justify-end items-center relative flex-col shrink-0 w-72 md:w-full" , index <3 ? "md:col-span-6 lg:col-span-4 xl:h-60 h-72" : "lg:col-span-4 xl:col-span-3 md:col-span-6 h-72")} key={index}>
                             <div
                                 className="rounded-xl bg-cardBg bg-cover w-full bg-no-repeat p-5 h-5/6   flex justify-end items-center shadow-main"
                             >
