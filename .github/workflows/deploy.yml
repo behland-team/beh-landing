@@ -1,0 +1,53 @@
+name: beh-landing
+
+on:
+  push:
+    branches: ["main"]
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Copy source to server
+        uses: appleboy/scp-action@v0.1.7
+        with:
+          host: ${{ secrets.SSH_HOST }}
+          username: ${{ secrets.SSH_USER }}
+          port: ${{ secrets.SSH_PORT }}
+          key: ${{ secrets.SSH_KEY }}
+          source: "."
+          target: "${{ secrets.APP_DIR }}"
+          rm: true
+          overwrite: true
+          exclude: |
+            .git
+            .github
+            node_modules
+            .next
+            .env*
+            **/.DS_Store
+
+      - name: Install, build, and reload via PM2
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: ${{ secrets.SSH_HOST }}
+          username: ${{ secrets.SSH_USER }}
+          port: ${{ secrets.SSH_PORT }}
+          key: ${{ secrets.SSH_KEY }}
+          script: |
+            set -e
+            cd "${{ secrets.APP_DIR }}"
+            export $(grep -v '^#' .env.production | xargs) || true
+            npm ci
+            npm run build
+            if pm2 list | grep -q "${{ secrets.PM2_APP_NAME }}"; then
+              pm2 reload ecosystem.config.js --only "${{ secrets.PM2_APP_NAME }}"
+            else
+              pm2 start ecosystem.config.js
+            fi
+            pm2 save
