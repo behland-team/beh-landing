@@ -14,10 +14,11 @@ export const ChartData = [
             ],
         },
         icon: "/images/charticon/ranking.svg",
-        percentage: "۱۰%",
+        percentage: 10,
         color: "text-chart-ranking",
         bg: "bg-[#A6BD001A]",
         description: " ۱۰٪ صندوق توسعه و رشد اکوسیستم",
+        borderColor : "border-chart-ranking",
     },
     {
         data: {
@@ -34,10 +35,11 @@ export const ChartData = [
             ],
         },
         icon: "/images/charticon/people.svg",
-        percentage: "۳۵%",
+        percentage: 35,
         color: "text-chart-people",
         description: "کاربران یادگیرنده و استخراج‌کننده",
         bg: "bg-[#FF7B001A]",
+        borderColor : "border-chart-people",
     },
     {
         data: {
@@ -54,10 +56,11 @@ export const ChartData = [
             ],
         },
         icon: "/images/charticon/security-card.svg",
-        percentage: "۱۰%",
+        percentage: 10,
         color: "text-chart-security",
         description: " ۱۰٪ بنیان‌گذار پروژه",
         bg: "bg-[#019F6F1A]",
+        borderColor : "border-chart-security",
     },
     {
         data: {
@@ -74,10 +77,11 @@ export const ChartData = [
             ],
         },
         icon: "/images/charticon/crown.svg",
-        percentage: "۱۰%",
+        percentage: 10,
         color: "text-chart-crown",
         description: " ۱۰٪ تبلیغات و توسعه برند",
         bg: "bg-[#8700FF1A]",
+        borderColor : "border-chart-crown",
     },
     {
         data: {
@@ -94,10 +98,11 @@ export const ChartData = [
             ],
         },
         icon: "/images/charticon/award.svg",
-        percentage: "۵%",
+        percentage: 5,
         color: "text-chart-award",
         description: " ۵٪  مدیران اصلی پروژه",
         bg: "bg-[#FFBA001A]",
+        borderColor : "border-chart-award",
     },
     {
         data: {
@@ -114,10 +119,11 @@ export const ChartData = [
             ],
         },
         icon: "/images/charticon/emoji-normal.svg",
-        percentage: "۵%",
+        percentage: 5,
         color: "text-chart-smile",
         description: " ۵٪ اعضای تیم اجرایی",
         bg: "bg-[#00A6DE1A]",
+        borderColor : "border-chart-smile",
     },
     {
         data: {
@@ -134,12 +140,33 @@ export const ChartData = [
             ],
         },
         icon: "/images/charticon/personalcard.svg",
-        percentage: "۲۵%",
+        percentage: 25,
         color: "text-chart-idCard",
         description: "کاربران یادگیرنده و استخراج‌کننده",
         bg: "bg-[#CF1D001A]",
+        borderColor : "border-chart-idCard",
     },
 ];
+
+export const SemiCircleChartData = {
+    datasets: [
+        {
+            data: [35, 5, 10, 25, 5, 10, 10],
+            backgroundColor: [
+                "#FF7B00",
+                "#00A6DE",
+                "#8700FF",
+                "#CF1D00",
+                "#FFBA00",
+                "#019F6F",
+                "#A6BD00",
+            ],
+            display: true,
+            borderColor: "#FFF"
+        }
+    ]
+};
+
 
 import Amirali from "../assets/Images/TeamMemebers/Amirali2.png";
 import Mehdi from "../assets/Images/TeamMemebers/Mehdi2.png";
@@ -152,6 +179,7 @@ import Alireza from "../assets/Images/TeamMemebers/Alireza.png";
 import Yassaman from "../assets/Images/TeamMemebers/Yassaman.png";
 import Abbasi from "../assets/Images/TeamMemebers/Abbasi.png";
 import discount from "../assets/Images/discount.png";
+
 export const Teams = [
     {
         name: "امیرعلی نیرومند زال پور",
@@ -287,12 +315,12 @@ export const phases = [
                 desc: "طراحی مدل اقتصادی پروژه و مسیر رشد کاربران",
                 status: true,
             },
-            { desc: "جذب اعضای اولیه تیم و تعیین نقش‌ها", status: true },
+            {desc: "جذب اعضای اولیه تیم و تعیین نقش‌ها", status: true},
             {
                 desc: "توسعه نسخه ابتدایی پلتفرم از طریق ربات تلگرام (نمونه اولیه یا MVP)",
                 status: true,
             },
-            { desc: "تدوین ساختار آموزشی سطوح VIP 0 و VIP1", status: true },
+            {desc: "تدوین ساختار آموزشی سطوح VIP 0 و VIP1", status: true},
             {
                 desc: "طراحی نسخه اولیه سایت و آماده‌سازی زیرساخت‌های فروش",
                 status: true,
@@ -310,7 +338,7 @@ export const phases = [
                 desc: "تست اولیه کیف پول کاربران و ثبت اطلاعات حساب‌ها",
                 status: false,
             },
-            { desc: "امنیت و انتشار توکن BEHT روی بلاک‌چین TON", status: false },
+            {desc: "امنیت و انتشار توکن BEHT روی بلاک‌چین TON", status: false},
         ],
         active: true,
     },
@@ -401,7 +429,7 @@ export const phases = [
                 desc: "فراهم‌سازی امکان خرید و فروش توکن توسط کاربران داخلی",
                 status: false,
             },
-            { desc: "فعال‌سازی اشتراک VIP از طریق پرداخت توکن BEHT", status: false },
+            {desc: "فعال‌سازی اشتراک VIP از طریق پرداخت توکن BEHT", status: false},
             {
                 desc: "انتشار رسمی NFTهای مسیر رشد و فراهم‌سازی امکان اشتراک‌گذاری آن‌ها در شبکه‌های اجتماعی",
                 status: false,
@@ -482,7 +510,7 @@ export const SocialMedia = [
 
 
 export const faqs = [
-    { title: "چطور به مرحله بعد می‌روم؟", content: "با انجام تمرین‌ها و قبولی در آزمون..." },
-    { title: "پشتیبانی شامل چه چیزهایی میشه؟", content: "جلسات لایو هفتگی، تیکت نامحدود..." },
-    { title: "مناسب افراد مبتدی هست؟", content: "بله، از صفر شروع می‌کنیم..." },
+    {title: "چطور به مرحله بعد می‌روم؟", content: "با انجام تمرین‌ها و قبولی در آزمون..."},
+    {title: "پشتیبانی شامل چه چیزهایی میشه؟", content: "جلسات لایو هفتگی، تیکت نامحدود..."},
+    {title: "مناسب افراد مبتدی هست؟", content: "بله، از صفر شروع می‌کنیم..."},
 ];

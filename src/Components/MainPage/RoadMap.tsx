@@ -32,10 +32,10 @@ export default function RoadMap() {
                 className="bg-roadMap bg-no-repeat bg-cover bg-center flex flex-col lg:flex-row-reverse   mt-4 w-full lg:h-screen bg-[#a7d8d3]">
                 <div className="relative h-[440px] sm:h-[570px] md:h-[680px] flex flex-col lg:w-2/5">
                     <Image src={branch} alt="branch" className="z-10 w-full"/>
-                    <div className="w-[clac(100%-48px)] lg:w-full mx-6 lg:mx-0 absolute left-0 right-0 top-[70px] md:top-36 sm:top-24 lg:top-[50px] xl:top-[100px] 2xl:top-[120px]  lg:pr-14 xl:pr-20">
+                    <div className="w-[clac(100%-48px)] lg:w-full mx-6 lg:mx-0 absolute left-0 right-0 top-[70px] md:top-36 sm:top-24 lg:top-[50px] xl:top-[100px] 2xl:top-[170px]  lg:pr-14 xl:pr-20">
                         <Image src={borde} alt={"borde"} className="w-full h-[339px] sm:h-[460px] md:h-[520px]"/>
                         <div
-                            className=" gap-4 sm:gap-5 lg:gap-6 xl:gap-9 flex flex-col absolute top-10 sm:top-24 md:top-28 sm:right-10 lg:top-14 right-4 lg:right-20 xl:right-28  z-0 mx-2 ">
+                            className="gap-2 xxs:gap-4 sm:gap-5 lg:gap-6 xl:gap-9 flex flex-col absolute top-10 sm:top-24 md:top-28 sm:right-10 lg:top-14 2xl:top-20 right-4 lg:right-20 xl:right-28  z-0 mx-2 ">
                             {phases?.map((item, index) => (
                                 <div
                                     onClick={() => handleTabChange(item.number)}
@@ -48,7 +48,7 @@ export default function RoadMap() {
                       className="shadow-main shadow-cream-medium rounded-full border size-8 md:size-10 border-cream-dark text-cream-dark bg-cream-light font-semibold lg:text-2xl flex items-center justify-center ">
                     {item.number}
                   </span>
-                                    <p className="text-text-dark_brown font-bold text-sm sm:text-lg md:text-2xl lg:text-[18px]">
+                                    <p className="text-text-dark_brown font-bold text-xs xxs:text-sm sm:text-lg md:text-2xl lg:text-[18px]">
                                         {t(`${item.title}`)}
                                     </p>
                                 </div>

@@ -10,7 +10,7 @@ export default function Header() {
             className=" flex  w-full  justify-center items-center pt-[18px] pb-[14px] lg:py-0 h-24  md:h-[10dvh]  lg:h-[12dvh]  bg-cream-light">
             <nav
                 dir="rtl"
-                className="max-w-[85rem] w-full mx-6  lg:mx-auto px-4 flex items-center justify-between bg-headerMobile md:bg-header  bg-cover lg:bg-contain  bg-center bg-no-repeat md:w-5/6  xl:w-4/6 h-full"
+                className="max-w-[85rem] w-full mx-6  lg:mx-auto px-4 flex items-center justify-between bg-headerMobile md:bg-header bg-contain  bg-center bg-no-repeat md:w-5/6  xl:w-4/6 h-full"
             >
                 <span
                     className="icon icon-profile lg:hidden size-[40px]  text-xl text-cream-medium border-[2px] rounded-xl py-1 px-2 border-cream-medium bg-cream-light shadow-main shadow-cream-dark">

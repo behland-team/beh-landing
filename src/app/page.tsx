@@ -15,11 +15,11 @@ export default function Home() {
       <Banner/>
       <RoadMap />
       <Characters />
-      {/*<WhyBeh />*/}
-      {/*<Token/>*/}
-      {/*<Team />*/}
-      {/*<News />*/}
-      {/*<FAQF/>*/}
+      <WhyBeh />
+      <Token/>
+      <Team />
+      <News />
+      <FAQF/>
 
     
      
