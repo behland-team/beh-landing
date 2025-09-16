@@ -19,10 +19,12 @@ import { useTranslations } from "next-intl";
 export default function FAQ() {
   const t = useTranslations("faq");
   return (
-    <div dir="rtl" className=" w-full  h-[55dvh] mt-10 flex relative">
-
-        <Image src={stone1} alt="stone1" className="absolute bottom-10"/>
-        <Image src={stone2} alt="stone2" className="absolute bottom-10 left-5"/>
+    <div dir="rtl" className=" w-full  h-[55dvh] mt-10 flex relative ">
+        <div
+            className="absolute -bottom-40 left-0 w-full h-[40dvh] bg-island bg-no-repeat  bg-auto  -z-30 "
+        />
+        <Image src={stone1} alt="stone1" className="absolute bottom-0"/>
+        <Image src={stone2} alt="stone2" className="absolute bottom-2 left-5"/>
         <Image src={stone3} alt="stone2" className="absolute top-2/3 left-10"/>
         <Image src={stone3} alt="stone2" className="absolute bottom-10 left-1/3"/>
         <Image src={stone4} alt="stone2" className="absolute bottom-10 left-1/2"/>
