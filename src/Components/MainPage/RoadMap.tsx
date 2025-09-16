@@ -23,7 +23,7 @@ export default function RoadMap() {
         <div className=" flex-col  w-full  bg-[#a7d8d3] pt-10">
             <div className="w-full flex flex-col justify-center items-center">
                 <p className="font-bold text-lg lg:text-3xl text-black">{tGeneral("header")}</p>
-                <p className="font-semibold lg:text-xl text-text-gray">
+                <p className="font-semibold lg:text-xl text-text-gray text-sm xxs:text-base text-center">
                     {tGeneral("description")}
                 </p>
             </div>

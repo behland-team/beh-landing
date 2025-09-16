@@ -29,12 +29,12 @@ export default function WhyBeh() {
             <div className=" flex justify-center items-center w-full lg:mt-16">
                 <div className="md:hidden flex flex-col gap-10">
                     <SemiCircleChart data={SemiCircleChartData}/>
-                    <div className="grid grid-cols-2 gap-5">
+                    <div className="grid grid-cols-2 gap-4 sm:gap-5">
                         {
                             ChartData.toSorted((a, b) => b.percentage - a.percentage).map((item, index) => (
                                 <div
                                     className={classNames(item.bg, "rounded-md border  p-2", item.borderColor, index < 3 ? "col-span-full" : "col-span-1",)}>
-                                    <p className={classNames(item.color, "text-center align-middle")}>{item.description}</p>
+                                    <p className={classNames(item.color, "text-center align-middle text-sm sm:text-base")}>{item.description}</p>
                                 </div>
                             ))
                         }
