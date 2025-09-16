@@ -37,7 +37,7 @@ export default function Characters() {
             dir="rtl"
             className="bg-CharBg bg-cover bg-no-repeat bg-center bg-cream-light"
         >
-            <div className="px-7 pt-12 lg:p-10 ">
+            <div className="px-7 pt-12 lg:px-10 xl:px-28 ">
                 <h2 className="lg:text-3xl text-center lg:text-right text-[20px] text-black font-semibold">{t("title")}</h2>
                 <div
                     className="w-full flex flex-wrap justify-between items-center gap-6 md:gap-5 mt-4 flex-col lg:flex-row">
