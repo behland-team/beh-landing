@@ -13,7 +13,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      # Deploy files via rsync over SSH (with excludes)
+      # همگام‌سازی سورس با سرور از طریق rsync (exclude پوشه‌های غیرضروری)
       - name: Sync source to server (rsync)
         uses: burnett01/rsync-deployments@7.0.1
         with:
@@ -25,6 +25,7 @@ jobs:
           remote_port: ${{ secrets.SSH_PORT }}
           remote_key: ${{ secrets.SSH_KEY }}
 
+      # نصب، بیلد و ریلود با PM2 داخل Bash login shell (تا nvm/Path لود شود)
       - name: Install, build, and reload via PM2
         uses: appleboy/ssh-action@v1.0.3
         with:
@@ -33,14 +34,33 @@ jobs:
           port: ${{ secrets.SSH_PORT }}
           key: ${{ secrets.SSH_KEY }}
           script: |
-            set -e
-            cd "${{ secrets.APP_DIR }}"
-            export $(grep -v '^#' .env.production | xargs) || true
-            npm ci
-            npm run build
-            if pm2 list | grep -q "${{ secrets.PM2_APP_NAME }}"; then
-              pm2 reload ecosystem.config.js --only "${{ secrets.PM2_APP_NAME }}"
-            else
-              pm2 start ecosystem.config.js
-            fi
-            pm2 save
+            bash -lc '
+              set -e
+              cd "${{ secrets.APP_DIR }}"
+
+              # اگر nvm داری، لودش کن (بدون نصب مجدد)
+              export NVM_DIR="$HOME/.nvm"
+              [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
+
+              # چک اینکه node/npm در PATH هستند
+              node -v && npm -v
+
+              # اگر env تولید هست، فقط همونو لود کن (وجودش اجباری نیست)
+              [ -f .env.production ] && set -a && . ./.env.production && set +a || true
+
+              # نصب تمیز و بیلد
+              npm ci
+              npm run build
+
+              # اگر Prisma داری، این خط رو باز کن:
+              # npx prisma migrate deploy || true
+
+              # PM2: ریلود اگر هست، وگرنه استارت
+              command -v pm2 >/dev/null 2>&1 || npm i -g pm2
+              if pm2 list | grep -q "${{ secrets.PM2_APP_NAME }}"; then
+                pm2 reload ecosystem.config.js --only "${{ secrets.PM2_APP_NAME }}"
+              else
+                pm2 start ecosystem.config.js
+              fi
+              pm2 save
+            '
