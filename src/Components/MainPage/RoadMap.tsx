@@ -30,7 +30,7 @@ export default function RoadMap() {
 
             <div
                 className="bg-roadMap bg-no-repeat bg-cover bg-center   mt-4 w-full lg:h-[1129px]  bg-[#a7d8d3]">
-                <div className="flex flex-col lg:flex-row-reverse lg:max-w-screen-3xl w-full h-full  2xl:justify-between mx-auto">
+                <div className="flex flex-col lg:flex-row-reverse lg:max-w-screen-3xl w-full h-full  2xl:justify-between lg:mx-auto">
                     <div className="relative h-[440px] sm:h-[570px] md:h-[680px] flex flex-col lg:w-2/5 lg:max-w-xl ">
                         <Image src={branch} alt="branch" className="z-10 w-full"/>
                         <div className="w-[clac(100%-48px)] lg:w-full mx-6 lg:mx-0 absolute left-0 right-0 top-[70px] md:top-36 sm:top-24 lg:top-[50px] xl:top-[100px]   lg:pr-14 xl:pr-20">
