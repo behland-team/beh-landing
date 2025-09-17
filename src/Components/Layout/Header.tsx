@@ -2,6 +2,7 @@ import React from "react";
 import {useTranslations} from "next-intl";
 import Image from "next/image";
 import logo from "../../../public/images/Logo.png";
+import MobileNavBtn from "@/Components/Layout/MobileNavBtn";
 
 export default function Header() {
     const t = useTranslations("header");
@@ -13,10 +14,7 @@ export default function Header() {
                     dir="rtl"
                     className="max-w-[85rem] w-full mx-6  lg:mx-auto px-4 flex items-center justify-between bg-headerMobile md:bg-header bg-contain  bg-center bg-no-repeat md:w-5/6  xl:w-4/6 h-full"
                 >
-                <span
-                    className="icon icon-profile lg:hidden size-[40px]  text-xl text-cream-medium border-[2px] rounded-xl py-1 px-2 border-cream-medium bg-cream-light shadow-main shadow-cream-dark">
-
-                </span>
+                    <MobileNavBtn />
                     <a
                         className="font-semibold text-xl text-black focus:outline-hidden focus:opacity-80 dark:text-white md:flex-1  flex-none lg:flex-none"
                         href="#"
