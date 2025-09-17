@@ -23,7 +23,7 @@ export default function News() {
     });
     console.log(visibleImages);
     return (
-        <div dir="rtl" className="py-10 md:px-24 px-6  mt-10">
+        <div dir="rtl" className="py-10 md:px-24 px-6  mt-10 xl:max-w-screen-2xl xl:mx-auto">
             <div className="w-full flex flex-col xxs:flex-row gap-3  items-center justify-between  mt-4">
                 <h2 className=" text-[18px] md:text-2xl xl:text-3xl text-black font-semibold">{t("title")}</h2>
                 <div className="flex items-center gap-4">
@@ -51,7 +51,7 @@ export default function News() {
                                 <h2 className={classNames("text-text-gray font-semibold text-sm", index < 1 ? "xl:text-2xl md:text-base" : "")}>
                                     بهلند یک مسیر آموزشی جدید برای کاربرانش راه‌اندازی کرد
                                 </h2>
-                                <p className={classNames("text-text-light_black  font-normal leading-6 md:leading-8  text-xs", index < 1 ? "xl:text-base md:text-sm line-clamp-3 xl:line-clamp-none md:leading-8" : "text-sm line-clamp-3 ")}>
+                                <p className={classNames("text-text-light_black  font-normal leading-6 md:leading-8  text-xs", index < 1 ? "xl:text-base md:text-sm line-clamp-3 xl:line-clamp-none md:leading-8" : "md:text-sm line-clamp-3 ")}>
                                     . کاربران می‌توانند با مأموریت‌ها، تمرین‌ها و پشتیبانی همیشگی،
                                     مهارت‌های خود را مرحله‌به‌مرحله تقویت کنند و حتی از همان مراحل
                                     اولیه درآمدزایی داشته باشند. این مسیر جدید به‌گونه‌ای طراحی شده که

@@ -13,7 +13,7 @@ interface TokenProps {
 export const Token: FunctionComponent<TokenProps> = () => {
     const t = useTranslations("token");
     return (
-        <div dir="rtl" className="my-16">
+        <div dir="rtl" className="my-16 xl:max-w-screen-2xl xl:mx-auto">
             <div className="w-[clac(100%-48px)] flex flex-col justify-center items-center gap-5 relative mx-6 ">
                 <Image src={WhyBehBg} alt={"background"} className="absolute top-0 left-0 w-full h-full md:hidden"/>
                 <Image src={Crown} alt={"Wht Beh"}

@@ -11,7 +11,8 @@ const config: Config = {
     theme: {
         extend: {
             screens: {
-                xxs: "440px"
+                xxs: "440px",
+                "3xl" : "1920px",
             },
             fontFamily: {
                 kalameh: "'Kalameh', 'sans-serif'",
