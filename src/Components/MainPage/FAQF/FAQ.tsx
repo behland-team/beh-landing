@@ -31,7 +31,7 @@ export default function FAQ() {
           </div>
           <div dir="rtl" className=" w-full  mt-10  md:px-10 lg:px-20  relative ">
               <div
-                  className="absolute -bottom-40 left-0 w-full h-[380px] lg:h-[400x] bg-island bg-no-repeat max-sm:bg-center  bg-cover  -z-30 "
+                  className="absolute -bottom-40 left-0 w-full h-[380px] lg:h-[400px] 3xl:h-[450px] bg-island bg-no-repeat max-sm:bg-center  bg-cover  -z-30 "
               />
               <Image src={stone1} alt="stone1" className="absolute bottom-0 md:right-10 hidden md:block"/>
               <Image src={stone2} alt="stone2" className="absolute md:bottom-2 md:left-1/3 bottom-6 max-md:-right-5  z-10"/>
@@ -43,14 +43,14 @@ export default function FAQ() {
               <Image src={littleGrass} alt="grass left" className="w-14 absolute left-2   bottom-36 z-30 md:hidden "/>
 
               <div className="flex lg:justify-around max-w-screen-2xl xl:mx-auto">
-                  <div className="h-[450px] xxs:h-[425px] sm:h-[470px] md:h-[550px] lg:h-[450px] xl:h-[420px]"></div>
-                  <div className="w-full px-6 md:px-0 sm:w-3/4 sm:mx-auto md:mx-0 lg:w-[500px] h-full xl:w-[724px] lg:h-full md:h-2/3 ">
+                  <div className="h-[475px] xxs:h-[425px] sm:h-[470px] md:h-[550px] lg:h-[450px] xl:h-[420px] 3xl:h-[475px]"></div>
+                  <div className="w-full px-6 md:px-0 sm:w-3/4 sm:mx-auto  lg:w-[550px] h-full xl:w-[724px] lg:h-full md:h-2/3 ">
                       <div
                           dir="ltr"
                           className="bg-boardFaq h-full w-full  bg-no-repeat  bg-cover lg:bg-contain xl:bg-cover overflow-hidden relative rounded-xl "
                       >
-                          <Image src={tree} alt="tree" className="absolute right-0 hidden md:block"/>
-                          <div className="w-full md:w-11/12 h-full z-10 flex p-5 pb-10 items-start justify-center lg:justify-start" dir="rtl">
+                          <Image src={tree} alt="tree" className="absolute right-0 hidden md:block lg:right-10 md:-right-4 xl:-right-4"/>
+                          <div className="w-full md:w-11/12 h-full z-10 flex p-5 pb-10 items-start justify-center xl:justify-start" dir="rtl">
                               <Accordion
                                   className="w-full md:w-10/12 h-full"
                                   items={faqs}
