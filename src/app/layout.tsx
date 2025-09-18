@@ -1,7 +1,6 @@
 import type {Metadata} from "next";
 // import localFont from "next/font/local";
 import "./globals.css";
-import Header from "@/Components/Layout/Header";
 import {NextIntlClientProvider} from "next-intl";
 // import Footer from "@/Components/MainPage/FAQF/Footer";
 
@@ -22,10 +21,7 @@ export default function RootLayout({
             className={`antialiased`}
         >
         <NextIntlClientProvider>
-            <>
-                <Header/>
                 {children}
-            </>
         </NextIntlClientProvider>
         </body>
         </html>
