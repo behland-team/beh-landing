@@ -30,12 +30,13 @@ function MobileNav({open, setOpen}: MobileNavInterface) {
                             <div className="flex items-center justify-between">
                                 <Image src={logo} alt={"logg"} className={"w-16"}/>
                                 <span
-                                    className="icon icon-profile lg:hidden size-[40px]  text-xl text-cream-medium border-[2px] rounded-xl py-1 px-2 border-cream-medium bg-cream-light shadow-main shadow-cream-dark"></span>
+                                    className="icon icon-notification lg:hidden size-[40px]  text-xl text-cream-medium border-[2px] rounded-xl py-1 px-2 border-cream-medium bg-cream-light shadow-main shadow-cream-dark"></span>
                             </div>
                             <nav>
                                 <ul className="flex flex-col gap-4">
                                     <li className="flex items-center gap-3">
-                                        <Image src={home} alt={"home"} className="w-6"/>
+                                        {/* <Image src={home} alt={"home"} className="w-6" /> */}
+                                        <span className='icon icon-home'></span>
                                         <span className={"text-cream-medium font-semibold"}> {t("home")}</span>
                                     </li>
                                     <hr className="text-gray-400"/>
