@@ -43,7 +43,7 @@ export default function FAQ() {
               <Image src={littleGrass} alt="grass left" className="w-14 absolute left-2   bottom-36 z-30 md:hidden "/>
 
               <div className="flex lg:justify-around max-w-screen-2xl xl:mx-auto">
-                  <div className="h-[475px] xxs:h-[425px] sm:h-[470px] md:h-[550px] lg:h-[450px] xl:h-[420px] 3xl:h-[475px]"></div>
+                  <div className="h-[475px] xxs:h-[425px] sm:h-[470px] md:h-[500px] lg:h-[450px] xl:h-[420px] 3xl:h-[475px]"></div>
                   <div className="w-full px-6 md:px-0 sm:w-3/4 sm:mx-auto  lg:w-[550px] h-full xl:w-[724px] lg:h-full md:h-2/3 ">
                       <div
                           dir="ltr"
@@ -62,7 +62,7 @@ export default function FAQ() {
                           <Image src={alga} alt="alga" className="absolute -top-2  z-0 hidden md:block"/>
                       </div>
                   </div>
-                  <div className="w-full md:flex md:items-center md:justify-end lg:w-4/12 px-5  hidden mb-44 ">
+                  <div className="w-full md:w-1/2 md:flex md:items-center md:justify-end lg:w-4/12 px-5  hidden mb-44 ">
                       <div className=" w-full  gap-2 px-2  relative overflow-hidden h-2/3 lg:h-full mt-auto max-w-[260px] ">
                           <Image
                               src={leftWood}
