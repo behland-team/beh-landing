@@ -100,6 +100,7 @@ export default function Footer() {
                     </div>
                 </div>
             </div>
+            <div className="w-full max-lg:h-24"></div>
         </footer>
     );
 }
