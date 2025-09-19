@@ -3,6 +3,7 @@ import {useTranslations} from "next-intl";
 import React, {useState} from "react";
 import cow from "../../../public/images/cow.svg"
 import Image from "next/image";
+import useWindowDimensions from "@/hooks/useWindowDimensions";
 
 const images = [
     "https://picsum.photos/id/1015/400/400",
@@ -17,17 +18,22 @@ const images = [
 export default function Characters() {
     const t = useTranslations("characters");
     const [current, setCurrent] = useState(0);
+    const {width} = useWindowDimensions();
 
     const prev = () =>
         setCurrent((c) => (c === 0 ? images.length - 1 : c - 1));
     const next = () =>
         setCurrent((c) => (c === images.length - 1 ? 0 : c + 1));
 
+    const visibleCount = () => {
+        if (width >= 1280) return 4
+        if (width >= 1024) return 3
+        if (width >= 640) return 2
+        return 1;
+    };
 
-    const visibleCount = 4;
 
-
-    const visibleImages = Array.from({length: visibleCount}, (_, i) => {
+    const visibleImages = Array.from({length: visibleCount()}, (_, i) => {
         const index = (current + i) % images.length;
         return images[index];
     });
@@ -65,7 +71,7 @@ export default function Characters() {
 
                 {/* عکس‌ها */}
                 <div className=" w-full mt-6 pr-6 pb-10">
-                    <div className="flex  items-center justify-start md:justify-center w-full  gap-6 py-5  overflow-x-hidden">
+                    <div className="flex  items-center justify-center w-full  gap-6 py-5  overflow-x-hidden">
                         {visibleImages.map((src, i) => (
                             <div
                                 key={i}

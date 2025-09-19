@@ -47,9 +47,10 @@ export default function SemiCircleChart({
                     datalabels : {
                         color : "#FFF",
                         padding : 20,
-                        formatter : (value)=>value+"%",
+                        formatter : (value)=>Intl.NumberFormat("fa").format(value)+"%",
                         font : {
                             size : 10,
+                            family : "kalameh",
                         }
 
                     }

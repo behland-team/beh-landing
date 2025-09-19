@@ -24,7 +24,6 @@ export default function Team() {
         const index = (current + i) % Teams.length;
         return Teams[index];
     });
-    console.log(visibleImages);
     return (
         <div
             dir="rtl"
@@ -62,7 +61,7 @@ export default function Team() {
                         {visibleImages.map((item, i) => (
                             <div
                                 key={i}
-                                className=" bg-teamBg bg-no-repeat bg-contain bg-center w-72 h-fit overflow-hidden   reletive"
+                                className=" bg-teamBg bg-no-repeat bg-contain bg-center w-72 h-fit overflow-hidden shrink-0  reletive"
                             >
                                 <Image src={item.image} alt="cow" className="w-full h-full "/>
                                 <div
