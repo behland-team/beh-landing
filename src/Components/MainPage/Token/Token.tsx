@@ -1,44 +1,27 @@
 import {saleStages} from "@/utils/data";
 import {useTranslations} from "next-intl";
 import React, {FunctionComponent} from "react";
-
-import Crown from "@/assets/Images/WhyBehCrown.svg"
-import WhyBehBg from "@/assets/Images/WhyBehMobile.png"
-import Image from "next/image";
 import classNames from "classnames";
+import TokenSlider from "@/Components/MainPage/Token/TokenSlider";
 
 interface TokenProps {
 }
 
 export const Token: FunctionComponent<TokenProps> = () => {
     const t = useTranslations("token");
+
     return (
         <div dir="rtl" className="my-16 xl:max-w-screen-2xl xl:mx-auto">
-            <div className="w-[clac(100%-48px)] flex flex-col justify-center items-center gap-5 relative mx-6 ">
-                <Image src={WhyBehBg} alt={"background"} className="absolute top-0 left-0 w-full h-full md:hidden"/>
-                <Image src={Crown} alt={"Wht Beh"}
-                       className="absolute -top-8 left-1/2 -translate-x-1/2 md:hidden z-10"/>
+            <div className="w-[clac(100%-48px)] md:flex flex-col justify-center items-center gap-5 relative mx-6 hidden">
                 <div className="z-20 flex items-center flex-col gap-2 px-8 py-10 text-center">
                     <p className="text-text-gray text-lg md:text-2xl lg:text-3xl font-semibold">{t("title")}</p>
                     <p className="text-text-gray text-sm md:text-base font-semibold  lg:w-1/2 xl:w-2/3">
                         {t("description")}
                     </p>
                 </div>
-                <div className="absolute -bottom-2 z-20 flex items-center justify-center gap-3 left-1/2 -translate-x-1/2 md:hidden">
-                    <button
-                        aria-label="Slide back"
-                        className="border-2 shadow-main p-2 rounded-xl bg-white border-text-dark_Orange icon icon-arrow_back text-text-orange"
-                    ></button>
-                    <button
-                        aria-label="Slide forward"
-                        className="border-2 shadow-main rounded-xl bg-white border-text-dark_Orange"
-                    >
-                        <span className="icon icon-arrow_back text-text-orange rotate-180 p-2"></span>
-                    </button>
-                </div>
             </div>
             <div>
-                <div className="md:grid md:grid-cols-12 flex gap-4 overflow-x-auto md:overflow-visible w-full p-10 xl:p-20  ">
+                <div className="md:grid md:grid-cols-12 hidden gap-4 md:overflow-visible w-full p-10 xl:p-20  ">
                     {saleStages.map((stage, index) => (
                         <div className={classNames(" flex justify-end items-center relative flex-col shrink-0 w-72 md:w-full" , index <3 ? "md:col-span-6 lg:col-span-4 xl:h-60 h-72" : "lg:col-span-4 xl:col-span-3 md:col-span-6 h-72")} key={index}>
                             <div
@@ -62,7 +45,7 @@ export const Token: FunctionComponent<TokenProps> = () => {
                   </span>
                                     </div>
 
-                                    <p className={classNames(" bg-[#F0E3D5] rounded-lg p-2 text-text-gray text-right leading-relaxed  font-semibold" , index <3 ? "text-base" : "text-sm")}>
+                                    <p className={classNames(" bg-[#F0E3D5] rounded-lg p-2 text-text-gray text-right leading-relaxed  font-semibold" , index <3 ? "md:text-base" : "text-sm")}>
                                         {stage.description}
                                     </p>
                                 </div>
@@ -70,8 +53,11 @@ export const Token: FunctionComponent<TokenProps> = () => {
                         </div>
                     ))}
                 </div>
-            </div>
+                <div>
 
+                </div>
+            </div>
+            <TokenSlider stages={saleStages} />
         </div>
     );
 };

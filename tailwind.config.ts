@@ -44,7 +44,8 @@ const config: Config = {
                 island: "url('/images/island.svg')",
                 boardFaq: "url('/images/Faq/boardFaq.svg')",
                 tree: "url('/images/Faq/tree.svg')",
-                boardFaq2: "url('/images/Faq/board.png')"
+                boardFaq2: "url('/images/Faq/board.png')",
+                mobileMenuBg: "url('/images/mobileMenuBg.svg')",
 
             },
             colors: {
