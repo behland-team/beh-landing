@@ -1,0 +1,113 @@
+import React from 'react';
+import {SocialMedia} from "@/utils/data";
+import classNames from "classnames";
+import {useTranslations} from "next-intl";
+
+function Footer() {
+    const t = useTranslations("footer");
+    return (
+        <footer dir={"rtl"} className="mb-10">
+            <div className="max-w-[75rem] mx-auto bg-[#FEECD8] rounded-xl px-12 py-8 relative">
+                <div className="absolute left-1/2 -translate-x-1/2 bottom-0  rounded-t-xl  bg-white px-3">
+                    <p className="text-center opacity-50">کلیه حقوق برای به‌لند محفوظ است</p>
+                </div>
+                <div
+                    className="grid  grid-cols-1 md:grid-cols-2  lg:grid-cols-3 lg:grid-rows-2 gap-7 lg:gap-5 items-start xl:max-w-screen-2xl xl:mx-auto">
+                    <div className="col-span-1 flex row-start-1 flex-col gap-2 lg:row-span-full">
+                        <h4 className="text-base font-extrabold text-balck">🔥 {t("aboutBeh")}</h4>
+                        <p className="text-sm font-normal text-text-gray">
+                            {t("descriptionBeh")}
+                        </p>
+                    </div>
+                    <div className="grid col-span-1  w-full lg:row-span-full ">
+                        <div className="flex gap-10 items-center justify-evenly lg:justify-center">
+                            <div className="flex flex-col items-center justify-around gap-5">
+                                <h4 className="text-base font-extrabold text-text-gray">
+                                    {t("services")}
+                                </h4>
+                                <ul className="list-disc flex flex-col gap-2 list-inside px-1">
+                                    <li className="text-sm font-semibold text-text-gray">
+                                        {t("contactUs")}
+                                    </li>
+                                    <li className="text-sm font-semibold text-text-gray">
+                                        {t("FAQ")}
+                                    </li>
+                                    <li className="text-sm font-semibold text-text-gray">
+                                        {t("aboutUs")}
+                                    </li>
+                                    <li className="text-sm font-semibold text-text-gray">
+                                        {t("news")}
+                                    </li>
+                                </ul>
+                            </div>
+                            <div className="flex flex-col items-center justify-around gap-5">
+                                <h4 className="text-base font-extrabold text-text-gray">
+                                    {t("services")}
+                                </h4>
+                                <ul className="list-disc flex flex-col gap-2 list-inside px-1">
+                                    <li className="text-sm font-semibold text-text-gray">
+                                        {t("contactUs")}
+                                    </li>
+                                    <li className="text-sm font-semibold text-text-gray">
+                                        {t("FAQ")}
+                                    </li>
+                                    <li className="text-sm font-semibold text-text-gray">
+                                        {t("aboutUs")}
+                                    </li>
+                                    <li className="text-sm font-semibold text-text-gray">
+                                        {t("news")}
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div
+                        className="col-span-1  lg:row-span-1  flex items-center flex-col justify-center gap-2 lg:items-start">
+                        <p className="text-base lg:font-semibold ">
+                            {t("socialMedia")}
+                        </p>
+                        <div className="flex  justify-start items-start gap-5">
+                            {SocialMedia.map((item, index) => (
+                                <div
+                                    key={index}
+                                    className="flex gap-3 border-2 border-cream-medium shadow-icon bg-white p-2 rounded-xl"
+                                >
+                                  <span
+                                      className={classNames(
+                                          item.name == "instagram"
+                                              ? "icon-instagram"
+                                              : item.name == "facebook"
+                                                  ? "icon-facebook"
+                                                  : item.name == "linkedin"
+                                                      ? "icon-linkedin"
+                                                      : "icon-twitter",
+                                          "icon text-cream-medium"
+                                      )}
+                                  ></span>
+                                </div>
+                            ))}
+                        </div>
+                    </div>
+                    <div className="col-span-1 row-start-2  lg:row-start-2 lg:row-span-1 space-y-1 ">
+                        <p className="text-base font-semibold">{t("newslatter")}</p>
+                        <div
+                            className="flex items-center justify-between  w-full rounded-lg overflow-hidden   border p-1  bg-white border-gray-500 ">
+                            <input
+                                type="email"
+                                placeholder="ایمیل خود را وارد کنید"
+                                className="rounded-full border-0 bg-transparent outline-none w-full mx-1 placeholder:text-sm"
+                            />
+                            <button
+                                className="rounded-lg border-2 text-cream-medium border-cream-medium px-6 text-sm p-1 m-0.5 bg-cream-dark_light ">
+                                ارسال
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div className="w-full max-lg:h-24"></div>
+        </footer>
+    );
+}
+
+export default Footer;

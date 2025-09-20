@@ -1,5 +1,4 @@
-import type {Config} from "tailwindcss";
-
+import type { Config } from "tailwindcss";
 const path = require("path");
 const config: Config = {
     content: [
@@ -46,45 +45,46 @@ const config: Config = {
                 tree: "url('/images/Faq/tree.svg')",
                 boardFaq2: "url('/images/Faq/board.png')",
                 mobileMenuBg: "url('/images/mobileMenuBg.svg')",
+                storyBg: "url('/images/StoryBg.svg')",
 
-            },
-            colors: {
-                background: "var(--background)",
-                foreground: "var(--foreground)",
-                chart: {
-                    ranking: "#A6BD00",
-                    people: "#FF7B00",
-                    security: "#019F6F",
-                    crown: "#8700FF",
-                    award: "#FFBA00",
-                    smile: "#00A6DE",
-                    idCard: "#CF1D00",
-                },
-                text: {
-                    black: "#1E1E1E",
-                    gray: "#4D4D4D",
-                    light_black: "#555555",
-                    bg: "#CC6D144F",
-                    orange: "#CC6D14",
-                    dark_Orange: "#B83A36",
-                    dark_brown: "#893D1B",
-                },
-                cream: {
-                    light: "#FEF2E4",
-                    dark_light: "#FFD9B1",
-                    medium: "#BD5300",
-                    dark: "#CC6D14",
-                },
-            },
+      },
+      colors: {
+        background: "var(--background)",
+        foreground: "var(--foreground)",
+        chart: {
+          ranking: "#A6BD00",
+          people: "#FF7B00",
+          security: "#019F6F",
+          crown: "#8700FF",
+          award: "#FFBA00",
+          smile: "#00A6DE",
+          idCard: "#CF1D00",
         },
+        text: {
+          black: "#1E1E1E",
+          gray: "#4D4D4D",
+          light_black: "#555555",
+          bg: "#CC6D144F",
+          orange: "#CC6D14",
+          dark_Orange: "#B83A36",
+          dark_brown: "#893D1B",
+        },
+        cream: {
+          light: "#FEF2E4",
+          dark_light: "#FFD9B1",
+          medium: "#BD5300",
+          dark: "#CC6D14",
+        },
+      },
     },
-    plugins: [
-        require("./plugins/tw-icomoon")({
-            selectionPath: path.resolve(process.cwd(), "icomoon/selection.json"),
-            fontFamily: "icomoon",
-            cssFontPath: "/fonts", // where the font files are served (under /public)
-            classPrefix: "icon", // results: .icon, .icon-home, etc.
-        }),
-    ],
+  },
+  plugins: [
+    require("./plugins/tw-icomoon")({
+      selectionPath: path.resolve(process.cwd(), "icomoon/selection.json"),
+      fontFamily: "icomoon",
+      cssFontPath: "/fonts", // where the font files are served (under /public)
+      classPrefix: "icon", // results: .icon, .icon-home, etc.
+    }),
+  ],
 };
 export default config;
