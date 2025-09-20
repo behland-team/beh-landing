@@ -20,20 +20,20 @@ function MobileMenu() {
                 <nav  dir="rtl" className="grid grid-cols-5 absolute top-10 left-0 w-full h-20 px-1 xxs:px-6 py-3">
                     <Link href={"#"} className="flex flex-col items-center gap-1.5">
                         <Image src={services} alt={"services"} className="size-6"/>
-                        <p className="text-xs text-text-gray">{t("services")}</p>
+                        <p className="text-[10px] xxs:text-xs text-text-gray">{t("services")}</p>
                     </Link>
                     <Link href={"#"} className="flex flex-col items-center gap-1.5">
                         <Image src={news} alt={"news"} className="size-6"/>
-                        <p className="text-xs text-text-gray">{t("news")}</p>
+                        <p className="text-[10px] xxs:text-xs text-text-gray">{t("news")}</p>
                     </Link>
                     <div></div>
                     <Link href={"#"} className="flex flex-col items-center gap-1.5">
                         <Image src={about} alt={"about"} className="size-6"/>
-                        <p className="text-xs text-text-gray">{t("about")}</p>
+                        <p className="text-[10px] xxs:text-xs text-text-gray">{t("about")}</p>
                     </Link>
                     <Link href={"#"} className="flex flex-col items-center gap-1.5">
                         <Image src={faq} alt={"faq"} className="size-6"/>
-                        <p className="text-xs text-text-gray">{t("FAQ")}</p>
+                        <p className="text-[10px] xxs:text-xs  text-text-gray">{t("FAQ")}</p>
                     </Link>
                 </nav>
             </div>
