@@ -9,7 +9,7 @@ function Footer() {
         <footer dir={"rtl"} className="mb-10">
             <div className="max-w-[75rem] mx-auto bg-[#FEECD8] rounded-xl px-12 py-8 relative">
                 <div className="absolute left-1/2 -translate-x-1/2 bottom-0  rounded-t-xl  bg-white px-3">
-                    <p className="text-center opacity-50">کلیه حقوق برای به‌لند محفوظ است</p>
+                    <p className="text-xs xxs:text-sm md:text-base text-center opacity-50">کلیه حقوق برای به‌لند محفوظ است</p>
                 </div>
                 <div
                     className="grid  grid-cols-1 md:grid-cols-2  lg:grid-cols-3 lg:grid-rows-2 gap-7 lg:gap-5 items-start xl:max-w-screen-2xl xl:mx-auto">
