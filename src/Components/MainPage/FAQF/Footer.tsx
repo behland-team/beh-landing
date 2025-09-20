@@ -91,10 +91,10 @@ export default function Footer() {
                         <input
                             type="email"
                             placeholder="ایمیل خود را وارد کنید"
-                            className="rounded-full border-0 bg-transparent outline-none w-full mx-1 placeholder:text-sm"
+                            className="rounded-xl border-0 bg-transparent outline-none w-full mx-1 placeholder:text-sm"
                         />
                         <button
-                            className="rounded-lg border-2 text-cream-medium border-cream-medium px-6 text-sm p-1 m-0.5 bg-cream-dark_light ">
+                            className="rounded-xl border-2 text-cream-medium border-cream-medium px-6 text-sm p-2  bg-cream-dark_light ">
                             ارسال
                         </button>
                     </div>
