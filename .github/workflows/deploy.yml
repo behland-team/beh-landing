@@ -1,0 +1,66 @@
+name: CI/CD - Next.js + PM2 (beh-landing)
+
+on:
+  push:
+    branches: ["main"]
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      # همگام‌سازی سورس با سرور از طریق rsync (exclude پوشه‌های غیرضروری)
+      - name: Sync source to server (rsync)
+        uses: burnett01/rsync-deployments@7.0.1
+        with:
+          switches: -az --delete --chmod=Du=rwx,Dgo=rx,Fu=rw,Fgo=r --exclude '.git' --exclude '.github' --exclude 'node_modules' --exclude '.next' --exclude '.env*' --exclude '.DS_Store'
+          path: ./
+          remote_path: ${{ secrets.APP_DIR }}
+          remote_host: ${{ secrets.SSH_HOST }}
+          remote_user: ${{ secrets.SSH_USER }}
+          remote_port: ${{ secrets.SSH_PORT }}
+          remote_key: ${{ secrets.SSH_KEY }}
+
+      # نصب، بیلد و ریلود با PM2 داخل Bash login shell (تا nvm/Path لود شود)
+      - name: Install, build, and reload via PM2
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: ${{ secrets.SSH_HOST }}
+          username: ${{ secrets.SSH_USER }}
+          port: ${{ secrets.SSH_PORT }}
+          key: ${{ secrets.SSH_KEY }}
+          script: |
+            bash -lc '
+              set -e
+              cd "${{ secrets.APP_DIR }}"
+
+              # اگر nvm داری، لودش کن (بدون نصب مجدد)
+              export NVM_DIR="$HOME/.nvm"
+              [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
+
+              # چک اینکه node/npm در PATH هستند
+              node -v && npm -v
+
+              # اگر env تولید هست، فقط همونو لود کن (وجودش اجباری نیست)
+              [ -f .env.production ] && set -a && . ./.env.production && set +a || true
+
+              # نصب تمیز و بیلد
+              npm ci
+              npm run build
+
+              # اگر Prisma داری، این خط رو باز کن:
+              # npx prisma migrate deploy || true
+
+              # PM2: ریلود اگر هست، وگرنه استارت
+              command -v pm2 >/dev/null 2>&1 || npm i -g pm2
+              if pm2 list | grep -q "${{ secrets.PM2_APP_NAME }}"; then
+                pm2 reload ecosystem.config.js --only "${{ secrets.PM2_APP_NAME }}"
+              else
+                pm2 start ecosystem.config.js
+              fi
+              pm2 save
+            '
