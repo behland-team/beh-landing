@@ -44,14 +44,14 @@ function TokenSlider({stages}: { stages: Stage[] }) {
                     <button
                         onClick={prev}
                         aria-label="Slide back"
-                        className="border-2 shadow-main p-2 rounded-xl bg-white border-text-dark_Orange icon icon-arrow_back text-text-orange"
+                        className="border-2 shadow-main p-2 rounded-xl bg-white border-text-dark_Orange icon icon-arrow-back text-text-orange"
                     ></button>
                     <button
                         onClick={next}
                         aria-label="Slide forward"
                         className="border-2 shadow-main rounded-xl bg-white border-text-dark_Orange"
                     >
-                        <span className="icon icon-arrow_back text-text-orange rotate-180 p-2"></span>
+                        <span className="icon icon-arrow-back text-text-orange rotate-180 p-2"></span>
                     </button>
                 </div>
             </div>

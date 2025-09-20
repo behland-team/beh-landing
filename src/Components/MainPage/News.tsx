@@ -21,7 +21,6 @@ export default function News() {
         const index = (current + i) % Teams.length;
         return Teams[index];
     });
-    console.log(visibleImages);
     return (
         <div dir="rtl" className="py-10 md:px-24 px-6  mt-10 xl:max-w-screen-2xl xl:mx-auto">
             <div className="w-full flex flex-col xxs:flex-row gap-3  items-center justify-between  mt-4">
@@ -30,14 +29,14 @@ export default function News() {
                     <button
                         aria-label="Slide back"
                         onClick={prev}
-                        className="border-2 shadow-main p-2 rounded-xl bg-white border-text-dark_Orange icon icon-arrow_back text-text-orange"
+                        className="border-2 shadow-main p-2 rounded-xl bg-white border-text-dark_Orange icon icon-arrow-back text-text-orange"
                     ></button>
                     <button
                         aria-label="Slide forward"
                         onClick={next}
                         className="border-2 shadow-main rounded-xl bg-white border-text-dark_Orange"
                     >
-                        <span className="icon icon-arrow_back text-text-orange rotate-180 p-2"></span>
+                        <span className="icon icon-arrow-back text-text-orange rotate-180 p-2"></span>
                     </button>
                 </div>
             </div>
