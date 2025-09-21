@@ -75,7 +75,7 @@ export default function Characters() {
                         {visibleImages.map((src, i) => (
                             <div
                                 key={i}
-                                className=" bg-card bg-no-repeat bg-contain bg-center w-56 xl:w-[280px] xl:h-96 h-80 flex justify-center  relative shrink-0"
+                                className=" bg-card bg-no-repeat bg-contain bg-center w-56 xl:w-[280px] xl:h-96 h-80 flex justify-center  relative shrink-0 bg-transparent"
                             >
                                 <div
                                     className="absolute  md:top-1 lg:top-0 xl:-top-1 px-4 py-3 lg:p-5 flex justify-between items-center  gap-5">

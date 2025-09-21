@@ -10,7 +10,7 @@ type Props = {
   className?: string;
 };
 
-export default function Accordion({
+export default function FaqAccordion({
   items,
   type = "single",
   defaultOpen = [0],
