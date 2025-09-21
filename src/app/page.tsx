@@ -15,11 +15,11 @@ export default function Home() {
         <>
             <Header variant={"landing"}/>
             <Banner/>
-            <RoadMap/>
-            <Characters/>
             <WhyBeh/>
             <Token/>
             <Team/>
+            <RoadMap/>
+            <Characters/>
             <News/>
             <FAQF/>
         </>
