@@ -7,20 +7,20 @@ function Footer() {
     const t = useTranslations("footer");
     return (
         <footer dir={"rtl"} className="mb-10">
-            <div className="max-w-[75rem] mx-auto bg-[#FEECD8] rounded-xl px-12 py-8 relative">
+            <div className="max-w-[75rem] mx-auto bg-[#FEECD8] lg:rounded-xl px-6 py-6 md:px-12 md:py-8 relative">
                 <div className="absolute left-1/2 -translate-x-1/2 bottom-0  rounded-t-xl  bg-white px-3">
-                    <p className="text-xs xxs:text-sm md:text-base text-center opacity-50">کلیه حقوق برای به‌لند محفوظ است</p>
+                    <p className="text-xs xxs:text-sm md:text-base text-center opacity-50 max-lg:hidden">کلیه حقوق برای به‌لند محفوظ است</p>
                 </div>
                 <div
-                    className="grid  grid-cols-1 md:grid-cols-2  lg:grid-cols-3 lg:grid-rows-2 gap-7 lg:gap-5 items-start xl:max-w-screen-2xl xl:mx-auto">
-                    <div className="col-span-1 flex row-start-1 flex-col gap-2 lg:row-span-full">
+                    className="grid max-sm:grid-cols-4 grid-cols-2  lg:grid-cols-3 lg:grid-rows-2 max-sm:gap-x-0 gap-7 lg:gap-5 items-start xl:max-w-screen-2xl xl:mx-auto">
+                    <div className="col-span-full md:col-span-1 flex row-start-1 flex-col gap-2 lg:row-span-full">
                         <h4 className="text-base font-extrabold text-balck">🔥 {t("aboutBeh")}</h4>
                         <p className="text-sm font-normal text-text-gray">
                             {t("descriptionBeh")}
                         </p>
                     </div>
-                    <div className="grid col-span-1  w-full lg:row-span-full ">
-                        <div className="flex gap-10 items-center justify-evenly lg:justify-center">
+                    <div className="grid max-sm:col-span-3 col-span-full md:col-span-1  w-full lg:row-span-full ">
+                        <div className="flex xxs:gap-10 gap-5 items-center justify-evenly lg:justify-center">
                             <div className="flex flex-col items-center justify-around gap-5">
                                 <h4 className="text-base font-extrabold text-text-gray">
                                     {t("services")}
@@ -62,11 +62,11 @@ function Footer() {
                         </div>
                     </div>
                     <div
-                        className="col-span-1  lg:row-span-1  flex items-center flex-col justify-center gap-2 lg:items-start">
-                        <p className="text-base lg:font-semibold ">
+                        className="col-span-full max-sm:col-span-1 md:col-span-1  lg:row-span-1  flex items-center flex-col justify-center gap-2 lg:items-start">
+                        <p className="text-base lg:font-semibold max-sm:hidden">
                             {t("socialMedia")}
                         </p>
-                        <div className="flex  justify-start items-start gap-5">
+                        <div className="flex max-sm:flex-col justify-start items-start gap-5">
                             {SocialMedia.map((item, index) => (
                                 <div
                                     key={index}
@@ -88,7 +88,7 @@ function Footer() {
                             ))}
                         </div>
                     </div>
-                    <div className="col-span-1 row-start-2  lg:row-start-2 lg:row-span-1 space-y-1 ">
+                    <div className="col-span-full md:col-span-1   space-y-1 ">
                         <p className="text-base font-semibold">{t("newslatter")}</p>
                         <div
                             className="flex items-center justify-between  w-full rounded-lg overflow-hidden   border p-1  bg-white border-gray-500 ">
@@ -105,7 +105,7 @@ function Footer() {
                     </div>
                 </div>
             </div>
-            <div className="w-full max-lg:h-24"></div>
+            <div className="w-full max-sm:h-16 max-lg:h-24 bg-[#FEECD8]"></div>
         </footer>
     );
 }
