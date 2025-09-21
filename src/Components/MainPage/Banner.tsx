@@ -20,11 +20,11 @@ export default function Banner() {
         <p className="text-center mt-4 md:mt-5 lg:mt-10 w-full px-7 md:w-2/3 lg:w-2/4 text-text-light_black font-[400] md:font-medium  lg:text-xl z-20">
           {t("description")}
         </p>
-
+{/* 
         <button className=" mt-5 lg:mt-7 px-5 font-medium z-10 text-sm lg:text-lg  shadow-main hover:bg-cream-medium/80 hover:text-cream-light  text-text-orange  p-2 rounded-2xl border-2 border-cream-medium bg-cream-light flex gap-2 items-center shadow-cream-dark ">
           {tHeader("login")}
           <span className="icon icon-profile text-xl font-medium"></span>
-        </button>
+        </button> */}
       </div>
     </div>
   );
