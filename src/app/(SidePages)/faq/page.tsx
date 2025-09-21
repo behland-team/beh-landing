@@ -1,8 +1,13 @@
 import React from 'react';
+import Banner from "@/Components/SidePages/FAQ/Banner";
+import Support from "@/Components/SidePages/FAQ/Support";
 
 function FAQPage() {
     return (
-        <div></div>
+        <main dir={"rtl"}>
+            <Banner />
+            <Support />
+        </main>
     );
 }
 
