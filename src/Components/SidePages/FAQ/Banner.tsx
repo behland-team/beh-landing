@@ -1,8 +1,10 @@
 import React from 'react';
 import bannerImage from "@/assets/Images/faq/banner.png"
 import Image from "next/image";
+import {useTranslations} from "next-intl";
 
 function Banner() {
+    const t= useTranslations("faqPage.banner")
     return (
         <section className="my-10 md:my-20 px-6 md:px-0">
             <div
@@ -10,19 +12,14 @@ function Banner() {
                 <div
                     className="flex flex-col items-center md:items-start gap-4 w-full md:w-1/2 px-6 py-8 sm:pl-14 md:pl-0 sm:pr-14 sm:pt-12 sm:pb-20 relative z-[2] ">
                     <h4 className="text-lg md:text-xl lg:text-2xl xl:text-3xl font-semibold xl:leading-10">
-                        همه چیز درباره به‌لند، سوالات پرتکرار شما
+                        {t("title")}
                     </h4>
                     <div className="flex flex-col gap-8 items-center md:items-start">
-                        <p className="text-sm lg:text-base text-justify">
-                            می‌دانیم که شروع در دنیای مالی و به‌لند ممکن است پر از سؤال و ابهام باشد. از چگونگی ورود به
-                            دوره‌ها و اتصال کیف پول تا مراحل رشد شخصیت دیجیتال و دریافت پاداش‌ها، همه چیز برای شما آماده
-                            است. این بخش به شما کمک می‌کند سریع‌ترین و شفاف‌ترین پاسخ‌ها را پیدا کنید، بدون سردرگمی و با
-                            اعتماد کامل. حتی اگر هنوز مطمئن نیستید از کجا شروع کنید، ما کنار شما هستیم تا مسیر یادگیری و
-                            رشد مالی شما ساده و لذت‌بخش شود
+                        <p className="text-sm lg:text-base text-justify">{t("description")}
                         </p>
                         <button
                             className="py-1.5 px-12 rounded-lg border bg-[#FEECD8]  w-fit border-cream-medium shadow-main shadow-cream-medium  text-cream-medium flex items-center justify-center gap-2">
-                            <span>تماس با ما</span>
+                            <span>{t("contact-us")}</span>
                             <span className="icon icon-call"></span>
                         </button>
                     </div>
