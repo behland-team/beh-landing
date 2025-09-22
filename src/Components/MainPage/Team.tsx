@@ -55,17 +55,15 @@ export default function Team() {
                         </p>
                         <div className="flex items-center gap-4 ">
                             <button
-                                disabled={nextBtnDisabled}
-                                onClick={onNextButtonClick}
-                                aria-label="Slide forward"
+                                disabled={prevBtnDisabled}
+                                onClick={onPrevButtonClick}
                                 className="border-2 shadow-main rounded-xl bg-white border-text-dark_Orange text-text-orange disabled:border-text-gray disabled:text-text-gray disabled:scale-90"
                             >
                                 <span className="icon icon-arrow-back   p-2"></span>
                             </button>
                             <button
-                                disabled={prevBtnDisabled}
-                                onClick={onPrevButtonClick}
-                                aria-label="Slide back"
+                                disabled={nextBtnDisabled}
+                                onClick={onNextButtonClick}
                                 className="border-2  shadow-main rounded-xl bg-white border-text-dark_Orange  text-text-orange disabled:border-text-gray disabled:text-text-gray disabled:scale-90"
                             >
                                 <span className="icon icon-arrow-back rotate-180  p-2"></span>
@@ -75,11 +73,12 @@ export default function Team() {
                 </div>
 
                 {/* عکس‌ها */}
-                <div className="relative flex items-center justify-center w-full mt-6" dir={"ltr"}>
+                <div className="relative flex items-center justify-center w-full mt-6" >
                     <Carousel opts={{
+                        direction : "rtl"
                     }} setApi={setApi} className="flex items-center justify-center w-full  gap-6 py-5 mx-auto overflow-hidden">
                         <CarouselContent>
-                            {Teams.reverse().map((item, i) => (
+                            {Teams.map((item, i) => (
                                 <CarouselItem
                                     key={i}
                                     className="   w-72 h-80 overflow-hidden shrink-0  max-sm:pl-4 xl:basis-1/4 lg:basis-1/3 md:basis-1/2 "
