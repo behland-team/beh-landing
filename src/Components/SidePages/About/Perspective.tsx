@@ -55,7 +55,7 @@ function Perspective() {
                         {
                             missions.map((mission , i) => (
                                 <div key={i}
-                                    className="border border-cream-medium bg-cream-light rounded-lg  flex flex-col sm:flex-row h-40 sm:h-24 w-48 max-sm:mx-auto sm:w-full ">
+                                    className="md:border border-cream-medium bg-cream-light rounded-lg  flex flex-col sm:flex-row h-40 sm:h-24 w-48 max-sm:mx-auto sm:w-full ">
                                     <div className="sm:w-1/3 relative h-20 sm:h-fit ">
                                         <Image src={badge} alt={"badge"} className="absolute -top-3 right-1/2 translate-x-1/2"/>
                                         <Image src={mission.icon} alt={"icon"}
@@ -97,7 +97,7 @@ function Perspective() {
                         {
                             perspectives.map((item , i)=>(
                                 <div key={i}
-                                    className="border border-cream-medium bg-cream-light rounded-lg  flex  flex-col sm:flex-row h-40 sm:h-24 w-48 max-sm:mx-auto sm:w-full">
+                                    className="md:border border-cream-medium bg-cream-light rounded-lg  flex  flex-col sm:flex-row h-40 sm:h-24 w-48 max-sm:mx-auto sm:w-full">
                                     <div className="sm:w-1/3 relative h-20 sm:h-fit">
                                         <Image src={badge} alt={"badge"} className="absolute -top-3 right-1/2 translate-x-1/2"/>
                                         <Image src={item.icon} alt={"icon"} className="absolute -top-1 right-1/2 translate-x-1/2"/>
