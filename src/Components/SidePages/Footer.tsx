@@ -2,12 +2,15 @@ import React from 'react';
 import {SocialMedia} from "@/utils/data";
 import classNames from "classnames";
 import {useTranslations} from "next-intl";
+import  alga from "@/assets/Images/alga.png";
+import Image from "next/image";
 
 function Footer() {
     const t = useTranslations("footer");
     return (
         <footer dir={"rtl"} className="mb-10">
             <div className="max-w-[75rem] mx-auto bg-[#FEECD8] lg:rounded-xl px-6 py-6 md:px-12 md:py-8 relative">
+                <Image src={alga} alt={"alga"} className="max-md:hidden absolute -top-2 left-0"/>
                 <div className="absolute left-1/2 -translate-x-1/2 bottom-0  rounded-t-xl  bg-white px-3">
                     <p className="text-xs xxs:text-sm md:text-base text-center opacity-50 max-lg:hidden">کلیه حقوق برای به‌لند محفوظ است</p>
                 </div>
