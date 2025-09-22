@@ -13,6 +13,7 @@ import Abbasi from "@/assets/Images/TeamMemebers/Abbasi.png";
 import quote from "@/assets/Images/about/quote.png";
 import classNames from "classnames";
 import Image from "next/image";
+import {useTranslations} from "next-intl";
 
 
 const teamQuote = [
@@ -107,6 +108,7 @@ const teamQuote = [
 
 function Team() {
     const [current, setCurrent] = useState(0);
+    const t= useTranslations("aboutPage.team");
 
     const prev = () => setCurrent((c) => (c === 0 ? teamQuote.length - 1 : c - 1));
     const next = () => setCurrent((c) => (c === teamQuote.length - 1 ? 0 : c + 1));
@@ -121,9 +123,8 @@ function Team() {
         <section className="my-20 bg-storyBg bg-no-repeat">
             <div className=" flex flex-col gap-10 py-10">
                 <div className="space-y-4 px-6">
-                    <h2 className="text-xl xxs:text-2xl lg:text-3xl font-bold text-center">تیم ما</h2>
-                    <p className="text-base md:text-lg text-center font-medium text-text-gray ">ما برای کنار هم کار کردن و خلق ایده‌های تازه هیجان
-                        داریم.</p>
+                    <h2 className="text-xl xxs:text-2xl lg:text-3xl font-bold text-center">{t("title")}</h2>
+                    <p className="text-base md:text-lg text-center font-medium text-text-gray ">{t("description")}</p>
                 </div>
                 <div className="flex items-start justify-center gap-8 w-full overflow-x-hidden">
                     {

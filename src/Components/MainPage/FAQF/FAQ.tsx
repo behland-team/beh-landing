@@ -17,7 +17,6 @@ import littleGrass from "@/assets/Images/faq/grass2.png"
 
 import FaqAccordion from "@/Components/UI/FaqAccordion";
 import { faqs } from "@/utils/data";
-import classNames from "classnames";
 import { useTranslations } from "next-intl";
 
 export default function FAQ() {
