@@ -34,7 +34,7 @@ const config: Config = {
     			CharBg: "url('/images/CharBg.png')",
     			card: "url('/images/card.svg')",
     			WhyBehBg: "url('/images/WhyBeh.png')",
-    			teamBg: "url('/images/TeamBg.png')",
+    			teamBg: "url('/images/TeamBg.svg')",
     			teamInfoBg: "url('/images/TeamInfoBg.png')",
     			cardBg: "url('/images/cardBg.png')",
     			cardMiniBg: "url('/images/cardMiniBg.png')",

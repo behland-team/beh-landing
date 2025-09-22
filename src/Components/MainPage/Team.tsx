@@ -1,29 +1,44 @@
 "use client";
 import {useTranslations} from "next-intl";
-import React, {useState} from "react";
+import React, {useCallback, useEffect, useState} from "react";
 import Image from "next/image";
 import {Teams} from "@/utils/data";
-import useWindowDimensions from "@/hooks/useWindowDimensions";
+import Bg from "@/assets/Images/TeamIBg.svg";
+import {
+    Carousel,
+    CarouselApi,
+    CarouselContent,
+    CarouselItem,
+} from "@/Components/UI/carousel";
+import {EmblaCarouselType} from "embla-carousel";
 
 export default function Team() {
     const t = useTranslations("team");
-    const [current, setCurrent] = useState(0);
-    const {width} = useWindowDimensions();
+    const [api, setApi] = React.useState<CarouselApi>()
+    const [prevBtnDisabled, setPrevBtnDisabled] = useState(true)
+    const [nextBtnDisabled, setNextBtnDisabled] = useState(true)
 
-    const prev = () => setCurrent((c) => (c === 0 ? Teams.length - 1 : c - 1));
-    const next = () => setCurrent((c) => (c === Teams.length - 1 ? 0 : c + 1));
+    const onPrevButtonClick = useCallback(() => {
+        if (!api) return
+        api.scrollPrev()
+    }, [api])
 
-    const visibleCount = () => {
-        if (width >= 1280) return 4
-        if (width >= 1024) return 3
-        if (width >= 640) return 2
-        return 1;
-    };
+    const onNextButtonClick = useCallback(() => {
+        if (!api) return
+        api.scrollNext()
+    }, [api])
 
-    const visibleImages = Array.from({length: visibleCount()}, (_, i) => {
-        const index = (current + i) % Teams.length;
-        return Teams[index];
-    });
+    const onSelect = useCallback((emblaApi: EmblaCarouselType) => {
+        setPrevBtnDisabled(!emblaApi.canScrollPrev())
+        setNextBtnDisabled(!emblaApi.canScrollNext())
+    }, [])
+
+    useEffect(() => {
+        if (!api) return
+
+        onSelect(api)
+        api.on('reInit', onSelect).on('select', onSelect)
+    }, [api, onSelect])
     return (
         <div
             dir="rtl"
@@ -40,38 +55,47 @@ export default function Team() {
                         </p>
                         <div className="flex items-center gap-4 ">
                             <button
-                                aria-label="Slide back"
-                                onClick={prev}
-                                className="border-2 shadow-main p-2 rounded-xl bg-white border-text-dark_Orange icon icon-arrow-back text-text-orange"
-                            ></button>
-                            <button
+                                disabled={nextBtnDisabled}
+                                onClick={onNextButtonClick}
                                 aria-label="Slide forward"
-                                onClick={next}
-                                className="border-2 shadow-main rounded-xl bg-white border-text-dark_Orange"
+                                className="border-2 shadow-main rounded-xl bg-white border-text-dark_Orange text-text-orange disabled:border-text-gray disabled:text-text-gray disabled:scale-90"
                             >
-                                <span className="icon icon-arrow-back text-text-orange rotate-180 p-2"></span>
+                                <span className="icon icon-arrow-back   p-2"></span>
+                            </button>
+                            <button
+                                disabled={prevBtnDisabled}
+                                onClick={onPrevButtonClick}
+                                aria-label="Slide back"
+                                className="border-2  shadow-main rounded-xl bg-white border-text-dark_Orange  text-text-orange disabled:border-text-gray disabled:text-text-gray disabled:scale-90"
+                            >
+                                <span className="icon icon-arrow-back rotate-180  p-2"></span>
                             </button>
                         </div>
                     </div>
                 </div>
 
                 {/* عکس‌ها */}
-                <div className="relative flex items-center justify-center w-full mt-6">
-                    <div className="flex items-center justify-center w-full  gap-6 py-5 mx-auto overflow-hidden">
-                        {visibleImages.map((item, i) => (
-                            <div
-                                key={i}
-                                className=" bg-teamBg bg-no-repeat bg-contain bg-center w-72 h-fit overflow-hidden shrink-0  reletive"
-                            >
-                                <Image src={item.image} alt="cow" className="w-full h-full "/>
-                                <div
-                                    className=" bg-teamInfoBg bg-no-repeat bg-cover bg-center w-72 h-1/4 overflow-hidden   absolute bottom-0 p-5 flex justify-center items-center flex-col gap-2">
-                                    <p className=" text-black text-xl font-normal">{item.name}</p>
-                                    <p>{item.title}</p>
-                                </div>
-                            </div>
-                        ))}
-                    </div>
+                <div className="relative flex items-center justify-center w-full mt-6" dir={"ltr"}>
+                    <Carousel opts={{
+                    }} setApi={setApi} className="flex items-center justify-center w-full  gap-6 py-5 mx-auto overflow-hidden">
+                        <CarouselContent>
+                            {Teams.reverse().map((item, i) => (
+                                <CarouselItem
+                                    key={i}
+                                    className="   w-72 h-80 overflow-hidden shrink-0  max-sm:pl-4 xl:basis-1/4 lg:basis-1/3 md:basis-1/2 "
+                                >
+                                    <div className="relative max-w-80 mx-auto ">
+                                        <Image src={Bg} alt={"background"} className="absolute w-full h-full -z-10" />
+                                        <Image src={item.image} alt="team" className="w-full h-full"/>
+                                        <div className="absolute bottom-0 -left-0 right-0 h-24 bg-teamInfoBg bg-no-repeat bg-center bg-cover flex justify-center items-center flex-col gap-2">
+                                            <p className=" text-black text-xl font-normal">{item.name}</p>
+                                            <p>{item.title}</p>
+                                        </div>
+                                    </div>
+                                </CarouselItem>
+                            ))}
+                        </CarouselContent>
+                    </Carousel>
                 </div>
             </div>
         </div>
