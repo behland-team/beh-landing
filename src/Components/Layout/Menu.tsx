@@ -2,6 +2,7 @@ import React from 'react';
 import Image from "next/image";
 import logo from "../../../public/images/Logo.png";
 import {useTranslations} from "next-intl";
+import Link from 'next/link';
 
 function Menu() {
     const t = useTranslations("header");
@@ -12,59 +13,59 @@ function Menu() {
                 dir="rtl"
                 className=" max-w-[85rem] w-full mx-6  lg:mx-auto px-4 flex items-center justify-between bg-headerMobile md:bg-header bg-contain  bg-center bg-no-repeat md:w-5/6 lg:w-[90%]  xl:w-4/5 h-full">
                 {/*<MobileNavBtn/>*/}
-                <a
+                <Link
                     className="font-semibold text-xl text-black focus:outline-hidden focus:opacity-80 dark:text-white md:flex-1  flex-none lg:flex-none"
-                    href="#"
+                    href="/"
                     aria-label="Brand">
                     <Image src={logo} alt="behland-logo" className="my-2 md:my-0"/>
-                </a>
+                </Link>
                 <span
                     className="icon icon-profile md:hidden size-[40px]   text-xl text-cream-medium border-[2px] rounded-xl py-1 px-2 border-cream-medium bg-cream-light shadow-main shadow-cream-dark">
                 </span>
                 <div
                     className="lg:flex flex-row items-center gap-1  xl:gap-3 mt-5 sm:justify-end sm:mt-0 sm:ps-5 hidden">
-                    <a
+                    <Link
                         className="font-medium text-text-black lg:text-sm xl:text-base hover:text-gray-400 focus:outline-hidden focus:text-gray-400"
-                        href="#"
+                        href="/"
                         aria-current="page">
                         {t("home")}
-                    </a>
+                    </Link>
                     <span className="rotate-[105deg] h-px w-4 bg-gray-500"></span>
-                    <a
+                    <Link
                         className="font-medium text-text-black lg:text-sm xl:text-base hover:text-gray-400 focus:outline-hidden focus:text-gray-400"
                         href="#">
                         {t("services")}
-                    </a>
+                    </Link>
                     <span className="rotate-[105deg] h-px w-4 bg-gray-500"></span>
-                    <a
+                    <Link
                         className="font-medium text-text-black lg:text-sm xl:text-base hover:text-gray-400 focus:outline-hidden focus:text-gray-400"
                         href="#">
                         {t("character")}
-                    </a>
+                    </Link>
                     <span className="rotate-[105deg] h-px w-4 bg-gray-500"></span>
-                    <a
+                    <Link
                         className="font-medium text-text-black lg:text-sm xl:text-base hover:text-gray-400 focus:outline-hidden focus:text-gray-400"
-                        href="#">
+                        href="/faq">
                         {t("FAQ")}
-                    </a>
+                    </Link>
                     <span className="rotate-[105deg] h-px w-4 bg-gray-500"></span>
-                    <a
+                    <Link
                         className="font-medium text-text-black lg:text-sm xl:text-base hover:text-gray-400 focus:outline-hidden focus:text-gray-400"
                         href="#">
                         {t("news")}
-                    </a>
+                    </Link>
                     <span className="rotate-[105deg] h-px w-4 bg-gray-500"></span>
-                    <a
+                    <Link
                         className="font-medium text-text-black lg:text-sm xl:text-base hover:text-gray-400 focus:outline-hidden focus:text-gray-400"
-                        href="#">
+                        href="/contacts">
                         {t("contact")}
-                    </a>
+                    </Link>
                     <span className="rotate-[105deg] h-px w-4 bg-gray-500"></span>
-                    <a
+                    <Link
                         className="font-medium text-text-black lg:text-sm xl:text-base hover:text-gray-400 focus:outline-hidden focus:text-gray-400"
-                        href="#">
+                        href="/about">
                         {t("about")}
-                    </a>
+                    </Link>
                 </div>
                 <div></div>
                 {/* <div className="md:flex flex-row items-center gap-5 mt-5 sm:justify-end sm:mt-0 sm:ps-5 hidden">
