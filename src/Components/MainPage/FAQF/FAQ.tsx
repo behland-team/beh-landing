@@ -15,9 +15,8 @@ import branch from "@/assets/Images/branch.png"
 import grass from "@/assets/Images/faq/grass.png"
 import littleGrass from "@/assets/Images/faq/grass2.png"
 
-import Accordion from "@/Components/UI/Accordion";
+import FaqAccordion from "@/Components/UI/FaqAccordion";
 import { faqs } from "@/utils/data";
-import classNames from "classnames";
 import { useTranslations } from "next-intl";
 
 export default function FAQ() {
@@ -51,7 +50,7 @@ export default function FAQ() {
                       >
                           <Image src={tree} alt="tree" className="absolute right-0 hidden md:block lg:right-10 md:-right-4 xl:-right-4"/>
                           <div className="w-full md:w-11/12 h-full z-10 flex p-5 pb-10 items-start justify-center xl:justify-start" dir="rtl">
-                              <Accordion
+                              <FaqAccordion
                                   className="w-full md:w-10/12 h-full"
                                   items={faqs}
                                   type="single"

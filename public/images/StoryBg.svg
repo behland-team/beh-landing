@@ -1,0 +1,14 @@
+<svg viewBox="0 0 1440 527" fill="none" xmlns="http://www.w3.org/2000/svg"
+     width="100%" height="100%" preserveAspectRatio="none">
+    <g filter="url(#filter0_g_640_719)">
+        <rect y="9" width="1441" height="509" fill="#FFF6ED"/>
+    </g>
+    <defs>
+        <filter id="filter0_g_640_719" x="-8.2" y="0.8" width="1457.4" height="525.4" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+            <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+            <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+            <feTurbulence type="fractalNoise" baseFrequency="0.047 0.047" numOctaves="3" seed="8486" />
+            <feDisplacementMap in="shape" scale="16.4" xChannelSelector="R" yChannelSelector="G"/>
+        </filter>
+    </defs>
+</svg>
