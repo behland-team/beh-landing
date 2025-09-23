@@ -66,7 +66,8 @@ function Menu() {
                         {t("about")}
                     </a>
                 </div>
-                <div className="md:flex flex-row items-center gap-5 mt-5 sm:justify-end sm:mt-0 sm:ps-5 hidden">
+                <div></div>
+                {/* <div className="md:flex flex-row items-center gap-5 mt-5 sm:justify-end sm:mt-0 sm:ps-5 hidden">
                     <span
                         className="icon icon-language text-xl text-cream-medium border-2 rounded-full px-2 p-1 border-cream-medium bg-cream-light shadow-main"></span>
                     <button
@@ -74,7 +75,7 @@ function Menu() {
                         <span className="icon icon-ranking"></span>
                         {t("login")}
                     </button>
-                </div>
+                </div> */}
             </nav>
         </div>
     );
