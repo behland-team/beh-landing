@@ -27,11 +27,11 @@ function MobileMenu() {
                         <p className="text-[10px] xxs:text-xs text-text-gray">{t("news")}</p>
                     </Link>
                     <div></div>
-                    <Link href={"#"} className="flex flex-col items-center gap-1.5">
+                    <Link href={"/about"} className="flex flex-col items-center gap-1.5">
                         <Image src={about} alt={"about"} className="size-6"/>
                         <p className="text-[10px] xxs:text-xs text-text-gray">{t("about")}</p>
                     </Link>
-                    <Link href={"#"} className="flex flex-col items-center gap-1.5">
+                    <Link href={"/faq"} className="flex flex-col items-center gap-1.5">
                         <Image src={faq} alt={"faq"} className="size-6"/>
                         <p className="text-[10px] xxs:text-xs  text-text-gray">{t("FAQ")}</p>
                     </Link>
