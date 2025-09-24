@@ -1,7 +1,7 @@
 import React from 'react';
-import storyLand from "@/assets/Images/storyLand.png"
-import LandBg from "@/assets/Images/behIslandBg.png"
-import LandBgMobile from "@/assets/Images/behIslandBgMobile.png"
+import storyLand from "@/assets/Images/storyLand.png";
+import LandBg from "@/assets/Images/behIslandBg.png";
+import LandBgMobile from "@/assets/Images/behIslandBgMobile.png";
 import Image from "next/image";
 import {useTranslations} from "next-intl";
 import classNames from "classnames";
@@ -10,6 +10,16 @@ const storyCard = [
     {
         title: "مسیر رشد واقعی",
         description: "هر قدم تو رو به یک مهارت مالی کاربردی نزدیک‌تر",
+<<<<<<< HEAD
+        iconClass: "icon icon-ranking",
+    },
+    {
+        title: "یادگیری همراه با ماجراجویی",
+        description: "آموزش خشک نیست، بلکه بازی‌گونه و مرحله‌به‌مرحله طراحی شده.",
+        iconClass: "icon icon-emoji-normal",
+    }
+];
+=======
         icon: "icon-emoji-normal"
     }, {
         title: "یادگیری همراه با ماجراجویی",
@@ -25,9 +35,10 @@ const storyCard = [
         icon: "icon-dollar-circle"
     },
 ]
+>>>>>>> origin/development
 
 function Story() {
-    const t = useTranslations("aboutPage.story")
+    const t = useTranslations("aboutPage.story");
     return (
         <section className="bg-storyBg bg-no-repeat w-full my-16 lg:my-40 ">
             <div className="flex flex-col lg:flex-row 3xl:max-w-screen-3xl mx-auto min-h-[500px] relative">
@@ -36,12 +47,23 @@ function Story() {
                     <p className=" text-sm sm:text-base text-justify">
                         {t("description")}
                     </p>
-
                 </div>
                 <div
                     className="lg:absolute left-1/3 xl:-bottom-8 lg:-bottom-20 flex flex-col lg:flex-row items-center lg:items-stretch gap-4 lg:pl-12 p-5  ">
                     {
                         storyCard.map((item , i) => (
+<<<<<<< HEAD
+                            <div key={i}
+                                className="border border-cream-medium rounded-xl px-2.5 py-3 flex lg:flex-col items-center gap-4 bg-[#FEECD8] w-full lg:w-[181px]">
+                               
+                                <div className="flex items-center justify-center rounded-full w-16 h-16 bg-white/50">
+                                    <span
+                                        className={classNames(
+                                            item.iconClass,
+                                            "w-20 h-20 text-cream-medium item-center"
+                                        )}
+                                    ></span>
+=======
                                 <div key={i}
                                     className="border border-cream-medium rounded-xl px-2.5 py-3 flex  lg:flex-col  items-center gap-4 bg-[#FEECD8] w-full xl:max-w-[181px]">
                                     <div className="rounded-full bg-white/60 py-2.5 px-4  mt-4 flex items-center justify-center">
@@ -51,7 +73,14 @@ function Story() {
                                         <h6 className="font-bold text-sm lg:text-center">{item.title}</h6>
                                         <p className="text-sm lg:text-center text-text-gray">{item.description}</p>
                                     </div>
+>>>>>>> origin/development
                                 </div>
+                                
+                                <div className="flex flex-col items-start lg:items-center gap-2">
+                                    <h6 className="font-bold text-sm lg:text-center">{item.title}</h6>
+                                    <p className="text-sm lg:text-center text-text-gray">{item.description}</p>
+                                </div>
+                            </div>
                         ))
                     }
                 </div>
