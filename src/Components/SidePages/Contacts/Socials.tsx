@@ -23,12 +23,8 @@ const links = [
     }, {
         title: "کانال تلگرام",
         icon: telegram,
-<<<<<<< HEAD
-        link: "https://t.me/BehLand_Official"
-=======
         link: "https://t.me/BehLand_Official",
         disable : false
->>>>>>> origin/development
     }, {
         title: "اینستاگرام",
         icon: instagram,
