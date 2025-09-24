@@ -3,8 +3,6 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/Components/UI/tabs";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/Components/UI/accordion";
 import Image from "next/image";
 
-
-
 function FAQTabs() {
     return (
         <section className="my-20">
@@ -21,60 +19,39 @@ function FAQTabs() {
                     <Tabs className="flex flex-col lg:flex-row w-full gap-6" dir="rtl" defaultValue={"start"}>
                         <TabsList className="flex lg:flex-col flex-nowrap overflow-x-auto gap-2 h-fit bg-[#FBF7F5] lg:w-1/5 p-4 max-sm:px-6  justify-start sm:justify-center">
                             <TabsTrigger value="start"
-<<<<<<< HEAD
-                                className="lg:w-full py-3 data-[state=active]:bg-[#FEECD8] font-semibold  justify-start font-kalameh data-[state=active]:shadow-none shrink-0 flex items-center gap-2">
+                                         className="lg:w-full py-3 data-[state=active]:bg-[#FEECD8] font-semibold  justify-start gap-2 font-kalameh data-[state=active]:shadow-none shrink-0 flex items-center">
                                 <span className="icon icon-medal-star w-8 h-8 flex-shrink-0"></span>
-                                شروع و عضویت
-                            </TabsTrigger>
-                            <TabsTrigger value="course"
-                                className="lg:w-full py-3 data-[state=active]:bg-[#FEECD8] font-semibold  justify-start font-kalameh data-[state=active]:shadow-none shrink-0 flex items-center gap-2">
-                                <span className="icon icon-teacher w-8 h-8 flex-shrink-0"></span>
-                                آموزش و دوره ها
-                            </TabsTrigger>
-                            <TabsTrigger value="rewird"
-                                className="lg:w-full py-3 data-[state=active]:bg-[#FEECD8] font-semibold  justify-start font-kalameh data-[state=active]:shadow-none shrink-0 flex items-center gap-2">
-                                <span className="icon icon-vector-13 w-8 h-8 flex-shrink-0"></span>
-                                پاداش و درآمدو عضویت
-                            </TabsTrigger>
-                            <TabsTrigger value="support"
-                                className="lg:w-full py-3 data-[state=active]:bg-[#FEECD8] font-semibold  justify-start font-kalameh data-[state=active]:shadow-none shrink-0 flex items-center gap-2">
-                                <span className="icon icon-setting w-8 h-8 flex-shrink-0"></span>
-                                پشتیبانی و فنی
-=======
-                                         className="lg:w-full py-3 data-[state=active]:bg-[#FEECD8] font-semibold  justify-start gap-2 font-kalameh data-[state=active]:shadow-none shrink-0 ">
-                                <span className="icon icon-medal-star" ></span>
                                 <p>شروع و عضویت</p>
                             </TabsTrigger>
                             <TabsTrigger value="course"
-                                         className="lg:w-full py-3 data-[state=active]:bg-[#FEECD8] font-semibold  justify-start gap-2 font-kalameh data-[state=active]:shadow-none shrink-0">
-                                <span className="icon icon-teacher" ></span>
+                                         className="lg:w-full py-3 data-[state=active]:bg-[#FEECD8] font-semibold  justify-start gap-2 font-kalameh data-[state=active]:shadow-none shrink-0 flex items-center">
+                                <span className="icon icon-teacher w-8 h-8 flex-shrink-0"></span>
                                 <p>آموزش و دوره ها</p>
                             </TabsTrigger>
                             <TabsTrigger value="rewird"
-                                         className="lg:w-full py-3 data-[state=active]:bg-[#FEECD8] font-semibold  justify-start gap-2 font-kalameh data-[state=active]:shadow-none shrink-0">
-                                <span className="icon icon-vector-13" ></span>
-                                <p>پاداش و درآمدو عضویت</p>
+                                         className="lg:w-full py-3 data-[state=active]:bg-[#FEECD8] font-semibold  justify-start gap-2 font-kalameh data-[state=active]:shadow-none shrink-0 flex items-center">
+                                <span className="icon icon-vector-13 w-8 h-8 flex-shrink-0"></span>
+                                <p>پاداش و درآمد</p>
                             </TabsTrigger>
                             <TabsTrigger value="support"
-                                         className="lg:w-full py-3 data-[state=active]:bg-[#FEECD8] font-semibold  justify-start gap-2 font-kalameh data-[state=active]:shadow-none shrink-0">
-                                <span className="icon icon-setting" ></span>
+                                         className="lg:w-full py-3 data-[state=active]:bg-[#FEECD8] font-semibold  justify-start gap-2 font-kalameh data-[state=active]:shadow-none shrink-0 flex items-center">
+                                <span className="icon icon-setting w-8 h-8 flex-shrink-0"></span>
                                 <p>پشتیبانی و فنی</p>
                             </TabsTrigger>
                             <TabsTrigger value="community"
-                                         className="lg:w-full py-3 data-[state=active]:bg-[#FEECD8] font-semibold  justify-start gap-2 font-kalameh data-[state=active]:shadow-none shrink-0">
-                                <span className="icon icon-crown" ></span>
+                                         className="lg:w-full py-3 data-[state=active]:bg-[#FEECD8] font-semibold  justify-start gap-2 font-kalameh data-[state=active]:shadow-none shrink-0 flex items-center">
+                                <span className="icon icon-crown w-8 h-8 flex-shrink-0"></span>
                                 <p>جامعه و رشد</p>
->>>>>>> origin/development
                             </TabsTrigger>
                         </TabsList>
                         <TabsContent value={"start"} className="flex-1 bg-[#FBF7F5] rounded-xl p-8 mt-0">
                             <Accordion type={"single"} collapsible>
                                 <AccordionItem value={"item1"} className="border-dashed">
                                     <AccordionTrigger className="hover:no-underline text-text-gray">
-                                        < div className="flex items-center gap-2">
+                                        <div className="flex items-center gap-2">
                                             <span
                                                 className="size-4 rounded-md  flex items-center justify-center bg-cream-dark_light text-cream-medium">+</span>
-                                            <p >چطور می‌تونم عضو به‌لند بشم؟</p>
+                                            <p>چطور می‌تونم عضو به‌لند بشم؟</p>
                                         </div>
                                     </AccordionTrigger>
                                     <AccordionContent>
@@ -83,10 +60,10 @@ function FAQTabs() {
                                 </AccordionItem>
                                 <AccordionItem value={"item2"} className="border-dashed">
                                     <AccordionTrigger className="hover:no-underline text-text-gray">
-                                        < div className="flex items-center gap-2">
+                                        <div className="flex items-center gap-2">
                                             <span
                                                 className="size-4 rounded-md  flex items-center justify-center bg-cream-dark_light text-cream-medium">+</span>
-                                            <p >چطور می‌تونم عضو به‌لند بشم؟</p>
+                                            <p>چطور می‌تونم عضو به‌لند بشم؟</p>
                                         </div>
                                     </AccordionTrigger>
                                     <AccordionContent>
@@ -95,10 +72,10 @@ function FAQTabs() {
                                 </AccordionItem>
                                 <AccordionItem value={"item3"} className="border-dashed">
                                     <AccordionTrigger className="hover:no-underline text-text-gray">
-                                        < div className="flex items-center gap-2">
+                                        <div className="flex items-center gap-2">
                                             <span
                                                 className="size-4 rounded-md  flex items-center justify-center bg-cream-dark_light text-cream-medium">+</span>
-                                            <p >چطور می‌تونم عضو به‌لند بشم؟</p>
+                                            <p>چطور می‌تونم عضو به‌لند بشم؟</p>
                                         </div>
                                     </AccordionTrigger>
                                     <AccordionContent>
