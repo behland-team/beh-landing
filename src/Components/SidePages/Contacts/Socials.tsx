@@ -21,7 +21,7 @@ const links = [
     }, {
         title: "کانال تلگرام",
         icon: telegram,
-        link: "#"
+        link: "https://t.me/BehLand_Official"
     }, {
         title: "اینستاگرام",
         icon: instagram,
