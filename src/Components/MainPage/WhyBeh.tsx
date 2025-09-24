@@ -12,7 +12,7 @@ import Image from "next/image";
 export default function WhyBeh() {
     const t = useTranslations("WhyBeh");
     return (
-        <div className="w-full p-6 xl:max-w-screen-2xl xl:mx-auto  lg:p-9  ">
+        <div className="w-full max-sm:p-6 xl:max-w-screen-2xl xl:mx-auto  lg:p-9  ">
             <div
                 className="w-full h-80 xl:h-[300px]  md:bg-WhyBehBg bg-no-repeat bg-contain bg-center flex flex-col   md:justify-center   relative mt-4">
                 <Image src={WhyBehBg} alt={"background"} className="absolute top-0 left-0 w-full h-full md:hidden"/>
@@ -21,7 +21,7 @@ export default function WhyBeh() {
                 <div className=" flex flex-col items-center justify-center gap-2  lg:gap-5 mt-14 absolute ">
                     <h3 className="text-black text-center           font-semibold xxs:text-lg lg:text-xl">{t("title")}</h3>
                     <p dir="rtl"
-                       className="text-text-gray font-yekan font-semibold text-sm lg:w-3/4 sm:px-5 text-justify lg:px-2 sm:w-2/4 w-5/6   md:w-full flex-wrap text-balance  md:text-center">
+                       className="text-text-gray  font-medium text-sm lg:w-3/4 sm:px-20 text-justify lg:px-2 sm:w-3/4 md:2/4 w-5/6   md:w-full flex-wrap text-balance  md:text-center">
                         {t("description")}
                     </p>
                 </div>

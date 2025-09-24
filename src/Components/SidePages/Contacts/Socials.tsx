@@ -11,41 +11,50 @@ import star from "@/assets/Images/contacts/Star_perspective_matte.svg"
 import Image from "next/image";
 import badge from "@/assets/Images/aboutBadge.svg";
 import {useTranslations} from "next-intl";
+import classNames from "classnames";
 
 
 const links = [
     {
         title: "یوتوب",
         icon: youtube,
-        link: "#"
+        link: "#",
+        disable : true
     }, {
         title: "کانال تلگرام",
         icon: telegram,
-        link: "#"
+        link: "https://t.me/BehLand_Official",
+        disable : false
     }, {
         title: "اینستاگرام",
         icon: instagram,
-        link: "#"
+        link: "#",
+        disable : true
     }, {
         title: "لینکدین",
         icon: linkdin,
-        link: "#"
+        link: "#",
+        disable : true
     }, {
         title: "توییتر(X)",
         icon: x,
-        link: "#"
+        link: "#",
+        disable : true
     }, {
         title: "دیسکورد",
         icon: discord,
-        link: "#"
+        link: "#",
+        disable : true
     }, {
         title: "واتساپ",
         icon: whatsup,
-        link: "#"
+        link: "#",
+        disable : true
     }, {
         title: "ایمیل ها",
         icon: gmail,
-        link: "#"
+        link: "#",
+        disable : true
     },
 ]
 
@@ -64,13 +73,13 @@ function Socials() {
                 <div className="grid xxs:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-6 gap-y-8 md:gap-y-12">
                     {
                         links.map((item, i) => (
-                            <a href={item.link} key={i}>
+                            <a href={item.link} key={i} target="_blank">
                                 <div
-                                     className="md:border border-cream-medium bg-cream-light rounded-lg  flex flex-col sm:flex-row h-40 sm:h-24 w-48 max-sm:mx-auto sm:w-full ">
+                                     className={classNames("md:border rounded-lg  flex flex-col sm:flex-row h-40 sm:h-24 w-48 max-sm:mx-auto sm:w-full relative" , item.disable  ?  "bg-black/70 text-gray-800" : "border-cream-medium bg-cream-light ")}>
                                     <div className="sm:w-1/3 relative h-20 sm:h-fit ">
-                                        <Image src={badge} alt={"badge"} className="absolute -top-3 right-1/2 translate-x-1/2"/>
+                                        <Image src={badge} alt={"badge"} className={classNames("absolute -top-3 right-1/2 translate-x-1/2" , item.disable && "contrast-0")}/>
                                         <Image src={item.icon} alt={"icon"}
-                                               className="md:size-8 lg:size-12 absolute -top-1 right-[calc(50%-2px)] translate-x-1/2"/>
+                                               className={classNames("md:size-8 lg:size-12 absolute -top-1 right-[calc(50%-2px)] translate-x-1/2" ,  item.disable && "contrast-50")}/>
                                     </div>
                                     <div className="flex items-center justify-between sm:w-2/3 px-2 py-4 max-sm:mt-4">
                                         <p className="text-center sm:text-right  text-lg font-semibold ">
@@ -78,7 +87,11 @@ function Socials() {
                                         </p>
                                         <span className="icon icon-arrow-back -rotate-[135deg]"  ></span>
                                     </div>
-
+                                    {item.disable && (
+                                        <p className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-10 font-semibold text-xl text-white ">به
+                                            زودی...</p>
+                                        )
+                                       }
                                 </div>
                             </a>
 
