@@ -1,10 +1,15 @@
+"use client";
 import React from 'react';
 import {SocialMedia} from "@/utils/data";
 import classNames from "classnames";
 import {useTranslations} from "next-intl";
 import alga from "@/assets/Images/alga.png";
 import Image from "next/image";
+<<<<<<< HEAD
 import Link from 'next/link';
+=======
+import {toast} from "sonner";
+>>>>>>> origin/development
 
 function Footer() {
     const t = useTranslations("footer");
@@ -18,8 +23,8 @@ function Footer() {
                 <div
                     className="grid max-sm:grid-cols-4 grid-cols-2 lg:grid-cols-3 lg:grid-rows-2 max-sm:gap-x-0 gap-7 lg:gap-5 items-start xl:max-w-screen-2xl xl:mx-auto">
                     <div className="col-span-full md:col-span-1 flex row-start-1 flex-col gap-2 lg:row-span-full">
-                        <h4 className="text-base font-extrabold text-balck">🔥 {t("aboutBeh")}</h4>
-                        <p className="text-sm font-normal text-text-gray">
+                        <h4 className="text-base  font-extrabold text-balck">🔥 {t("aboutBeh")}</h4>
+                        <p className="text-sm font-normal text-justify text-text-gray">
                             {t("descriptionBeh")}
                         </p>
                     </div>
@@ -54,8 +59,9 @@ function Footer() {
                             {SocialMedia.map((item, index) => (
                                 <div
                                     key={index}
-                                    className="flex gap-3 border-2 border-cream-medium shadow-icon bg-white p-2 rounded-xl"
+                                    className={classNames("flex gap-3 border-2  shadow-icon  p-2 rounded-xl", item.disable ? "text-text-gray shadow shadow-text-gray border-text-gray" : "text-cream-medium border-cream-medium bg-white ")}
                                 >
+<<<<<<< HEAD
                                     <span
                                         className={classNames(
                                             item.name == "instagram"
@@ -68,6 +74,20 @@ function Footer() {
                                             "icon text-cream-medium"
                                         )}
                                     ></span>
+=======
+                                  <span
+                                      className={classNames(
+                                          item.name == "instagram"
+                                              ? "icon-instagram"
+                                              : item.name == "telegram"
+                                                  ? "icon-telegram"
+                                                  : item.name == "linkedin"
+                                                      ? "icon-linkedin"
+                                                      : "icon-twitter",
+                                          "icon "
+                                      )}
+                                  ></span>
+>>>>>>> origin/development
                                 </div>
                             ))}
                         </div>
@@ -81,8 +101,20 @@ function Footer() {
                                 placeholder="ایمیل خود را وارد کنید"
                                 className="rounded-full border-0 bg-transparent outline-none w-full mx-1 placeholder:text-sm"
                             />
+<<<<<<< HEAD
                             <button
                                 className="rounded-lg border-2 text-cream-medium border-cream-medium px-6 text-sm p-1 m-0.5 bg-cream-dark_light">
+=======
+                            <button type="button"
+                                onClick={()=>{
+                                    toast.custom(t=>(
+                                        <div className="border-2 border-cream-medium flex items-center relative overflow-hidden bg-[#FEECD8] px-12 py-2 rounded-lg min-h-16">
+                                            <p className="text-sm font-semibold">ایمیل شما با موفقیت ثبت شد ✔</p>
+                                        </div>
+                                    ))
+                                }}
+                                className="rounded-lg border-2 text-cream-medium border-cream-medium px-6 text-sm p-1 m-0.5 bg-cream-dark_light cursor-pointer ">
+>>>>>>> origin/development
                                 ارسال
                             </button>
                         </div>

@@ -3,6 +3,7 @@ import {useTranslations} from "next-intl";
 import React, {FunctionComponent} from "react";
 import classNames from "classnames";
 import TokenSlider from "@/Components/MainPage/Token/TokenSlider";
+import Image from "next/image";
 
 interface TokenProps {
 }
@@ -29,10 +30,15 @@ export const Token: FunctionComponent<TokenProps> = () => {
                             >
                                 <div
                                     className="bg-crown bg-contain bg-no-repeat bg-center absolute top-1 left-0 h-2/6 w-full flex justify-center items-center">
-                                    <p className="text-sm md:text-base font-bold text-[#893D1B]">
-                                        {" "}
-                                        {stage.title}
-                                    </p>
+                                    <div className="flex items-center justify-center gap-2">
+                                        {
+                                            stage.discount && (<Image src={stage.discount} alt={"discount"} />)
+                                        }
+                                        <p className="text-sm md:text-base font-bold text-[#893D1B]">
+                                            {stage.title}
+                                        </p>
+                                    </div>
+
                                 </div>
                                 <div className={classNames("flex flex-col justify-end w-full h-full",index <3 ? "items-stretch gap-2  xl:items-center xl:gap-5" :"items-stretch gap-2" )}>
                                     <div className={classNames("flex flex-nowrap gap-2 text-sm text-right", index <3  ? " flex-col items-stretch xl:flex-row xl:items-center" :"flex-col items-stretch")}>
