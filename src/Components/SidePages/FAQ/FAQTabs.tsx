@@ -11,18 +11,33 @@ function FAQTabs() {
                     <p className="text-center">پرکاربردترین پرسش‌ها رو جمع کردیم تا بدون اتلاف وقت مسیرت روشن بشه</p>
                 </div>
                 <div className="sm:px-12 xl:px-0">
-                    <Tabs className="flex flex-col lg:flex-row w-full gap-6" dir="rtl">
+                    <Tabs className="flex flex-col lg:flex-row w-full gap-6" dir="rtl" defaultValue={"start"}>
                         <TabsList className="flex lg:flex-col flex-nowrap overflow-x-auto gap-2 h-fit bg-[#FBF7F5] lg:w-1/5 p-4 max-sm:px-6  justify-start sm:justify-center">
                             <TabsTrigger value="start"
-                                         className="lg:w-full py-3 data-[state=active]:bg-[#FEECD8] font-semibold  justify-start font-kalameh data-[state=active]:shadow-none shrink-0 ">شروع
-                                و عضویت</TabsTrigger>
+                                         className="lg:w-full py-3 data-[state=active]:bg-[#FEECD8] font-semibold  justify-start gap-2 font-kalameh data-[state=active]:shadow-none shrink-0 ">
+                                <span className="icon icon-medal-star" ></span>
+                                <p>شروع و عضویت</p>
+                            </TabsTrigger>
                             <TabsTrigger value="course"
-                                         className="lg:w-full py-3 data-[state=active]:bg-[#FEECD8] font-semibold  justify-start font-kalameh data-[state=active]:shadow-none shrink-0">آموزش
-                                و دوره ها</TabsTrigger>
+                                         className="lg:w-full py-3 data-[state=active]:bg-[#FEECD8] font-semibold  justify-start gap-2 font-kalameh data-[state=active]:shadow-none shrink-0">
+                                <span className="icon icon-teacher" ></span>
+                                <p>آموزش و دوره ها</p>
+                            </TabsTrigger>
                             <TabsTrigger value="rewird"
-                                         className="lg:w-full py-3 data-[state=active]:bg-[#FEECD8] font-semibold  justify-start font-kalameh data-[state=active]:shadow-none shrink-0">پاداش و درآمدو عضویت</TabsTrigger>
+                                         className="lg:w-full py-3 data-[state=active]:bg-[#FEECD8] font-semibold  justify-start gap-2 font-kalameh data-[state=active]:shadow-none shrink-0">
+                                <span className="icon icon-vector-13" ></span>
+                                <p>پاداش و درآمدو عضویت</p>
+                            </TabsTrigger>
                             <TabsTrigger value="support"
-                                         className="lg:w-full py-3 data-[state=active]:bg-[#FEECD8] font-semibold  justify-start font-kalameh data-[state=active]:shadow-none shrink-0">پشتیبانی و فنی</TabsTrigger>
+                                         className="lg:w-full py-3 data-[state=active]:bg-[#FEECD8] font-semibold  justify-start gap-2 font-kalameh data-[state=active]:shadow-none shrink-0">
+                                <span className="icon icon-setting" ></span>
+                                <p>پشتیبانی و فنی</p>
+                            </TabsTrigger>
+                            <TabsTrigger value="community"
+                                         className="lg:w-full py-3 data-[state=active]:bg-[#FEECD8] font-semibold  justify-start gap-2 font-kalameh data-[state=active]:shadow-none shrink-0">
+                                <span className="icon icon-crown" ></span>
+                                <p>جامعه و رشد</p>
+                            </TabsTrigger>
                         </TabsList>
                         <TabsContent value={"start"} className="flex-1 bg-[#FBF7F5] rounded-xl p-8 mt-0">
                             <Accordion type={"single"} collapsible>

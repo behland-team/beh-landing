@@ -4,15 +4,34 @@ import React, {useCallback} from "react";
 import Image from "next/image";
 import {Carousel, CarouselApi, CarouselContent, CarouselItem} from "@/Components/UI/carousel";
 
-const images = [
-    "https://picsum.photos/id/1015/400/400",
-    "https://picsum.photos/id/1016/400/400",
-    "https://picsum.photos/id/1018/400/400",
-    "https://picsum.photos/id/1019/400/400",
-    "https://picsum.photos/id/1020/400/400",
-    "https://picsum.photos/id/1021/400/400",
-    "https://picsum.photos/id/1022/400/400",
-];
+const characters = [
+    {
+        name : "به کو",
+        image : "/images/Behcow.png",
+        title : "beh cow"
+    }, {
+        name : "به  پول",
+        image : "/images/cow.svg",
+        title : "beh bull"
+    }, {
+        name : "به کو",
+        image : "/images/Behcow.png",
+        title : "beh cow"
+    }, {
+        name : "به  پول",
+        image : "/images/cow.svg",
+        title : "beh bull"
+    }, {
+        name : "به کو",
+        image : "/images/Behcow.png",
+        title : "beh cow"
+    }, {
+        name : "به  پول",
+        image : "/images/cow.svg",
+        title : "beh bull"
+    },
+
+]
 
 export default function Characters() {
     const t = useTranslations("characters");
@@ -69,7 +88,7 @@ export default function Characters() {
                         loop : true
                     }} className="flex  items-center justify-center w-full  gap-6 py-5  overflow-x-hidden">
                         <CarouselContent>
-                        {images.map((src, i) => (
+                        {characters.map((item, i) => (
                             <CarouselItem key={i} className="xl:basis-1/4 lg:basis-1/3 md:basis-1/2 will-change-transform">
                             <div
                                 className=" bg-card bg-no-repeat bg-contain bg-center w-56 xl:w-[280px] xl:h-96 h-80 mx-auto flex justify-center  relative shrink-0 bg-transparent"
@@ -77,14 +96,14 @@ export default function Characters() {
                                 <div
                                     className="absolute  md:top-1 lg:top-0 xl:-top-1 px-4 py-3 lg:p-5 flex justify-between items-center  gap-5">
                                     <p className="text-white  font-black lg:text-stroke-orange  text-[20px] lg:text-2xl">
-                                        به‌بول
+                                        {item.name}
                                     </p>
                                     <p className="text-white  font-black lg:text-stroke-orange  text-[20px] lg:text-2xl">
-                                        behbull
+                                        {item.title}
                                     </p>
                                 </div>
-                                <Image src={"/images/cow.svg"} width="256" height="256" alt="cow" priority loading="eager"
-                                       className="size-52 xl:size-64  absolute left-1/2 -translate-x-1/2 bottom-8 lg:bottom-7"/>
+                                <Image src={item.image} width="256" height="256" alt="cow" priority loading="eager"
+                                       className="max-w-56 xl:max-w-[280px] xl:max-h-72 max-h-60 w-full h-full absolute left-1/2 -translate-x-1/2 bottom-6 lg:bottom-7"/>
                             </div>
                             </CarouselItem>
                         ))}
