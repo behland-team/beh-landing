@@ -15,14 +15,22 @@ const storyCard = [
         title: "یادگیری همراه با ماجراجویی",
         description: "آموزش خشک نیست، بلکه بازی‌گونه و  مرحله‌به‌مرحله طراحی شده.",
         icon: "icon-profile"
-    }
+    },{
+        title: "جامعه پویا",
+        description: " شخصیت‌ها و اعضای جامعه بهلند، یادگیری رو لذت‌بخش و پرانرژی می‌کنن.",
+        icon: "icon-profile"
+    }, {
+        title: "درآمدزایی از آموخته‌ها",
+        description: " یادگیری فقط تئوری نیست؛ می‌تونی از دانش مالی خودت درآمد داشته باشی.",
+        icon: "icon-profile"
+    },
 ]
 
 function Story() {
     const t = useTranslations("aboutPage.story")
     return (
         <section className="bg-storyBg bg-no-repeat w-full my-16 lg:my-40">
-            <div className="flex flex-col lg:flex-row 3xl:max-w-[85rem] mx-auto min-h-[500px] relative">
+            <div className="flex flex-col lg:flex-row 3xl:max-w-screen-3xl mx-auto min-h-[500px] relative">
                 <div className="pr-12 xl:pr-32 pl-12 py-10 lg:py-14 flex flex-col gap-4 lg:w-2/3 ">
                     <h3 className="font-semibold text-xl xxs:text-2xl md:text-3xl xl:text-4xl">{t("title")}</h3>
                     <p className=" text-sm sm:text-base text-justify">
@@ -31,11 +39,11 @@ function Story() {
 
                 </div>
                 <div
-                    className="lg:absolute left-1/3 -bottom-8 flex flex-col lg:flex-row items-center lg:items-stretch gap-4 lg:pl-12 p-5  ">
+                    className="lg:absolute left-1/3 xl:-bottom-8 lg:-bottom-20 flex flex-col lg:flex-row items-center lg:items-stretch gap-4 lg:pl-12 p-5  ">
                     {
                         storyCard.map((item , i) => (
                                 <div key={i}
-                                    className="border border-cream-medium rounded-xl px-2.5 py-3 flex  lg:flex-col  items-center gap-4 bg-[#FEECD8] w-full lg:w-[181px]">
+                                    className="border border-cream-medium rounded-xl px-2.5 py-3 flex  lg:flex-col  items-center gap-4 bg-[#FEECD8] w-full xl:max-w-[181px]">
                                     <div className="rounded-full bg-white/70 py-1.5 px-2  mt-4 flex items-center justify-center">
                                         <span className={classNames("icon text-cream-medium text-4xl" , item.icon)}></span>
                                     </div>

@@ -8,7 +8,9 @@
     --foreground: #ededed;
   }
 } */
-
+html {
+    scroll-behavior: smooth;
+}
 body {
   font-family: kalameh, YekanBakh,Helvetica, sans-serif;
 }

@@ -1,5 +1,5 @@
 "use client";
-import React, {useState} from 'react';
+import React, {useCallback, useEffect, useState} from 'react';
 import Amirali from "@/assets/Images/TeamMemebers/Amirali2.png";
 import Mehdi from "@/assets/Images/TeamMemebers/Mehdi2.png";
 import Amirhossein from "@/assets/Images/TeamMemebers/Amirhossein.png";
@@ -14,6 +14,7 @@ import quote from "@/assets/Images/about/quote.png";
 import classNames from "classnames";
 import Image from "next/image";
 import {useTranslations} from "next-intl";
+import {Carousel, CarouselApi, CarouselContent, CarouselItem} from "@/Components/UI/carousel";
 
 
 const teamQuote = [
@@ -107,18 +108,31 @@ const teamQuote = [
 ];
 
 function Team() {
-    const [current, setCurrent] = useState(0);
-    const t= useTranslations("aboutPage.team");
+    const t = useTranslations("aboutPage.team");
+    const [selectedIndex, setSelectedIndex] = useState(0);
+    const [api, setApi] = React.useState<CarouselApi>()
 
-    const prev = () => setCurrent((c) => (c === 0 ? teamQuote.length - 1 : c - 1));
-    const next = () => setCurrent((c) => (c === teamQuote.length - 1 ? 0 : c + 1));
+    const onPrevButtonClick = useCallback(() => {
+        if (!api) return
+        api.scrollPrev()
+    }, [api])
 
-   const visibleCount = 3
+    const onNextButtonClick = useCallback(() => {
+        if (!api) return
+        api.scrollNext()
+    }, [api])
 
-    const visibleImages = Array.from({length: visibleCount}, (_, i) => {
-        const index = (current + i) % teamQuote.length;
-        return teamQuote[index];
-    });
+    useEffect(() =>{
+        if (!api) return;
+        const onSelect = () => {
+            setSelectedIndex(api?.selectedScrollSnap())
+        }
+        api.on("select", onSelect)
+        onSelect()
+        return () => {
+            api.off("select", onSelect);
+        };
+    }, [api])
     return (
         <section className="my-20 bg-storyBg bg-no-repeat">
             <div className=" flex flex-col gap-10 py-10">
@@ -126,32 +140,39 @@ function Team() {
                     <h2 className="text-xl xxs:text-2xl lg:text-3xl font-bold text-center">{t("title")}</h2>
                     <p className="text-base md:text-lg text-center font-medium text-text-gray ">{t("description")}</p>
                 </div>
-                <div className="flex items-start justify-center gap-8 w-full overflow-x-hidden">
-                    {
-                            visibleImages.map((item , i)=>(
-                                <div key={i} className={classNames("px-6 py-4 rounded-xl border border-cream-medium bg-white w-64 space-y-4  md:w-96 lg:w-[600px] shrink-0" , i !==1 && "opacity-30")}>
-                                    <Image src={quote} alt={"quote"} className="size-14 mx-auto md:hidden" />
+                <Carousel setApi={setApi} opts={{loop: true, align: "center", direction: "rtl"}}
+                          className="flex items-start justify-center gap-8 w-full overflow-x-hidden">
+                    <CarouselContent>
+                        {
+                            teamQuote.map((item, i) => (
+                                <CarouselItem key={i}
+                                              className={classNames("basis-3/5 sm:basis-2/3  md:basis-2/4 xl:basis-2/5 transition-opacity mx-auto", i === selectedIndex ? "opacity-100" : "opacity-50")}>
+                                    <div
+                                        className={classNames("px-6 py-4 rounded-xl border border-cream-medium bg-white space-y-4  mx-auto ")}>
+                                        <Image src={quote} alt={"quote"} className="size-14 mx-auto md:hidden"/>
                                         <p className="text-sm sm:text-base text-justify">{item.quote}</p>
-                                </div>
+                                    </div>
+                                </CarouselItem>
                             ))
-                    }
-                </div>
+                        }
+                    </CarouselContent>
+                </Carousel>
                 <div className="flex items-center justify-center gap-6  mx-auto px-6 md:px-0">
                     <button
-                        aria-label="Slide back"
-                        onClick={prev}
+                        onClick={onPrevButtonClick}
                         className="border-2 shadow-main p-2 rounded-xl bg-white border-text-dark_Orange icon icon-arrow-back text-text-orange shadow-cream-medium"
                     ></button>
                     <div className="flex items-center gap-2 ">
-                        <Image src={visibleImages[1].image} alt={"team image"} className="size-16 rounded-full border border-cream-medium"/>
-                        <div className="flex flex-col items-center gap-1 text-sm xxs:text-base sm:text-lg font-medium   md:min-w-44 lg:text-nowrap">
-                            <p>{visibleImages[1].name}</p>
-                            <p className="line-clamp-1">{visibleImages[1].title}</p>
+                        <Image src={teamQuote[selectedIndex].image} alt={"team image"}
+                               className="size-16 rounded-full border border-cream-medium"/>
+                        <div
+                            className="flex flex-col items-center gap-1 text-sm xxs:text-base sm:text-lg font-medium   md:min-w-44 lg:text-nowrap">
+                            <p>{teamQuote[selectedIndex].name}</p>
+                            <p className="line-clamp-1">{teamQuote[selectedIndex].title}</p>
                         </div>
                     </div>
                     <button
-                        aria-label="Slide forward"
-                        onClick={next}
+                        onClick={onNextButtonClick}
                         className="border-2 shadow-main rounded-xl bg-white border-text-dark_Orange shadow-cream-medium"
                     >
                         <span className="icon icon-arrow-back text-text-orange rotate-180 p-2"></span>

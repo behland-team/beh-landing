@@ -31,15 +31,15 @@ function Menu() {
                         {t("home")}
                     </Link>
                     <span className="rotate-[105deg] h-px w-4 bg-gray-500"></span>
+                    {/*<Link*/}
+                    {/*    className="font-medium text-text-black lg:text-sm xl:text-base hover:text-gray-400 focus:outline-hidden focus:text-gray-400"*/}
+                    {/*    href="#">*/}
+                    {/*    {t("services")}*/}
+                    {/*</Link>*/}
+                    {/*<span className="rotate-[105deg] h-px w-4 bg-gray-500"></span>*/}
                     <Link
                         className="font-medium text-text-black lg:text-sm xl:text-base hover:text-gray-400 focus:outline-hidden focus:text-gray-400"
-                        href="#">
-                        {t("services")}
-                    </Link>
-                    <span className="rotate-[105deg] h-px w-4 bg-gray-500"></span>
-                    <Link
-                        className="font-medium text-text-black lg:text-sm xl:text-base hover:text-gray-400 focus:outline-hidden focus:text-gray-400"
-                        href="#">
+                        href="/#character">
                         {t("character")}
                     </Link>
                     <span className="rotate-[105deg] h-px w-4 bg-gray-500"></span>
@@ -51,7 +51,7 @@ function Menu() {
                     <span className="rotate-[105deg] h-px w-4 bg-gray-500"></span>
                     <Link
                         className="font-medium text-text-black lg:text-sm xl:text-base hover:text-gray-400 focus:outline-hidden focus:text-gray-400"
-                        href="#">
+                        href="/#news">
                         {t("news")}
                     </Link>
                     <span className="rotate-[105deg] h-px w-4 bg-gray-500"></span>

@@ -38,6 +38,10 @@ export default function Team() {
 
         onSelect(api)
         api.on('reInit', onSelect).on('select', onSelect)
+
+        return ()=>{
+            api.off('reInit', onSelect).off('select', onSelect)
+        }
     }, [api, onSelect])
     return (
         <div
@@ -81,7 +85,7 @@ export default function Team() {
                             {Teams.map((item, i) => (
                                 <CarouselItem
                                     key={i}
-                                    className="   w-72 h-80 overflow-hidden shrink-0  max-sm:pl-4 xl:basis-1/4 lg:basis-1/3 md:basis-1/2 "
+                                    className="   w-72 h-80 overflow-hidden shrink-0  max-sm:pl-4 xl:basis-1/4 lg:basis-1/3 md:basis-1/2 max-md:will-change-transform"
                                 >
                                     <div className="relative max-w-80 mx-auto ">
                                         <Image src={Bg} alt={"background"} className="absolute w-full h-full -z-10" />

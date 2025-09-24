@@ -1,17 +1,20 @@
+"use client";
 import {SocialMedia} from "@/utils/data";
 import classNames from "classnames";
 import {useTranslations} from "next-intl";
 import React from "react";
+import {toast} from "sonner";
 
 export default function Footer() {
     const t = useTranslations("footer");
     return (
         <footer dir="rtl"
                 className=" bg-gradient-to-b  from-[#54E2D9]  to-white px-6 py-12  md:px-10 lg:px-16 xl:px-24 lg:py-16 ">
-            <div className="grid  grid-cols-1 md:grid-cols-2  lg:grid-cols-3 lg:grid-rows-2 gap-7 lg:gap-5 items-start xl:max-w-screen-2xl xl:mx-auto">
+            <div
+                className="grid  grid-cols-1 md:grid-cols-2  lg:grid-cols-3 lg:grid-rows-2 gap-7 lg:gap-5 items-start xl:max-w-screen-2xl xl:mx-auto">
                 <div className="col-span-1 flex row-start-1 flex-col gap-2 lg:row-span-full">
                     <h4 className="text-base font-extrabold text-balck">{t("aboutBeh")}</h4>
-                    <p className="text-sm font-normal text-text-gray">
+                    <p className="text-sm font-normal text-text-gray text-justify">
                         {t("descriptionBeh")}
                     </p>
                 </div>
@@ -64,9 +67,11 @@ export default function Footer() {
                     </p>
                     <div className="flex  justify-start items-start gap-5">
                         {SocialMedia.map((item, index) => (
-                            <div
+                            <a
+                                target="_blank"
+                                href={item.link}
                                 key={index}
-                                className="flex gap-3 border-2 border-cream-medium shadow-icon bg-cream-dark_light p-2 rounded-xl"
+                                className={classNames("flex gap-3 border-2  shadow-icon  p-2 rounded-xl", item.disable ? "text-text-gray shadow shadow-text-gray border-text-gray" : "text-cream-medium border-cream-medium bg-white ")}
                             >
               <span
                   className={classNames(
@@ -77,10 +82,10 @@ export default function Footer() {
                               : item.name == "linkedin"
                                   ? "icon-linkedin"
                                   : "icon-twitter",
-                      "icon text-cream-medium"
+                      "icon "
                   )}
               ></span>
-                            </div>
+                            </a>
                         ))}
                     </div>
                 </div>
@@ -94,7 +99,16 @@ export default function Footer() {
                             className="rounded-xl border-0 bg-transparent outline-none w-full mx-1 placeholder:text-sm"
                         />
                         <button
-                            className="rounded-xl border-2 text-cream-medium border-cream-medium px-6 text-sm p-2  bg-cream-dark_light ">
+                            type="button"
+                            onClick={() => {
+                            toast.custom(t => (
+                                <div
+                                    className="border-2 border-cream-medium flex items-center relative bg-[#FEECD8] px-12 py-2 rounded-lg min-h-16">
+                                    <p className="text-sm font-semibold">ایمیل شما با موفقیت ثبت شد ✔</p>
+                                </div>
+                            ))
+                        }}
+                                className="rounded-xl border-2 text-cream-medium border-cream-medium px-6 text-sm p-2  bg-cream-dark_light cursor-pointer ">
                             ارسال
                         </button>
                     </div>

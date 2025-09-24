@@ -1,12 +1,23 @@
-import React from 'react';
+"use client"
+import React, {FormEvent} from 'react';
 import mail from "@/assets/Images/contacts/mail.png"
 import message from "@/assets/Images/contacts/Message_perspective.png"
 import click from "@/assets/Images/contacts/click.png"
 import Image from "next/image";
 import {useTranslations} from "next-intl";
+import {toast} from "sonner";
 
 function ContactForm() {
-    const t = useTranslations("contactPage.form")
+    const t = useTranslations("contactPage.form");
+    const handleSubmit = (e : FormEvent<HTMLFormElement>)=>{
+        e.preventDefault();
+        toast.custom(t=>(
+            <div className="border-2 border-cream-medium flex items-center relative bg-[#FEECD8] px-12 py-2 rounded-lg min-h-16">
+                <p className="text-sm font-semibold">در اسرا وقت پیام شما پیگیری میشود</p>
+                <span className="absolute top-1 left-1 text-sm cursor-pointer" onClick={()=>toast.dismiss(t)}>❌</span>
+            </div>
+        ))
+    }
     return (
         <section className="bg-storyBg bg-no-repeat my-20">
             <div className="max-w-[85rem] flex flex-col md:flex-row items-center gap-8 mx-auto py-14 relative">
@@ -17,7 +28,7 @@ function ContactForm() {
                         <h3 className="text-2xl font-semibold">{t("title")}</h3>
                     </div>
                     <p className="text-text-gray text-lg md:hidden">{t("desc")}</p>
-                    <form className="grid grid-cols-3 gap-6">
+                    <form className="grid grid-cols-3 gap-6" onSubmit={handleSubmit}>
                         <input className="max-lg:col-span-full border border-black rounded-lg min-h-12 px-6 py-3 bg-white"
                                placeholder={t("fullName")} name="name"/>
                         <input className="max-lg:col-span-full border border-black rounded-lg min-h-12 px-6 py-3 bg-white"
