@@ -83,7 +83,7 @@ export default function Characters() {
                 {/* عکس‌ها */}
                 <div className=" w-full mt-6 px-6 pb-10">
                     <Carousel setApi={setApi} opts={{
-                        align : "center",
+                        align : "start",
                         direction : "rtl",
                         loop : true
                     }} className="flex  items-center justify-center w-full  gap-6 py-5  overflow-x-hidden">
