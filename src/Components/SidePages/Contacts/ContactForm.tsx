@@ -26,8 +26,14 @@ function ContactForm() {
                                placeholder={t("phone")} name="phone"/>
                         <textarea className="border border-black rounded-lg col-span-full px-6 py-3 min-h-56 bg-white" placeholder={t("message")}></textarea>
                         <button className="max-lg:col-span-full py-1.5 px-12 lg:col-start-3 md:mr-auto rounded-lg border md:bg-[#FEECD8] w-full md:w-fit border-cream-medium shadow-main shadow-cream-medium  text-cream-medium flex items-center justify-center gap-2">
-                            <span>{t("send")}</span>
-                            <span className="icon icon-call"></span>
+                           <span>{t("send")}</span>
+                            <Image 
+                                src={"/images/Icons/send.svg"}
+                                alt="آیکون ارسال پیام" 
+                                width={24}
+                                height={24}
+                                className="w-6 h-6" 
+                            />
                         </button>
                     </form>
                 </div>

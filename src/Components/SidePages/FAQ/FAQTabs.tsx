@@ -1,28 +1,60 @@
 import React from 'react';
-import {Tabs, TabsContent, TabsList, TabsTrigger} from "@/Components/UI/tabs";
-import {Accordion, AccordionContent, AccordionItem, AccordionTrigger} from "@/Components/UI/accordion";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/Components/UI/tabs";
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/Components/UI/accordion";
+import Image from "next/image";
+
+
 
 function FAQTabs() {
     return (
         <section className="my-20">
             <div className="max-w-[75rem] mx-auto flex flex-col gap-16">
-                <div className="space-y-4">
-                    <h3 className="text-xl lg:text-3xl text-center font-semibold">سوالات پر تکرار</h3>
+              <div className="flex flex-col justify-center items-center space-y-4">
+                    <div className="flex justify-center items-center space-x-2 space-x-reverse">
+                        <div className="w-12 h-12 flex-shrink-0">
+                            <Image
+                                src={"/images/Icons/message-question.svg"}
+                                alt="آیکون سوالات پرتکرار"
+                                width={48}
+                                height={48}
+                            />
+                        </div>
+                        <h3 className="text-xl lg:text-3xl font-semibold">سوالات پر تکرار</h3>
+                    </div>
                     <p className="text-center">پرکاربردترین پرسش‌ها رو جمع کردیم تا بدون اتلاف وقت مسیرت روشن بشه</p>
                 </div>
+
                 <div className="sm:px-12 xl:px-0">
                     <Tabs className="flex flex-col lg:flex-row w-full gap-6" dir="rtl">
                         <TabsList className="flex lg:flex-col flex-nowrap overflow-x-auto gap-2 h-fit bg-[#FBF7F5] lg:w-1/5 p-4 max-sm:px-6  justify-start sm:justify-center">
                             <TabsTrigger value="start"
-                                         className="lg:w-full py-3 data-[state=active]:bg-[#FEECD8] font-semibold  justify-start font-kalameh data-[state=active]:shadow-none shrink-0 ">شروع
-                                و عضویت</TabsTrigger>
+                                className="lg:w-full py-3 data-[state=active]:bg-[#FEECD8] font-semibold  justify-start font-kalameh data-[state=active]:shadow-none shrink-0 flex items-center gap-2">
+                                <span className="w-8 h-8 flex-shrink-0">
+                                    <Image src="/images/Icons/medal-star.svg" alt="شروع و عضویت" width={32} height={32} />
+                                </span>
+                                شروع و عضویت
+                            </TabsTrigger>
                             <TabsTrigger value="course"
-                                         className="lg:w-full py-3 data-[state=active]:bg-[#FEECD8] font-semibold  justify-start font-kalameh data-[state=active]:shadow-none shrink-0">آموزش
-                                و دوره ها</TabsTrigger>
+                                className="lg:w-full py-3 data-[state=active]:bg-[#FEECD8] font-semibold  justify-start font-kalameh data-[state=active]:shadow-none shrink-0 flex items-center gap-2">
+                                <span className="w-8 h-8 flex-shrink-0">
+                                    <Image src="/images/Icons/teacher.svg" alt="آموزش و دوره‌ها" width={32} height={32} />
+                                </span>
+                                آموزش و دوره ها
+                            </TabsTrigger>
                             <TabsTrigger value="rewird"
-                                         className="lg:w-full py-3 data-[state=active]:bg-[#FEECD8] font-semibold  justify-start font-kalameh data-[state=active]:shadow-none shrink-0">پاداش و درآمدو عضویت</TabsTrigger>
+                                className="lg:w-full py-3 data-[state=active]:bg-[#FEECD8] font-semibold  justify-start font-kalameh data-[state=active]:shadow-none shrink-0 flex items-center gap-2">
+                                <span className="w-8 h-8 flex-shrink-0">
+                                    <Image src="/images/Icons/coins.svg" alt="پاداش و درآمد" width={32} height={32} />
+                                </span>
+                                پاداش و درآمدو عضویت
+                            </TabsTrigger>
                             <TabsTrigger value="support"
-                                         className="lg:w-full py-3 data-[state=active]:bg-[#FEECD8] font-semibold  justify-start font-kalameh data-[state=active]:shadow-none shrink-0">پشتیبانی و فنی</TabsTrigger>
+                                className="lg:w-full py-3 data-[state=active]:bg-[#FEECD8] font-semibold  justify-start font-kalameh data-[state=active]:shadow-none shrink-0 flex items-center gap-2">
+                                <span className="w-8 h-8 flex-shrink-0">
+                                    <Image src="/images/Icons/message-settings.svg" alt="پشتیبانی و فنی" width={32} height={32} />
+                                </span>
+                                پشتیبانی و فنی
+                            </TabsTrigger>
                         </TabsList>
                         <TabsContent value={"start"} className="flex-1 bg-[#FBF7F5] rounded-xl p-8 mt-0">
                             <Accordion type={"single"} collapsible>
