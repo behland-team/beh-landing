@@ -13,8 +13,7 @@ function ContactForm() {
         e.preventDefault();
         toast.custom(t=>(
             <div className="border-2 border-cream-medium flex items-center relative bg-[#FEECD8] px-12 py-2 rounded-lg min-h-16">
-                <p className="text-sm font-semibold">در اسرا وقت پیام شما پیگیری میشود</p>
-                <span className="absolute top-1 left-1 text-sm cursor-pointer" onClick={()=>toast.dismiss(t)}>❌</span>
+                <p className="text-sm font-semibold">در اسرا وقت پیام شما پیگیری میشود 🙏 </p>
             </div>
         ))
     }
