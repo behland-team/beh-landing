@@ -130,7 +130,7 @@ export const ChartData = [
             // labels: ["Progress", "Remaining"],
             datasets: [
                 {
-                    data: [25, 75],
+                    data: [10, 75],
                     backgroundColor: [
                         "rgba(207, 29, 0, 1)", // رنگ پر شده
                         "rgb(229, 229, 229)", // خاکستری برای بقیه
@@ -140,9 +140,9 @@ export const ChartData = [
             ],
         },
         icon: "/images/charticon/personalcard.svg",
-        percentage: 25,
+        percentage: 10,
         color: "text-chart-idCard",
-        description: "کاربران یادگیرنده و استخراج‌کننده",
+        description: "فروش مرحله ای ۱۰%",
         bg: "bg-[#CF1D001A]",
         borderColor: "border-chart-idCard",
     },
@@ -195,7 +195,7 @@ export const Teams = [
     },
     {
         name: "پرهام حسن‌زاده",
-        title: "Senior Web Designer ",
+        title: "Senior Web developer ",
         role: [],
         image: Parham,
     },
@@ -217,12 +217,7 @@ export const Teams = [
         role: ["طراحی دوره‌های آموزشی", "تدوین مسیر رشد کاربران"],
         image: Alireza,
     },
-    {
-        name: "نسرین قادری",
-        title: "SEO & Documentation Specialist ",
-        role: ["تنظیم اسناد پروژه", "هماهنگی تیم", "مدیریت زمان‌بندی مستندات"],
-        image: Nasrin,
-    },
+
     {
         name: "شیوا محققی",
         title: "PR Development Consultant ",
@@ -239,16 +234,7 @@ export const Teams = [
         ],
         image: Davood,
     },
-    {
-        name: " یاسمین طاهری",
-        title: "Senior Visual Designer ",
-        role: [
-            "تحلیل داده‌های کاربران",
-            "بررسی بازارهای هدف",
-            "تدوین استراتژی‌های ورود به بازار",
-        ],
-        image: Yassaman,
-    },
+
 ];
 
 export const saleStages = [
@@ -493,18 +479,22 @@ export const SocialMedia = [
     {
         name: "instagram",
         link: "https://www.instagram.com/behland.official/",
+        disable : true,
     },
     {
         name: "twitter",
         link: "https://www.instagram.com/behland.official/",
+        disable : true,
     },
     {
-        name: "facebook",
-        link: "https://www.instagram.com/behland.official/",
+        name: "telegram",
+        link: "https://t.me/BehLand_Official",
+        disable : false,
     },
     {
         name: "linkedin",
         link: "https://www.instagram.com/behland.official/",
+        disable : true,
     },
 ];
 

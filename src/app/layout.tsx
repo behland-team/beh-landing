@@ -3,6 +3,7 @@ import type {Metadata} from "next";
 import "./globals.css";
 import {NextIntlClientProvider} from "next-intl";
 import MobileMenu from "@/Components/Layout/MobileMenu";
+import {Toaster} from "@/Components/UI/sonner";
 // import Footer from "@/Components/MainPage/FAQF/Footer";
 
 
@@ -25,6 +26,7 @@ export default function RootLayout({
             <>
                 <MobileMenu />
                 {children}
+                <Toaster />
             </>
         </NextIntlClientProvider>
         </body>

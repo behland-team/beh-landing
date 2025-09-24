@@ -3,6 +3,7 @@ import Image from "next/image";
 import star from "@/assets/Images/about/star.svg"
 import team from "@/assets/Images/about/team-behland.png"
 import {useTranslations} from "next-intl";
+import Link from "next/link";
 
 function Contact() {
     const t = useTranslations("aboutPage.contact");
@@ -16,16 +17,11 @@ function Contact() {
                     <p className="text-center text-text-gray">{t("description")}
                     </p>
                     <div className=" mt-4 flex items-center justify-center gap-6 max-md:w-full">
-                        <button
-                            className="py-1.5 max-md:flex-1 px-3 lg:px-12 rounded-lg border bg-[#FEECD8]  w-fit border-cream-medium shadow-main shadow-cream-medium  text-cream-medium flex items-center justify-center gap-2">
-                            <span>{t("contact")}</span>
-                            <span className="icon icon-call"></span>
-                        </button>
-                        <button
+                        <Link href="/contacts"
                             className="py-1.5 max-md:flex-1 px-3 lg:px-12 rounded-lg border w-fit border-cream-medium shadow-main shadow-cream-medium  text-cream-medium flex items-center justify-center gap-2">
                             <span>{t("contact")}</span>
                             <span className="icon icon-call"></span>
-                        </button>
+                        </Link>
                     </div>
                 </div>
                 <div className="h-48 xxs:h-52 md:h-64 lg:h-[400px]"></div>

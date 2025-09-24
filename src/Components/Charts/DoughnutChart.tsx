@@ -25,7 +25,6 @@ export default function DoughnutChart({
                                           percentage,
                                           color,
                                       }: DoughnutChartProps) {
-    console.log(icon);
     const canvasRef = useRef<HTMLCanvasElement | null>(null);
     const chartRef = useRef<Chart | null>(null);
 
@@ -58,11 +57,11 @@ export default function DoughnutChart({
             {/* Canvas full size */}
             <canvas ref={canvasRef} className="absolute top-0 left-0 w-full h-full"/>
             <div
-                className="absolute top-1/2 left-1/2 w-11 h-11 -translate-x-1/2 -translate-y-1/2 pointer-events-none flex flex-col items-center justify-center">
+                className="absolute top-1/2 left-1/2  -translate-x-1/2 -translate-y-1/2 pointer-events-none flex flex-col items-center justify-center ">
                 <img src={icon} alt="icon" className="w-2/3 h-2/3"/>
                 <p
                     className={classNames(
-                        "font-yekan text-lg font-bold",
+                        "text-lg font-bold",
                         color
                     )}
                 >
