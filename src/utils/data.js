@@ -487,8 +487,8 @@ export const SocialMedia = [
         disable : true,
     },
     {
-        name: "facebook",
-        link: "https://www.instagram.com/behland.official/",
+        name: "telegram",
+        link: "https://t.me/BehLand_Official",
         disable : false,
     },
     {

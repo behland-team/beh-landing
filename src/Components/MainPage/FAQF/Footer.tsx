@@ -71,14 +71,14 @@ export default function Footer() {
                                 target="_blank"
                                 href={item.link}
                                 key={index}
-                                className={classNames("flex gap-3 border-2  shadow-icon  p-2 rounded-xl", item.disable ? "text-text-gray shadow shadow-text-gray border-text-gray" : "text-cream-medium border-cream-medium bg-white ")}
+                                className={classNames("flex gap-3 border-2 shadow-icon  p-2 rounded-xl", item.disable ? "text-text-gray shadow shadow-text-gray border-text-gray" : "text-cream-medium border-cream-medium bg-white ")}
                             >
               <span
                   className={classNames(
                       item.name == "instagram"
                           ? "icon-instagram"
-                          : item.name == "facebook"
-                              ? "icon-facebook"
+                          : item.name == "telegram"
+                              ? "icon-telegram"
                               : item.name == "linkedin"
                                   ? "icon-linkedin"
                                   : "icon-twitter",
@@ -103,7 +103,7 @@ export default function Footer() {
                             onClick={() => {
                             toast.custom(t => (
                                 <div
-                                    className="border-2 border-cream-medium flex items-center relative bg-[#FEECD8] px-12 py-2 rounded-lg min-h-16">
+                                    className="border-2 border-cream-medium flex items-center relative overflow-hidden bg-[#FEECD8] px-12 py-2 rounded-lg min-h-16">
                                     <p className="text-sm font-semibold">ایمیل شما با موفقیت ثبت شد ✔</p>
                                 </div>
                             ))
