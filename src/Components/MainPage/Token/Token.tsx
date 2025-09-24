@@ -3,7 +3,6 @@ import {useTranslations} from "next-intl";
 import React, {FunctionComponent} from "react";
 import classNames from "classnames";
 import TokenSlider from "@/Components/MainPage/Token/TokenSlider";
-import Image from 'next/image';
 
 interface TokenProps {
 }
@@ -28,29 +27,8 @@ export const Token: FunctionComponent<TokenProps> = () => {
                             <div
                                 className="rounded-xl bg-cardBg bg-cover w-full bg-no-repeat p-5 h-5/6   flex justify-end items-center shadow-main"
                             >
-
-                                   
-
                                 <div
                                     className="bg-crown bg-contain bg-no-repeat bg-center absolute top-1 left-0 h-2/6 w-full flex justify-center items-center">
-
-                                         {index < 3 && (
-                        <span className="absolute right-20 top-1/2 -translate-y-1/2 w-10 h-10">
-                    <Image
-                        src="/images/Icons/Frame.svg"
-                        alt="Special Offer Icon"
-                        width={32}
-                        height={32}
-                        className="object-contain w-full h-full"
-                    />
-                        </span>
-                      )}
-
-
-
-
-
-
                                     <p className="text-sm md:text-base font-bold text-[#893D1B]">
                                         {" "}
                                         {stage.title}
