@@ -73,7 +73,8 @@ function Footer() {
                         </p>
                         <div className="flex max-sm:flex-col justify-start items-start gap-5">
                             {SocialMedia.map((item, index) => (
-                                <div
+                                <a
+                                    href={item.link}
                                     key={index}
                                     className={classNames("flex gap-3 border-2  shadow-icon  p-2 rounded-xl", item.disable ? "text-text-gray shadow shadow-text-gray border-text-gray" : "text-cream-medium border-cream-medium bg-white ")}
                                 >
@@ -89,7 +90,7 @@ function Footer() {
                                           "icon "
                                       )}
                                   ></span>
-                                </div>
+                                </a>
                             ))}
                         </div>
                     </div>
