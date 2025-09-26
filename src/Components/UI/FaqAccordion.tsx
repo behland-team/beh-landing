@@ -4,7 +4,7 @@ import { useId, useState } from "react";
 type Item = { id?: string; title: string; content: string | React.ReactNode };
 
 type Props = {
-  items: Item[];
+  items: Item[]|any;
   type?: "single" | "multiple";      // default: "single"
   defaultOpen?: number[];            // indexes to open by default
   className?: string;
@@ -32,7 +32,7 @@ export default function FaqAccordion({
 
   return (
     <div className={`w-full  rounded-2xl   ${className}`}>
-      {items.map((item, idx) => {
+      {items.map((item:any, idx:any) => {
         const expanded = open.includes(idx);
         const panelId = useId();
         const buttonId = useId();
