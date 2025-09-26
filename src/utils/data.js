@@ -206,12 +206,6 @@ export const Teams = [
         image: Abbasi,
     },
     {
-        name: "مهرداد نظری",
-        title: "Content & Market Analysis Lead ",
-        role: ["تدوین تحلیل‌های بازار", "سیگنال‌دهی", "مدیریت محتوای تحلیلی"],
-        image: Amirhossein,
-    },
-    {
         name: "علیرضا نیرومند زال پور",
         title: "Educational Content Lead ",
         role: ["طراحی دوره‌های آموزشی", "تدوین مسیر رشد کاربران"],
