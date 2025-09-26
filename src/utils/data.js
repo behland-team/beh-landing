@@ -301,12 +301,12 @@ export const phases = [
                 desc: "طراحی مدل اقتصادی پروژه و مسیر رشد کاربران",
                 status: true,
             },
-            {desc: "جذب اعضای اولیه تیم و تعیین نقش‌ها", status: true},
+            { desc: "جذب اعضای اولیه تیم و تعیین نقش‌ها", status: true },
             {
                 desc: "توسعه نسخه ابتدایی پلتفرم از طریق ربات تلگرام (نمونه اولیه یا MVP)",
                 status: true,
             },
-            {desc: "تدوین ساختار آموزشی سطوح VIP 0 و VIP1", status: true},
+            { desc: "تدوین ساختار آموزشی سطوح VIP 0 و VIP1", status: true },
             {
                 desc: "طراحی نسخه اولیه سایت و آماده‌سازی زیرساخت‌های فروش",
                 status: true,
@@ -322,9 +322,9 @@ export const phases = [
             },
             {
                 desc: "تست اولیه کیف پول کاربران و ثبت اطلاعات حساب‌ها",
-                status: false,
+                status: true,
             },
-            {desc: "امنیت و انتشار توکن BEHT روی بلاک‌چین TON", status: false},
+            { desc: "امنیت و انتشار توکن BEHT روی بلاک‌چین TON", status: true },
         ],
         active: true,
     },
@@ -335,11 +335,15 @@ export const phases = [
         tasks: [
             {
                 desc: " جذب نهایی اعضای تخصصی تیم و تثبیت ساختار درون‌سازمانی",
-                status: false,
+                status: true,
             },
             {
                 desc: " مینت توکن و انتقال آن به والت های مربوط",
-                status: false,
+                status: true,
+            },
+            {
+                desc: " تست زیرساخت کیف پول داخلی کاربران",
+                status: true,
             },
             {
                 desc: "  اجرای مرحله اول و دوم پیش‌فروش توکن BEHT لاز طریق کانال «به‌تحلیل»",
@@ -357,10 +361,7 @@ export const phases = [
                 desc: " بارگذاری کامل دوره‌های آموزشی سطوح VIP 0 و VIP 1",
                 status: false,
             },
-            {
-                desc: " تست زیرساخت کیف پول داخلی کاربران",
-                status: false,
-            },
+
             {
                 desc: "آماده‌سازی نسخه نهایی سایت و اتصال آن به ربات تلگرام",
                 status: false,
@@ -415,7 +416,7 @@ export const phases = [
                 desc: "فراهم‌سازی امکان خرید و فروش توکن توسط کاربران داخلی",
                 status: false,
             },
-            {desc: "فعال‌سازی اشتراک VIP از طریق پرداخت توکن BEHT", status: false},
+            { desc: "فعال‌سازی اشتراک VIP از طریق پرداخت توکن BEHT", status: false },
             {
                 desc: "انتشار رسمی NFTهای مسیر رشد و فراهم‌سازی امکان اشتراک‌گذاری آن‌ها در شبکه‌های اجتماعی",
                 status: false,
