@@ -42,16 +42,16 @@ function Story() {
                     className="lg:absolute left-1/3 xl:-bottom-8 lg:-bottom-20 flex flex-col lg:flex-row items-center lg:items-stretch gap-4 lg:pl-12 p-5  ">
                     {
                         storyCard.map((item , i) => (
-                                <div key={i}
-                                    className="border border-cream-medium rounded-xl px-2.5 py-3 flex  lg:flex-col  items-center gap-4 bg-[#FEECD8] w-full xl:max-w-[181px]">
-                                    <div className="rounded-full bg-white/60 py-2.5 px-4  mt-4 flex items-center justify-center">
-                                        <span className={classNames("icon text-cream-medium text-3xl" , item.icon)}></span>
-                                    </div>
-                                    <div className="flex flex-col items-start lg:items-center gap-2 ">
-                                        <h6 className="font-bold text-sm lg:text-center">{item.title}</h6>
-                                        <p className="text-sm lg:text-center text-text-gray">{item.description}</p>
-                                    </div>
+                            <div key={i}
+                                 className="border border-cream-medium rounded-xl px-2.5 py-3 flex  lg:flex-col  items-center gap-4 bg-[#FEECD8] w-full xl:max-w-[181px]">
+                                <div className="rounded-full bg-white/60 py-2.5 px-4  mt-4 flex items-center justify-center">
+                                    <span className={classNames("icon text-cream-medium text-3xl" , item.icon)}></span>
                                 </div>
+                                <div className="flex flex-col items-start lg:items-center gap-2 ">
+                                    <h6 className="font-bold text-sm lg:text-center">{item.title}</h6>
+                                    <p className="text-sm lg:text-center text-text-gray">{item.description}</p>
+                                </div>
+                            </div>
                         ))
                     }
                 </div>

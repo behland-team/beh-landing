@@ -2,6 +2,7 @@ import React from 'react';
 import bannerImage from "@/assets/Images/about-banner.png"
 import Image from "next/image";
 import {useTranslations} from "next-intl";
+import Link from 'next/link';
 function Banner() {
     const t = useTranslations("aboutPage.banner")
     return (
@@ -16,10 +17,12 @@ function Banner() {
                         <p className="text-sm lg:text-base text-justify">
                             {t("description")}
                         </p>
+                        <Link href={"/contacts"}>
                         <button className="py-1.5 px-12 rounded-lg border bg-[#FEECD8]  w-fit border-cream-medium shadow-main shadow-cream-medium  text-cream-medium flex items-center justify-center gap-2">
                             <span>{t("contact-us")}</span>
                             <span className="icon icon-call"></span>
                         </button>
+                        </Link>
                     </div>
                 </div>
                 <div className="md:w-1/2 relative max-xxs:min-h-52 max-md:min-h-72">

@@ -66,7 +66,7 @@ export default function FaqAccordion({
               }`}
             >
               <div className="overflow-hidden">
-                <p className="pt-3 text-cream-medium leading-relaxed text-sm font-semibold">
+                <p className="pt-3 text-cream-medium leading-relaxed text-xs md:text-sm font-semibold">
                   {item.content}
                 </p>
               </div>
