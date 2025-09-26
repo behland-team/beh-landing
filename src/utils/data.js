@@ -322,9 +322,9 @@ export const phases = [
             },
             {
                 desc: "تست اولیه کیف پول کاربران و ثبت اطلاعات حساب‌ها",
-                status: false,
+                status: true,
             },
-            { desc: "امنیت و انتشار توکن BEHT روی بلاک‌چین TON", status: false },
+            { desc: "امنیت و انتشار توکن BEHT روی بلاک‌چین TON", status: true },
         ],
         active: true,
     },
@@ -335,11 +335,15 @@ export const phases = [
         tasks: [
             {
                 desc: " جذب نهایی اعضای تخصصی تیم و تثبیت ساختار درون‌سازمانی",
-                status: false,
+                status: true,
             },
             {
                 desc: " مینت توکن و انتقال آن به والت های مربوط",
-                status: false,
+                status: true,
+            },
+            {
+                desc: " تست زیرساخت کیف پول داخلی کاربران",
+                status: true,
             },
             {
                 desc: "  اجرای مرحله اول و دوم پیش‌فروش توکن BEHT لاز طریق کانال «به‌تحلیل»",
@@ -357,10 +361,7 @@ export const phases = [
                 desc: " بارگذاری کامل دوره‌های آموزشی سطوح VIP 0 و VIP 1",
                 status: false,
             },
-            {
-                desc: " تست زیرساخت کیف پول داخلی کاربران",
-                status: false,
-            },
+
             {
                 desc: "آماده‌سازی نسخه نهایی سایت و اتصال آن به ربات تلگرام",
                 status: false,
@@ -479,22 +480,22 @@ export const SocialMedia = [
     {
         name: "instagram",
         link: "https://www.instagram.com/behland.official/",
-        disable : true,
+        disable: true,
     },
     {
         name: "twitter",
         link: "https://www.instagram.com/behland.official/",
-        disable : true,
+        disable: true,
     },
     {
         name: "telegram",
         link: "https://t.me/BehLand_Official",
-        disable : false,
+        disable: false,
     },
     {
         name: "linkedin",
         link: "https://www.instagram.com/behland.official/",
-        disable : true,
+        disable: true,
     },
 ];
 
