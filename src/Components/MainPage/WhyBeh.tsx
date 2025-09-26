@@ -55,7 +55,7 @@ export default function WhyBeh() {
                             />
                             <div
                                 className={classNames(item.bg, "w-full p-2 flex justify-center items-center rounded-md mx-auto")}>
-                                <p className={classNames(item.color, "text-center align-middle")}>{item.description}</p>
+                                <p dir="rtl" className={classNames(item.color, "text-center align-middle")}>{item.description}</p>
                             </div>
                         </div>
                     ))}
