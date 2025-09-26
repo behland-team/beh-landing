@@ -148,8 +148,8 @@ export default function News() {
                                             <h2 className={classNames("text-text-gray font-semibold text-sm")}>
                                                 {item.title}
                                             </h2>
-                                            <p className={classNames("text-text-light_black  font-normal leading-6 md:leading-8  text-xs md:text-sm")}>
-                                                {item.description.toLocaleString("fa")}
+                                            <p className={classNames("text-text-light_black text-justify font-normal leading-6 md:leading-8  text-xs md:text-sm max-sm:line-clamp-4")}>
+                                                {item.description}
                                             </p>
                                         </div>
                                         <div
