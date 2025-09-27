@@ -13,6 +13,7 @@ export const ChartData = [
                 },
             ],
         },
+
         icon: "/images/charticon/ranking.svg",
         percentage: 10,
         color: "text-chart-ranking",
@@ -37,7 +38,7 @@ export const ChartData = [
         icon: "/images/charticon/people.svg",
         percentage: 35,
         color: "text-chart-people",
-        description: "کاربران یادگیرنده و استخراج‌کننده",
+        description: "۳۵٪ کاربران یادگیرنده و استخراج‌کننده",
         bg: "bg-[#FF7B001A]",
         borderColor: "border-chart-people",
     },
@@ -142,7 +143,7 @@ export const ChartData = [
         icon: "/images/charticon/personalcard.svg",
         percentage: 10,
         color: "text-chart-idCard",
-        description: "فروش مرحله ای ۱۰%",
+        description: "۱۰٪ فروش مرحله ای",
         bg: "bg-[#CF1D001A]",
         borderColor: "border-chart-idCard",
     },
@@ -473,24 +474,45 @@ export const phases = [
 export const SocialMedia = [
     {
         name: "instagram",
-        link: "https://www.instagram.com/behland.official/",
+        link: "https://www.instagram.com/behlandofficial/",
         disable: true,
     },
     {
         name: "twitter",
-        link: "https://www.instagram.com/behland.official/",
+        link: "https://x.com/BehLandOfficial",
         disable: true,
     },
     {
         name: "telegram",
-        link: "https://t.me/BehLand_Official",
-        disable: false,
+        link: "https://t.me/BehLand_gp",
+        disable: true,
     },
     {
         name: "linkedin",
-        link: "https://www.instagram.com/behland.official/",
+        link: "#",
         disable: true,
     },
+    {
+        name: "github",
+        link: "https://github.com/beh-land",
+        disable: true,
+    },
+    {
+        name: "aparat",
+        link: "https://www.aparat.com/BehLandOfficial",
+        disable: true,
+    },
+      {
+        name: "youtube",
+        link: "https://www.youtube.com/@BehLandOfficial",
+        disable: true,
+    },
+    {
+        name: "email",
+        link: "support@beh.land",
+        disable: true,
+    },
+    
 ];
 
 
