@@ -1,8 +1,49 @@
+"use client";
 import React from 'react';
-
+import announcement from "@/assets/Images/announcement.png";
+import mail from "@/assets/Images/mail.png";
+import badge from "@/assets/Images/Article/badge.svg";
+import Image from "next/image";
+import {toast} from "sonner";
 function Newsletter() {
     return (
-        <div></div>
+        <section className={"my-10"}>
+            <div className="3xl:max-w-[85rem] mx-auto flex items-center justify-center max-3xl:px-20 gap-7">
+                <Image src={announcement} alt={"announcement"} />
+                <div className="rounded-lg bg-[#FBF7F5] border-[#CCCDF4] border px-8 pb-6 pt-20 w-1/2 relative">
+                    <div className="absolute -top-2 left-1/2 -translate-x-1/2 max-w-64">
+                        <Image src={badge} alt={"badge"}  className="w-full"/>
+                        <p className="w-full text-center font-semibold text-lg absolute left-1/2 -translate-x-1/2 top-2"> عضویت در خبرنامه به‌لند</p>
+                    </div>
+                    <div className="space-y-4">
+                        <p>در خبرنامه ما عضو شوید تا مطالب جدید جا نمونید.</p>
+                        <div className="flex items-center justify-between  w-full rounded-lg overflow-hidden   border p-1  bg-white border-gray-500 ">
+                            <input
+                                type="email"
+                                placeholder="ایمیل خود را وارد کنید"
+                                className="rounded-full border-0 bg-transparent outline-none w-full mx-1 placeholder:text-sm"
+                            />
+                            <button
+                                type="button"
+                                onClick={() => {
+                                    toast.custom((t) => (
+                                        <div className="border-2 border-cream-medium flex items-center relative overflow-hidden bg-[#FEECD8] px-12 py-2 rounded-lg min-h-16">
+                                            <p className="text-sm font-semibold">
+                                                ایمیل شما با موفقیت ثبت شد ✔️
+                                            </p>
+                                        </div>
+                                    ));
+                                }}
+                                className="rounded-lg border-2 text-cream-medium border-cream-medium px-6 text-sm p-1 m-0.5 bg-white cursor-pointer shadow-main shadow-text-dark_Orange"
+                            >
+                                ارسال
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <Image src={mail} alt={"mail"} />
+            </div>
+        </section>
     );
 }
 
