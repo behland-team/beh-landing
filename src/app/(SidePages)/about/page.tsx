@@ -8,14 +8,14 @@ import Contact from "@/Components/SidePages/About/Contact";
 
 function AboutPage() {
     return (
-        <main dir={"rtl"}>
+        <div dir={"rtl"}>
             <Banner />
             <Story />
             <Perspective />
             <UserRoad />
             <Team />
             <Contact />
-        </main>
+        </div>
     );
 }
 

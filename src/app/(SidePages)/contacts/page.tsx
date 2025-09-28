@@ -5,11 +5,11 @@ import ContactForm from "@/Components/SidePages/Contacts/ContactForm";
 
 function ContactPage() {
     return (
-        <main dir="rtl">
+        <div dir="rtl">
             <Banner />
             <Socials />
             <ContactForm />
-        </main>
+        </div>
     );
 }
 

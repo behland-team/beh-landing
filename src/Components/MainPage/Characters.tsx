@@ -1,6 +1,6 @@
 "use client";
 import { useTranslations } from "next-intl";
-import React, { useCallback } from "react";
+import React from "react";
 import Image from "next/image";
 import {
   Carousel,
@@ -12,6 +12,7 @@ import behcow from "@/assets/Images/beh/‌‌‌behcow.png";
 import coming from "@/assets/Images/beh/coming.png";
 import coming2 from "@/assets/Images/beh/coming2.png";
 import behdonk from "@/assets/Images/beh/Behdank.png";
+import {useCarousel} from "@/hooks/useCarousel";
 
 const characters = [
   {
@@ -49,17 +50,7 @@ const characters = [
 export default function Characters() {
   const t = useTranslations("characters");
   const [api, setApi] = React.useState<CarouselApi>();
-
-  const onPrevButtonClick = useCallback(() => {
-    if (!api) return;
-    api.scrollPrev();
-  }, [api]);
-
-  const onNextButtonClick = useCallback(() => {
-    if (!api) return;
-    api.scrollNext();
-  }, [api]);
-
+    const { onPrevButtonClick , onNextButtonClick} = useCarousel(api);
   return (
     <div
       dir="rtl"

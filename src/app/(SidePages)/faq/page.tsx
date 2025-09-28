@@ -5,11 +5,11 @@ import FAQTabs from "@/Components/SidePages/FAQ/FAQTabs";
 
 function FAQPage() {
     return (
-        <main dir={"rtl"}>
+        <div dir={"rtl"}>
             <Banner />
             <FAQTabs />
             <Support />
-        </main>
+        </div>
     );
 }
 
