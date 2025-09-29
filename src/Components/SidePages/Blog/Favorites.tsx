@@ -25,17 +25,17 @@ function Favorites() {
     const data = Array.from({length: 8});
     return (
         <section className="my-10">
-            <div className="flex max-w-[85rem] mx-auto max-3xl:px-20 gap-10 flex-col">
+            <div className="flex max-w-[85rem] mx-auto  md:px-6 lg:px-20 3xl:px-0 gap-10 flex-col">
                 <div className="flex items-center flex-col gap-2">
-                    <div className="flex items-center gap-2 text-2xl font-semibold tracking-tight">
+                    <div className="flex items-center gap-2 text-lg lg:text-2xl font-semibold tracking-tight">
                         <span className="icon icon-ranking text-text-dark_Orange"></span>
                         <h2>محبوب ترین های به لند</h2>
                     </div>
-                    <p className="text-cream-medium">جدید ترین و به روز ترین مقالات مشاهده کنید .</p>
+                    <p className="text-cream-medium text-sm md:text-base max-sm:text-[#848484]">جدید ترین و به روز ترین مقالات مشاهده کنید .</p>
                 </div>
                 <div>
                     <Tabs dir="rtl" defaultValue={"start"}>
-                        <TabsList className="px-4 py-3 h-fit w-full flex items-center gap-4 justify-between mb-12">
+                        <TabsList className="px-4 py-3 h-fit w-full flex items-center overflow-x-auto gap-4 justify-between mb-4 sm:mb-12">
                             {
                                 tabs.map((item , index)=>(
                                     <TabsTrigger value={item.id} key={index}
@@ -46,21 +46,33 @@ function Favorites() {
                                 ))
                             }
                         </TabsList>
-                        <TabsContent value={"start"} className="grid grid-cols-4 gap-6">
+                        <TabsContent value={"start"} className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-6 max-md:px-4">
                             {
                                 data.map((item, index) => (
                                     <div key={index}
-                                         className="flex flex-col gap-6 p-4 rounded-lg border border-[#848484]">
-                                        <div className="bg-[#F8F7BB] rounded-lg h-44"></div>
-                                        <div className="space-y-2">
-                                            <h5 className="font-bold text-sm ">بهلند مسیر یادگیری جدیدی ارائه داد است
-                                                ؟</h5>
-                                            <div className="text-sm text-[#848484] flex items-center gap-2">
-                                                <span className="icon icon-calendar"></span>
-                                                <p>۸ دقیقه زمان برای خواندن این مقاله</p>
+                                         className="flex  flex-col gap-4 p-2 xxs:p-4 rounded-lg border border-[#848484]">
+                                        <div className="flex md:flex-col gap-2 md:gap-6 max-md:border-b border-dashed border-[#848484] flex-1 pb-4">
+                                            <div className="bg-[#F8F7BB] rounded-lg max-md:size-16  md:h-44 max-md:shrink-0 "></div>
+                                            <div className="space-y-2">
+                                                <h5 className="font-bold text-sm ">بهلند مسیر یادگیری جدیدی ارائه داد است
+                                                    ؟</h5>
+                                                <div className="text-sm text-[#848484] flex items-center gap-2">
+                                                    <span className="icon icon-calendar max-md:hidden"></span>
+                                                    <p className="max-md:hidden">۸ دقیقه زمان برای خواندن این مقاله</p>
+                                                    <p className="md:hidden text-justify">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده...</p>
+                                                </div>
                                             </div>
                                         </div>
-                                    </div>
+                                        <div className="flex items-center justify-between md:hidden">
+                                                <div className="flex items-center gap-2">
+                                                    <span className="icon icon-calendar text-cream-medium"></span>
+                                                    <span className="text-gray-500 text-sm">8 دقیقه</span>
+                                                </div>
+                                                <div className="flex items-center gap-2">
+                                                    <span className="icon icon-calendar text-cream-medium"></span>
+                                                    <span className="text-gray-500 text-sm">1404/04/07</span>
+                                                </div>
+                                        </div>                                    </div>
                                 ))
                             }
                         </TabsContent>

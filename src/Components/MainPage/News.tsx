@@ -45,7 +45,7 @@ export default function News() {
     const [api, setApi] = React.useState<CarouselApi>()
     const {prevBtnDisabled , nextBtnDisabled, onPrevButtonClick , onNextButtonClick} = useCarousel(api);
     return (
-        <div dir="rtl" className="py-10 lg:px-28 px-6  mt-10 xl:max-w-screen-2xl xl:mx-auto" id="news">
+        <div dir="rtl" className="py-10 lg:px-28 px-2 xxs:px-6  mt-10 xl:max-w-screen-2xl xl:mx-auto" id="news">
             <div className="w-full flex flex-col xxs:flex-row gap-3  items-center justify-between  mt-4">
                 <h2 className=" text-[18px] md:text-2xl xl:text-3xl text-black font-semibold">{t("title")}</h2>
                 <div className="flex items-center gap-4">
@@ -114,7 +114,7 @@ export default function News() {
                         {allNews.map((item, index) => (
                             <CarouselItem key={index} className="basis-2/3 md:basis-1/2 lg:basis-2/5 xl:basis-1/3 ">
                                 <div
-                                    className={classNames("bg-[#FEECD8] rounded-3xl flex lg:max-w-96 xl:max-w-[400px] mx-auto flex-col-reverse h-full")}>
+                                    className={classNames("bg-[#FEECD8] rounded-xl md:rounded-3xl flex lg:max-w-96 xl:max-w-[400px] mx-auto flex-col-reverse h-full")}>
                                     <div
                                         className={classNames("flex flex-col flex-1 justify-between items-start sm:p-4 md:p-1")}>
                                         <div className="flex flex-col gap-3 px-2">
@@ -149,7 +149,7 @@ export default function News() {
                                         <Image
                                             src={item.image}
                                             alt="news"
-                                            className={classNames(" overflow-hidden rounded-2xl md:rounded-[34px] w-full")}
+                                            className={classNames(" overflow-hidden rounded-xl xl:rounded-2xl md:rounded-[34px] w-full")}
                                         />
                                     </div>
                                 </div>

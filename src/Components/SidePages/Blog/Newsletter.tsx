@@ -8,15 +8,15 @@ import {toast} from "sonner";
 function Newsletter() {
     return (
         <section className={"my-10"}>
-            <div className="3xl:max-w-[85rem] mx-auto flex items-center justify-center max-3xl:px-20 gap-7">
-                <Image src={announcement} alt={"announcement"} />
-                <div className="rounded-lg bg-[#FBF7F5] border-[#CCCDF4] border px-8 pb-6 pt-20 w-1/2 relative">
-                    <div className="absolute -top-2 left-1/2 -translate-x-1/2 max-w-64">
+            <div className="3xl:max-w-[85rem] mx-auto flex items-center justify-center px-6 md:px-10 xl:px-24 gap-7">
+                <Image src={announcement} alt={"announcement"} className="max-lg:hidden" />
+                <div className="rounded-lg bg-[#FBF7F5] border-[#CCCDF4] border px-8 pb-6 pt-20 max-md:w-full  lg:w-1/2 relative">
+                    <div className="absolute -top-2 left-1/2 -translate-x-1/2 max-md:w-72 max-w-64">
                         <Image src={badge} alt={"badge"}  className="w-full"/>
-                        <p className="w-full text-center font-semibold text-lg absolute left-1/2 -translate-x-1/2 top-2"> عضویت در خبرنامه به‌لند</p>
+                        <p className="w-full text-center font-semibold md:text-lg absolute left-1/2 -translate-x-1/2 top-2"> عضویت در خبرنامه به‌لند</p>
                     </div>
                     <div className="space-y-4">
-                        <p>در خبرنامه ما عضو شوید تا مطالب جدید جا نمونید.</p>
+                        <p className="text-center max-xxs:text-sm md:text-right">در خبرنامه ما عضو شوید تا مطالب جدید جا نمونید.</p>
                         <div className="flex items-center justify-between  w-full rounded-lg overflow-hidden   border p-1  bg-white border-gray-500 ">
                             <input
                                 type="email"
@@ -41,7 +41,7 @@ function Newsletter() {
                         </div>
                     </div>
                 </div>
-                <Image src={mail} alt={"mail"} />
+                <Image src={mail} alt={"mail"}  className="max-lg:hidden" />
             </div>
         </section>
     );
