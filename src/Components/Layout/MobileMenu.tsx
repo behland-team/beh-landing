@@ -24,7 +24,7 @@ function MobileMenu() {
                         {/*<p className="text-[10px] xxs:text-xs text-text-gray">{t("services")}</p>*/}
                         <p className="text-[10px] xxs:text-xs text-text-gray">تماس با ما</p>
                     </Link>
-                    <Link href={"/#news"} className="flex flex-col items-center gap-1.5">
+                    <Link href={"/blog"} className="flex flex-col items-center gap-1.5">
                         <Image src={services} alt={"services"} className="size-6"/>
                         <p className="text-[10px] xxs:text-xs text-text-gray">{t("news")}</p>
                     </Link>

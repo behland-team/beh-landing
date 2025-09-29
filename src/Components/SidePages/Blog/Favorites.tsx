@@ -34,7 +34,7 @@ function Favorites() {
                     <p className="text-cream-medium">جدید ترین و به روز ترین مقالات مشاهده کنید .</p>
                 </div>
                 <div>
-                    <Tabs dir="rtl">
+                    <Tabs dir="rtl" defaultValue={"start"}>
                         <TabsList className="px-4 py-3 h-fit w-full flex items-center gap-4 justify-between mb-12">
                             {
                                 tabs.map((item , index)=>(
@@ -45,8 +45,6 @@ function Favorites() {
                                     </TabsTrigger>
                                 ))
                             }
-
-
                         </TabsList>
                         <TabsContent value={"start"} className="grid grid-cols-4 gap-6">
                             {

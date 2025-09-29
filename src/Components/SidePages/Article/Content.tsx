@@ -2,13 +2,15 @@ import React, {ComponentProps} from 'react';
 import classNames from "classnames";
 import Author from "@/Components/SidePages/Article/Author";
 import Comments from "@/Components/SidePages/Article/Comments";
+import Share from "@/Components/SidePages/Article/Share";
 
 function Content({className, ...props}: ComponentProps<"section">) {
     return (
         <section className={classNames("flex flex-col", className)} {...props}>
             <div className="space-y-6 my-10">
-                <h2 className="text-xl font-semibold">بهلند با معرفی مسیر آموزشی تازه</h2>
-                <p className="text-justify tracking-tight">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و
+                <h2 className="md:text-xl font-semibold">بهلند با معرفی مسیر آموزشی تازه</h2>
+                <p className="text-sm md:text-base text-justify tracking-tight">لورم ایپسوم متن ساختگی با تولید سادگی
+                    نامفهوم از صنعت چاپ، و
                     با استفاده از طراحان گرافیک است، چاپگرها
                     و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است، و برای شرایط فعلی تکنولوژی مورد نیاز، و
                     کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد،
@@ -42,12 +44,15 @@ function Content({className, ...props}: ComponentProps<"section">) {
                     گیرد.</p>
             </div>
             <div
-                className="border border-dashed border-cream-medium bg-[#FBF7F5] rounded-lg px-6 py-8 my-10 flex items-center gap-2">
+                className="border border-dashed border-cream-medium bg-[#FBF7F5] rounded-lg px-6 py-8 my-4 md:my-10 flex items-center gap-2 text-sm md:text-base">
                 <div className="font-bold flex items-center gap-1">
-                    <span className="icon icon-crown text-text-dark_Orange text-xl"></span>
-                    <h4 >محتوای مرتبط:</h4>
+                    <span className="icon icon-crown text-text-dark_Orange text-lg md:text-xl"></span>
+                    <h4>محتوای مرتبط:</h4>
                 </div>
                 <p> یه متن توضیحی یا لینک مرتبط میزاریم اینجا</p>
+            </div>
+            <div className="md:hidden my-6">
+                <Share/>
             </div>
             <Author/>
             <Comments/>

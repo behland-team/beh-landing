@@ -51,7 +51,7 @@ function Menu() {
                     <span className="rotate-[105deg] h-px w-4 bg-gray-500"></span>
                     <Link
                         className="font-medium text-text-black lg:text-sm xl:text-base hover:text-gray-400 focus:outline-hidden focus:text-gray-400"
-                        href="/#news">
+                        href="/blog">
                         {t("news")}
                     </Link>
                     <span className="rotate-[105deg] h-px w-4 bg-gray-500"></span>
