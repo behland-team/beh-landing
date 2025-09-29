@@ -42,7 +42,7 @@ export default function FAQ() {
               <Image src={littleGrass} alt="grass left" className="w-14 absolute left-2   bottom-36 z-30 md:hidden "/>
 
               <div className="flex lg:justify-around max-w-screen-2xl xl:mx-auto">
-                  <div className="h-[500px] xxs:h-[475px] sm:h-[520px] md:h-[550px] lg:h-[500px] xl:h-[475px] 3xl:h-[500px]"></div>
+                  <div className="h-[535px] xxs:h-[475px] sm:h-[520px] md:h-[550px] lg:h-[500px] xl:h-[475px] 3xl:h-[500px]"></div>
                   <div className="w-full px-6 md:px-0 sm:w-3/4 sm:mx-auto  lg:w-[550px] h-full xl:w-[724px] lg:h-full md:h-2/3 ">
                       <div
                           dir="ltr"

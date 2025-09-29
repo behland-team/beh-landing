@@ -3,6 +3,7 @@ import Image from "next/image";
 import logo from "../../../public/images/Logo.png";
 import {useTranslations} from "next-intl";
 import Link from 'next/link';
+import MenuLink from "@/Components/Layout/MenuLink";
 
 function Menu() {
     const t = useTranslations("header");
@@ -24,12 +25,9 @@ function Menu() {
                 </span>
                 <div
                     className="lg:flex flex-row items-center gap-1  xl:gap-3 mt-5 sm:justify-end sm:mt-0 sm:ps-5 hidden">
-                    <Link
-                        className="font-medium text-text-black lg:text-sm xl:text-base hover:text-gray-400 focus:outline-hidden focus:text-gray-400"
-                        href="/"
-                        aria-current="page">
-                        {t("home")}
-                    </Link>
+                   <MenuLink href={"/"}>
+                       {t("home")}
+                   </MenuLink>
                     <span className="rotate-[105deg] h-px w-4 bg-gray-500"></span>
                     {/*<Link*/}
                     {/*    className="font-medium text-text-black lg:text-sm xl:text-base hover:text-gray-400 focus:outline-hidden focus:text-gray-400"*/}
@@ -37,35 +35,25 @@ function Menu() {
                     {/*    {t("services")}*/}
                     {/*</Link>*/}
                     {/*<span className="rotate-[105deg] h-px w-4 bg-gray-500"></span>*/}
-                    <Link
-                        className="font-medium text-text-black lg:text-sm xl:text-base hover:text-gray-400 focus:outline-hidden focus:text-gray-400"
-                        href="/#character">
+                    <MenuLink href={"/#character"}>
                         {t("character")}
-                    </Link>
+                    </MenuLink>
                     <span className="rotate-[105deg] h-px w-4 bg-gray-500"></span>
-                    <Link
-                        className="font-medium text-text-black lg:text-sm xl:text-base hover:text-gray-400 focus:outline-hidden focus:text-gray-400"
-                        href="/faq">
+                    <MenuLink href={"/faq"}>
                         {t("FAQ")}
-                    </Link>
+                    </MenuLink>
                     <span className="rotate-[105deg] h-px w-4 bg-gray-500"></span>
-                    <Link
-                        className="font-medium text-text-black lg:text-sm xl:text-base hover:text-gray-400 focus:outline-hidden focus:text-gray-400"
-                        href="/#news">
+                    <MenuLink href={"/blog"}>
                         {t("news")}
-                    </Link>
+                    </MenuLink>
                     <span className="rotate-[105deg] h-px w-4 bg-gray-500"></span>
-                    <Link
-                        className="font-medium text-text-black lg:text-sm xl:text-base hover:text-gray-400 focus:outline-hidden focus:text-gray-400"
-                        href="/contacts">
+                    <MenuLink href={"/contacts"}>
                         {t("contact")}
-                    </Link>
+                    </MenuLink>
                     <span className="rotate-[105deg] h-px w-4 bg-gray-500"></span>
-                    <Link
-                        className="font-medium text-text-black lg:text-sm xl:text-base hover:text-gray-400 focus:outline-hidden focus:text-gray-400"
-                        href="/about">
+                    <MenuLink href={"/about"}>
                         {t("about")}
-                    </Link>
+                    </MenuLink>
                 </div>
                 <div></div>
                 {/* <div className="md:flex flex-row items-center gap-5 mt-5 sm:justify-end sm:mt-0 sm:ps-5 hidden">
