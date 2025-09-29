@@ -3,8 +3,10 @@ import React, {useState} from 'react';
 import {Carousel, CarouselApi, CarouselContent, CarouselItem} from "@/Components/UI/carousel";
 import {useCarousel} from "@/hooks/useCarousel";
 import classNames from "classnames";
+import {useTranslations} from "next-intl";
 
 function EditorChoice() {
+    const t = useTranslations("blogPage");
     const data = Array.from({length: 10});
     const [api, setApi] = useState<CarouselApi>();
     const {prevBtnDisabled, onPrevButtonClick, onNextButtonClick, nextBtnDisabled ,selectedIndex , onDotBtnClick} = useCarousel(api);
@@ -14,9 +16,9 @@ function EditorChoice() {
                 <div className="md:flex md:flex-col md:gap-3 md:items-center space-y-2">
                     <div className="flex max-md:flex-col items-center justify-center gap-2">
                         <span className="icon icon-language text-text-dark_Orange text-xl max-md:text-3xl font-semibold"></span>
-                        <h2 className=" font-semibold text-2xl tracking-tight">انتخاب سردبیر</h2>
+                        <h2 className=" font-semibold text-2xl tracking-tight">{t("editorChoice")}</h2>
                     </div>
-                    <p className="text-center text-cream-medium md:hidden">جدید ترین و به روز ترین مقالات مشاهده کنید .</p>
+                    <p className="text-center text-cream-medium md:hidden">{t("newestArticleDes")}</p>
                     <div className="flex items-center gap-2 justify-center  md:hidden">
                         <button
                             disabled={prevBtnDisabled}

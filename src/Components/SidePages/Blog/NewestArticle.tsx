@@ -2,8 +2,10 @@
 import React, {useState} from 'react';
 import {Carousel, CarouselApi, CarouselContent, CarouselItem} from "@/Components/UI/carousel";
 import {useCarousel} from "@/hooks/useCarousel";
+import {useTranslations} from "next-intl";
 
 function NewestArticle() {
+    const t = useTranslations("blogPage")
     const [api , setApi] =useState<CarouselApi>();
     const {prevBtnDisabled , nextBtnDisabled, onPrevButtonClick , onNextButtonClick} = useCarousel(api);
     const data = Array.from({length : 10});
@@ -14,9 +16,11 @@ function NewestArticle() {
                         <div className={"space-y-2 max-sm:flex max-sm:flex-col max-sm:items-center max-sm:flex-1"}>
                             <div className="flex items-center max-sm:flex-col  gap-2 font-bold md:text-2xl text-lg">
                                 <span className="icon icon-ranking text-text-dark_Orange text-2xl"></span>
-                                <h2>جدید ترین مقالات</h2>
+                                <h2>{t("newestArticle")}</h2>
                             </div>
-                            <p className="text-text-dark_Orange">جدید ترین و به روز ترین مقالات مشاهده کنید .</p>
+                            <p className="text-text-dark_Orange">{
+                                t("newestArticleDes")
+                            }</p>
                         </div>
                     <div className="flex items-center gap-4 max-sm:hidden">
                         <button

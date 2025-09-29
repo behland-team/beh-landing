@@ -1,6 +1,8 @@
 import React from 'react';
+import {useTranslations} from "next-intl";
 
 function SimilarArticle() {
+    const t = useTranslations("articlePage");
     const data = Array.from({length: 3});
     return (
         <section className="my-10 xl:my-32">
@@ -9,12 +11,12 @@ function SimilarArticle() {
                     <div className="flex flex-col gap-2">
                         <div className="flex items-center gap-3">
                             <span className={"icon icon-document text-cream-medium text-xl xl:text-3xl font-semibold"}></span>
-                            <h3 className="text-lg md:text-xl xl:text-3xl font-semibold tracking-tight">مقالات مشابه</h3>
+                            <h3 className="text-lg md:text-xl xl:text-3xl font-semibold tracking-tight">{t("similarArticle")}</h3>
                         </div>
-                        <p className="text-[#848484] max-md:hidden">جدید ترین و به روز ترین مقالات مشاهده کنید .</p>
+                        <p className="text-[#848484] max-md:hidden">{t("similarArticleDes")}</p>
                     </div>
                     <button type="button" className="text-[#848484] flex items-center gap-2 md:hidden">
-                        <p>مشاهده همه</p>
+                        <p>{t("seeAll")}</p>
                         <span className="icon icon-arrow-back -rotate-[135deg]"></span>
                     </button>
                 </div>

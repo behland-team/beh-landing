@@ -3,12 +3,14 @@ import React, {ComponentProps, useState} from 'react';
 import classNames from "classnames";
 import {Carousel, CarouselApi, CarouselContent, CarouselItem} from "@/Components/UI/carousel";
 import {useCarousel} from "@/hooks/useCarousel";
+import {useTranslations} from "next-intl";
 
 
 function RecentNewsSlider({className, ...props}: ComponentProps<"div">) {
     const data = Array.from({length: 5});
    const [api , setApi] = useState<CarouselApi>();
-   const {onDotBtnClick ,selectedIndex , onPrevButtonClick ,prevBtnDisabled , nextBtnDisabled , onNextButtonClick} = useCarousel(api)
+   const {onDotBtnClick ,selectedIndex , onPrevButtonClick ,prevBtnDisabled , nextBtnDisabled , onNextButtonClick} = useCarousel(api);
+   const t = useTranslations("blogPage")
     return (
         <div className={classNames(className, "max-md:px-6 max-xxs:px-0")} {...props}>
             <Carousel setApi={setApi} opts={{direction: "rtl", align: "center"}} className="w-full">
@@ -44,7 +46,7 @@ function RecentNewsSlider({className, ...props}: ComponentProps<"div">) {
                                             </div>
                                             <button
                                                 className="text-cream-medium border-none outline-none flex items-center gap-2 text-sm max-md:hidden">
-                                                <p>ادامه مطلب</p>
+                                                <p>{t("more")}</p>
                                                 <span className="icon icon-arrow-back text-xs rotate-180"></span>
                                             </button>
                                         </div>

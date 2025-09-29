@@ -3,8 +3,10 @@ import React, {useState} from 'react';
 import {Carousel, CarouselApi, CarouselContent, CarouselItem} from "@/Components/UI/carousel";
 import {useCarousel} from "@/hooks/useCarousel";
 import classNames from "classnames";
+import {useTranslations} from "next-intl";
 
 function CryptoNews() {
+    const t = useTranslations("blogPage");
     const [api, setApi] = useState<CarouselApi>();
     const {selectedIndex, prevBtnDisabled, onPrevButtonClick, nextBtnDisabled, onNextButtonClick ,onDotBtnClick} = useCarousel(api);
     const data = Array.from({length: 10});
@@ -18,9 +20,9 @@ function CryptoNews() {
                             <div className="flex items-center gap-2">
                                 <span
                                     className="icon icon-dollar-circle text-2xl font-bold text-text-dark_Orange"></span>
-                                <h2 className="font-bold text-lg  md:text-2xl">ارزهای دیجیتال</h2>
+                                <h2 className="font-bold text-lg  md:text-2xl">{t("crypto")}</h2>
                             </div>
-                            <p className="text-[#848484] text-sm lg:text-base">جدید ترین و به روز ترین مقالات مشاهده کنید .</p>
+                            <p className="text-[#848484] text-sm lg:text-base">{t("newestArticleDes")}</p>
                         </div>
                         <div className="flex items-center gap-4 max-md:flex-row-reverse">
                             <button

@@ -1,6 +1,7 @@
 import React from 'react';
 import {Tabs, TabsContent, TabsList, TabsTrigger} from "@/Components/UI/tabs";
 import classNames from "classnames";
+import {useTranslations} from "next-intl";
 
 const tabs = [
     {
@@ -22,6 +23,7 @@ const tabs = [
 ]
 
 function Favorites() {
+    const t = useTranslations("blogPage");
     const data = Array.from({length: 8});
     return (
         <section className="my-10">
@@ -29,9 +31,9 @@ function Favorites() {
                 <div className="flex items-center flex-col gap-2">
                     <div className="flex items-center gap-2 text-lg lg:text-2xl font-semibold tracking-tight">
                         <span className="icon icon-ranking text-text-dark_Orange"></span>
-                        <h2>محبوب ترین های به لند</h2>
+                        <h2>{t("favorite")}</h2>
                     </div>
-                    <p className="text-cream-medium text-sm md:text-base max-sm:text-[#848484]">جدید ترین و به روز ترین مقالات مشاهده کنید .</p>
+                    <p className="text-cream-medium text-sm md:text-base max-sm:text-[#848484]">{t("newestArticleDes")}</p>
                 </div>
                 <div>
                     <Tabs dir="rtl" defaultValue={"start"}>

@@ -3,8 +3,10 @@ import classNames from "classnames";
 import Author from "@/Components/SidePages/Article/Author";
 import Comments from "@/Components/SidePages/Article/Comments";
 import Share from "@/Components/SidePages/Article/Share";
+import {useTranslations} from "next-intl";
 
 function Content({className, ...props}: ComponentProps<"section">) {
+    const t = useTranslations("articlePage");
     return (
         <section className={classNames("flex flex-col", className)} {...props}>
             <div className="space-y-6 my-10">
@@ -47,7 +49,7 @@ function Content({className, ...props}: ComponentProps<"section">) {
                 className="border border-dashed border-cream-medium bg-[#FBF7F5] rounded-lg px-6 py-8 my-4 md:my-10 flex items-center gap-2 text-sm md:text-base">
                 <div className="font-bold flex items-center gap-1">
                     <span className="icon icon-crown text-text-dark_Orange text-lg md:text-xl"></span>
-                    <h4>محتوای مرتبط:</h4>
+                    <h4>{t("related")} :</h4>
                 </div>
                 <p> یه متن توضیحی یا لینک مرتبط میزاریم اینجا</p>
             </div>

@@ -1,8 +1,10 @@
 import React from 'react';
 import Image from "next/image";
 import abbasi from "@/assets/Images/TeamMemebers/Abbasi.png"
+import {useTranslations} from "next-intl";
 
 function Author() {
+    const t = useTranslations("articlePage");
     return (
         <div className="flex flex-col gap-5 border border-[#CCCFD4]  rounded-lg px-6 py-7">
             <div className="flex items-center justify-between">
@@ -10,7 +12,7 @@ function Author() {
                     <Image src={abbasi} alt={"abbasi"} className="size-10 md:size-14 rounded-full bg-red-800"/>
                     <h4 className="font-semibold md:text-lg ">فاطمه عباسی</h4>
                 </div>
-                <button className="rounded-lg px-4 py-3 text-cream-medium/70 bg-[#FBF7F5] text-sm">سایر مقالات نویسنده
+                <button className="rounded-lg px-4 py-3 text-cream-medium/70 bg-[#FBF7F5] text-sm">{t("authorArticles")}
                 </button>
             </div>
             <p className="text-sm md:text-base text-justify text-[#404040] leading-8">«نوشتن، قفل‌هایی را باز میکند که به ظاهر غیرقابل‌‌نفوذ هستند». این باور نیکان او
