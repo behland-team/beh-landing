@@ -11,7 +11,7 @@ function MobileMenu() {
     const t = useTranslations("header");
     return (
             <div className="fixed  w-full bottom-0 left-0 right-0  h-28 z-50 bg-mobileMenuBg bg-no-repeat bg-bottom lg:hidden  ">
-                <div className="absolute top-6 translate-x-1/2 right-1/2">
+                <div className="absolute top-6 translate-x-1/2 right-1/2 z-10">
                     <Link href={"/"} className="flex flex-col items-center gap-1.5 self-start">
                         <Image src={logo} alt={"login"} className=""/>
                         {/*<p className="text-xs text-cream-medium font-semibold">{t("mobileLogin")}</p>*/}
