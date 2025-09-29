@@ -5,7 +5,10 @@ import NewestArticle from "@/Components/SidePages/Blog/NewestArticle";
 import CryptoNews from "@/Components/SidePages/Blog/CryptoNews";
 import Favorites from "@/Components/SidePages/Blog/Favorites";
 import Newsletter from "@/Components/SidePages/Blog/Newsletter";
-
+import {Metadata} from "next";
+export const metadata : Metadata  = {
+    title : "بهلند | اخبار و مقالات"
+}
 function Page() {
     return (
         <div dir="rtl">
