@@ -4,9 +4,9 @@ import {EmblaCarouselType} from "embla-carousel";
 
 
 export const useCarousel = (api :CarouselApi) => {
-    const [prevBtnDisabled, setPrevBtnDisabled] = useState(true)
-    const [nextBtnDisabled, setNextBtnDisabled] = useState(true);
-    const [selectedIndex, setSelectedIndex] = useState(0);
+    const [prevBtnDisabled, setPrevBtnDisabled] = useState<boolean>(true)
+    const [nextBtnDisabled, setNextBtnDisabled] = useState<boolean>(true);
+    const [selectedIndex, setSelectedIndex] = useState<number>(0);
 
     const onPrevButtonClick = useCallback(() => {
         if (!api) return

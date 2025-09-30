@@ -48,7 +48,6 @@ export default function WhyBeh() {
                         >
                             <DoughnutChart
                                 data={item.data}
-                                key={index}
                                 icon={item.icon}
                                 percentage={item.percentage}
                                 color={item.color}

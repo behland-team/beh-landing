@@ -23,11 +23,11 @@ function RecentNewsTab({className, ...props}: ComponentProps<"div">) {
                 <TabsContent value={"newest"} className="space-y-4">
                     {data.map((item, i) => (
                         <div key={i}
-                             className="border border-[#CCCFD4] rounded-lg p-4 grid grid-cols-12 gap-2 md:gap-4">
+                             className="border border-[#CCCFD4] rounded-lg p-4 grid grid-cols-[80px_1fr] md:grid-cols-[112px_1fr] gap-2 md:gap-4">
                             <div
-                                className="w-full md:min-h-28 md:min-w-28 rounded-lg bg-sky-700 col-span-4 md:col-span-3 lg:col-span-4 xl:col-span-3 row-span-2"></div>
+                                className="w-full  rounded-lg max-h-20 md:max-h-28 bg-sky-700 col-span-1 row-span-2"></div>
                             <div
-                                className="flex flex-col gap-3 col-span-8 md:col-span-9 lg:col-span-8 xl:col-span-9 pb-4 xl:border-b border-dashed ">
+                                className="flex flex-col gap-3 col-span-1 pb-4 xl:border-b border-dashed ">
                                 <div className="space-y-2">
                                     <h3 className="text-sm font-bold max-xxs:text-xs">بهلند مسیر یادگیری جدیدی ارائه داد
                                         است ؟</h3>
@@ -38,20 +38,20 @@ function RecentNewsTab({className, ...props}: ComponentProps<"div">) {
                                 </div>
                             </div>
                             <div
-                                className="flex items-center justify-between col-span-full xl:col-span-9  xl:col-start-4">
-                                <div className="flex items-center gap-4">
+                                className="flex items-center justify-between col-span-full xl:col-span-1 xl:col-start-2">
+                                <div className="flex items-center gap-2 xxs:gap-4">
                                     <div className="flex items-center gap-2">
                                         <span className="icon icon-calendar text-cream-medium"></span>
-                                        <span className="text-gray-500 text-sm">8 دقیقه</span>
+                                        <span className="text-gray-500 text-xs xxs:text-sm">8 دقیقه</span>
                                     </div>
                                     <div className="flex items-center gap-2">
                                         <span className="icon icon-calendar text-cream-medium"></span>
-                                        <span className="text-gray-500 text-sm">1404/04/07</span>
+                                        <span className="text-gray-500 text-xs xxs:text-sm">1404/04/07</span>
                                     </div>
                                 </div>
                                 <Link href={"/blog/article/crypto/14"}>
                                     <button
-                                        className="text-cream-medium border-none outline-none flex items-center gap-2 text-sm">
+                                        className="text-cream-medium border-none outline-none flex items-center gap-2 text-xs xxs:text-sm">
                                         <p>{t("more")}</p>
                                         <span className="icon icon-arrow-back text-xs rotate-180"></span>
                                     </button>
