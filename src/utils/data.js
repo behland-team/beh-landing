@@ -492,26 +492,6 @@ export const SocialMedia = [
         link: "#",
         disable: true,
     },
-    {
-        name: "github",
-        link: "https://github.com/beh-land",
-        disable: true,
-    },
-    {
-        name: "aparat",
-        link: "https://www.aparat.com/BehLandOfficial",
-        disable: true,
-    },
-      {
-        name: "youtube",
-        link: "https://www.youtube.com/@BehLandOfficial",
-        disable: true,
-    },
-    {
-        name: "email",
-        link: "support@beh.land",
-        disable: true,
-    },
     
 ];
 

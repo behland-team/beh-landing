@@ -79,6 +79,7 @@ export default function FAQ() {
                               <Link href="/faq">
                                 <Image src={board} alt={"board"} className="cursor-pointer" />
                                 <p className="absolute z-20 text-xl xxs:text-3xl text-center  left-1/2 -translate-x-1/2 text-white font-bold top-10 text-nowrap cursor-pointer">
+                                 <span className="icon icon-navigate rotate-180 "></span>
                                   سوالات متداول
                                 </p>
                               </Link>
