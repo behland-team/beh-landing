@@ -25,7 +25,7 @@ function Menu() {
                 </span>
                 <div
                     className="lg:flex flex-row items-center gap-1  xl:gap-3 mt-5 sm:justify-end sm:mt-0 sm:ps-5 hidden">
-                   <MenuLink href={"/"}>
+                   <MenuLink className="font-medium  lg:text-sm xl:text-base hover:text-cream-medium focus:outline-hidden" href={"/"}>
                        {t("home")}
                    </MenuLink>
                     <span className="rotate-[105deg] h-px w-4 bg-gray-500"></span>
@@ -35,23 +35,23 @@ function Menu() {
                     {/*    {t("services")}*/}
                     {/*</Link>*/}
                     {/*<span className="rotate-[105deg] h-px w-4 bg-gray-500"></span>*/}
-                    <MenuLink href={"/#character"}>
+                    <MenuLink className="font-medium  lg:text-sm xl:text-base hover:text-cream-medium focus:outline-hidden" href={"/#character"}>
                         {t("character")}
                     </MenuLink>
                     <span className="rotate-[105deg] h-px w-4 bg-gray-500"></span>
-                    <MenuLink href={"/faq"}>
+                    <MenuLink className="font-medium  lg:text-sm xl:text-base hover:text-cream-medium focus:outline-hidden" href={"/faq"}>
                         {t("FAQ")}
                     </MenuLink>
                     <span className="rotate-[105deg] h-px w-4 bg-gray-500"></span>
-                    <MenuLink href={"/blog"}>
+                    <MenuLink className="font-medium  lg:text-sm xl:text-base hover:text-cream-medium focus:outline-hidden" href={"/blog"}>
                         {t("news")}
                     </MenuLink>
                     <span className="rotate-[105deg] h-px w-4 bg-gray-500"></span>
-                    <MenuLink href={"/contacts"}>
+                    <MenuLink className="font-medium  lg:text-sm xl:text-base hover:text-cream-medium focus:outline-hidden" href={"/contacts"}>
                         {t("contact")}
                     </MenuLink>
                     <span className="rotate-[105deg] h-px w-4 bg-gray-500"></span>
-                    <MenuLink href={"/about"}>
+                    <MenuLink className="font-medium  lg:text-sm xl:text-base hover:text-cream-medium focus:outline-hidden" href={"/about"}>
                         {t("about")}
                     </MenuLink>
                 </div>

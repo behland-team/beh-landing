@@ -12,7 +12,7 @@ function Banner() {
                         <div className="flex items-center gap-2">
                                 <span
                                     className="size-8 md:size-10 border-cream-medium border text-cream-medium bg-cream-dark_light rounded-full flex items-center justify-center p-1">
-                                    <span className="icon icon-share"></span>
+                                    <span className="icon icon-tag"></span>
                                 </span>
                             <ul className="flex items-center gap-2 list-disc text-cream-medium list-inside marker:text-cream-medium text-sm md:text-base">
                                 <li className="border-cream-medium border bg-cream-dark_light  px-2 py-1.5 rounded-lg  text-black">به
@@ -38,11 +38,11 @@ function Banner() {
                                     <p className="text-text-gray">1404 / اردیبهشت / 04</p>
                                 </li>
                                 <li className="border-cream-medium border bg-cream-dark_light  px-2 py-1.5 rounded-lg flex items-center gap-2">
-                                    <span className="icon icon-information text-cream-medium"></span>
+                                    <span className="icon icon-clock text-cream-medium"></span>
                                     <p className="text-text-gray">8 دقیقه</p>
                                 </li>
                                 <li className="border-cream-medium border bg-cream-dark_light  px-2 py-1.5 rounded-lg flex items-center gap-2">
-                                    <span className="icon icon-calendar text-cream-medium"></span>
+                                    <span className="icon icon-comments text-cream-medium"></span>
                                     <p className="text-text-gray">2 دیدگاه</p>
                                 </li>
                             </ul>

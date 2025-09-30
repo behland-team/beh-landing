@@ -33,7 +33,7 @@ function SimilarArticle() {
                                 <hr className="border-b border-[#CCCDF4] border-dashed" />
                                 <div className="flex items-center justify-between">
                                     <div className="flex items-center gap-2">
-                                        <span className="icon icon-calendar text-cream-medium"></span>
+                                        <span className="icon icon-clock text-cream-medium"></span>
                                         <span className="text-text-gray/60">۸ دقیقه</span>
                                     </div>
                                     <div className="flex items-center gap-2">
@@ -41,7 +41,7 @@ function SimilarArticle() {
                                         <span className="text-text-gray/60">1404 /04/07</span>
                                     </div>
                                     <div className="flex items-center gap-2">
-                                        <span className="icon icon-calendar text-cream-medium"></span>
+                                        <span className="icon icon-comments text-cream-medium"></span>
                                         <span className="text-text-gray/60">2 دیدگاه</span>
                                     </div>
                                 </div>

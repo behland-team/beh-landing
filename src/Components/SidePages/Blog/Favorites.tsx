@@ -30,7 +30,7 @@ function Favorites() {
             <div className="flex max-w-[85rem] mx-auto  md:px-6 lg:px-20 3xl:px-0 gap-10 flex-col">
                 <div className="flex items-center flex-col gap-2">
                     <div className="flex items-center gap-2 text-lg lg:text-2xl font-semibold tracking-tight">
-                        <span className="icon icon-ranking text-text-dark_Orange"></span>
+                        <span className="icon icon-heart-tick text-text-dark_Orange"></span>
                         <h2>{t("favorite")}</h2>
                     </div>
                     <p className="text-cream-medium text-sm md:text-base max-sm:text-[#848484]">{t("newestArticleDes")}</p>
@@ -59,7 +59,7 @@ function Favorites() {
                                                 <h5 className="font-bold text-sm ">بهلند مسیر یادگیری جدیدی ارائه داد است
                                                     ؟</h5>
                                                 <div className="text-sm text-[#848484] flex items-center gap-2">
-                                                    <span className="icon icon-calendar max-md:hidden"></span>
+                                                    <span className="icon icon-clock max-md:hidden"></span>
                                                     <p className="max-md:hidden">۸ دقیقه زمان برای خواندن این مقاله</p>
                                                     <p className="md:hidden text-justify">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده...</p>
                                                 </div>
@@ -67,7 +67,7 @@ function Favorites() {
                                         </div>
                                         <div className="flex items-center justify-between md:hidden">
                                                 <div className="flex items-center gap-2">
-                                                    <span className="icon icon-calendar text-cream-medium"></span>
+                                                    <span className="icon icon-clock text-cream-medium"></span>
                                                     <span className="text-gray-500 text-sm">8 دقیقه</span>
                                                 </div>
                                                 <div className="flex items-center gap-2">

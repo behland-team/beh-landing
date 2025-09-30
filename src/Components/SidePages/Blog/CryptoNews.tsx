@@ -19,7 +19,7 @@ function CryptoNews() {
                         <div className="space-y-2">
                             <div className="flex items-center gap-2">
                                 <span
-                                    className="icon icon-dollar-circle text-2xl font-bold text-text-dark_Orange"></span>
+                                    className="icon icon-bitcoin text-2xl font-bold text-text-dark_Orange"></span>
                                 <h2 className="font-bold text-lg  md:text-2xl">{t("crypto")}</h2>
                             </div>
                             <p className="text-[#848484] text-sm lg:text-base">{t("newestArticleDes")}</p>
@@ -63,11 +63,11 @@ function CryptoNews() {
                                             <hr className="border border-dashed border-[#CCCDF4]"/>
                                             <div className="flex items-center justify-between">
                                                 <div className="flex items-center gap-2">
-                                                    <span className="icon icon-calendar text-text-dark_Orange"></span>
+                                                    <span className="icon icon-clock text-text-dark_Orange"></span>
                                                     <span className="text-[#848484] text-sm">8 دقیقه</span>
                                                 </div>
                                                 <div className="flex items-center gap-2">
-                                                    <span className="icon icon-calendar text-text-dark_Orange"></span>
+                                                    <span className="icon icon-comments text-text-dark_Orange"></span>
                                                     <span className="text-[#848484] text-sm">10 دیدگاه</span>
                                                 </div>
                                                 <div className="flex items-center gap-2">

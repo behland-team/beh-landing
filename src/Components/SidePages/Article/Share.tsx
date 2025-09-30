@@ -9,7 +9,7 @@ function Share() {
                     <button className="border-2 shadow-main rounded-lg bg-white border-text-dark_Orange text-text-orange px-4 py-1 shadow-cream-medium">{t("copy")}</button>
                 <div className="flex items-center gap-2 text-[#848484]">
                     <p>https://pvst.ir/ex1</p>
-                    <span className="icon icon-share"></span>
+                    <span className="icon icon-link"></span>
                 </div>
             </div>
             <div className="rounded-lg border border-cream-medium bg-[#FBF7F5] px-4 py-3 flex items-center justify-between">

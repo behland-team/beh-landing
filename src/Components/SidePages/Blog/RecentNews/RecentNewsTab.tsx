@@ -41,7 +41,7 @@ function RecentNewsTab({className, ...props}: ComponentProps<"div">) {
                                 className="flex items-center justify-between col-span-full xl:col-span-1 xl:col-start-2">
                                 <div className="flex items-center gap-2 xxs:gap-4">
                                     <div className="flex items-center gap-2">
-                                        <span className="icon icon-calendar text-cream-medium"></span>
+                                        <span className="icon icon-clock text-cream-medium"></span>
                                         <span className="text-gray-500 text-xs xxs:text-sm">8 دقیقه</span>
                                     </div>
                                     <div className="flex items-center gap-2">
