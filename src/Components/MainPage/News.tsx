@@ -145,7 +145,7 @@ export default function News() {
                                             </div>
                                         </div>
                                     </div>
-                                    <div className=" p-4 rounded-3xl overflow-hidden  ">
+                                    <div className="p-1.5 xxs:p-4 rounded-3xl overflow-hidden  ">
                                         <Image
                                             src={item.image}
                                             alt="news"

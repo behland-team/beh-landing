@@ -11,7 +11,7 @@ function NewestArticle() {
     const data = Array.from({length : 10});
     return (
         <section className="my-20">
-            <div className="flex-col gap-8 flex 3xl:max-w-[85rem] mx-auto sm:px-6 md:px-10 xl:px-24 3xl:px-0 ">
+            <div className="flex-col gap-8 flex 3xl:max-w-[85rem] mx-auto px-1 sm:px-6 md:px-10 xl:px-24 3xl:px-0 ">
                 <div className="flex  items-center justify-between">
                         <div className={"space-y-2 max-sm:flex max-sm:flex-col max-sm:items-center max-sm:flex-1"}>
                             <div className="flex items-center max-sm:flex-col  gap-2 font-bold md:text-2xl text-lg">
