@@ -1,10 +1,15 @@
 "use client";
-import React, {ComponentProps} from 'react';
-import Link from "next/link";
+import React from 'react';
+import Link, {LinkProps} from "next/link";
 import classNames from "classnames";
 import {usePathname} from "next/navigation";
 
-function MenuLink({href, className, children, ...props}: ComponentProps<"link">) {
+interface MenuLinkProps  extends LinkProps{
+    className?: string;
+    children?: React.ReactNode;
+}
+
+function MenuLink({href, className, children, ...props}:MenuLinkProps) {
     const pathname = usePathname();
     return (
         <Link {...props}

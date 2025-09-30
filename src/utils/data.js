@@ -170,13 +170,13 @@ export const SemiCircleChartData = {
 
 import Amirali from "../assets/Images/TeamMemebers/Amirali2.png";
 import Mehdi from "../assets/Images/TeamMemebers/Mehdi2.png";
-import Amirhossein from "../assets/Images/TeamMemebers/Amirhossein.png";
-import Nasrin from "../assets/Images/TeamMemebers/Narges.png";
+// import Amirhossein from "../assets/Images/TeamMemebers/Amirhossein.png";
+// import Nasrin from "../assets/Images/TeamMemebers/Narges.png";
 import Shiva from "../assets/Images/TeamMemebers/Shiva.png";
 import Davood from "../assets/Images/TeamMemebers/David.png";
 import Parham from "../assets/Images/TeamMemebers/parham.png";
 import Alireza from "../assets/Images/TeamMemebers/Alireza.png";
-import Yassaman from "../assets/Images/TeamMemebers/Yassaman.png";
+// import Yassaman from "../assets/Images/TeamMemebers/Yassaman.png";
 import Abbasi from "../assets/Images/TeamMemebers/Abbasi.png";
 import discount from "../assets/Images/discount.png";
 
@@ -494,12 +494,11 @@ export const SocialMedia = [
 ];
 
 
-export const faqs = [
+export const faqs  = [
     {
         title: "به‌لند دقیقاً چیه؟",
         content: "به‌لند یک پلتفرم آموزش مالی بازی‌محوره که همزمان با یادگیری، می‌تونی درآمد هم داشته باشی. هر مرحله مثل یک بازی طراحی شده و تو رو قدم‌به‌قدم به سمت تحلیلگر حرفه‌ای و استقلال مالی می‌بره."
-    },
-    , {
+    }, {
         title: "چرا اسمش به‌لند انتخاب شده؟",
         content: "چون به‌لند یک «سرزمین» جدیده؛ جایی که دانش، بازی و اقتصاد کنار هم قرار گرفتن و آینده مالی در اون ساخته می‌شه."
     },
