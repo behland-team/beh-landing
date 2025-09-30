@@ -1,10 +1,9 @@
-"use client";
 import { SocialMedia } from "@/utils/data";
 import classNames from "classnames";
 import { useTranslations } from "next-intl";
 import Link from "next/link";
 import React from "react";
-import { toast } from "sonner";
+import NewsletterForm from "@/Components/Layout/Newsletter-Form";
 
 export default function Footer() {
   const t = useTranslations("footer");
@@ -55,7 +54,7 @@ export default function Footer() {
                 </li>
                 <li>
                   <Link
-                    href="/news"
+                    href="/blog"
                     className="text-sm font-semibold text-text-gray"
                   >
                     {t("news")}
@@ -76,7 +75,7 @@ export default function Footer() {
                 className={classNames(
                   "flex gap-3 border-2 shadow-icon  p-2 rounded-xl",
                   item.disable
-                    ? "text-text-gray shadow shadow-text-gray border-text-gray"
+                    ? "text-text-gray shadow shadow-text-gray border-text-gray  pointer-events-none"
                     : "text-cream-medium border-cream-medium bg-white "
                 )}
               >
@@ -98,28 +97,23 @@ export default function Footer() {
         </div>
         <div className="col-span-1 row-start-2  lg:row-start-2 lg:row-span-1 space-y-1 ">
           <p className="text-base font-semibold">{t("newslatter")}</p>
-          <div className="flex items-center justify-between  w-full rounded-xl overflow-hidden   border border-gray-500 ">
-            <input
-              type="email"
-              placeholder="ایمیل خود را وارد کنید"
-              className="rounded-xl border-0 bg-transparent outline-none w-full mx-1 placeholder:text-sm"
-            />
-            <button
-              type="button"
-              onClick={() => {
-                toast.custom((t) => (
-                  <div className="border-2 border-cream-medium flex items-center relative overflow-hidden bg-[#FEECD8] px-12 py-2 rounded-lg min-h-16">
-                    <p className="text-sm font-semibold">
-                      ایمیل شما با موفقیت ثبت شد ✔️
-                    </p>
-                  </div>
-                ));
-              }}
-              className="rounded-xl border-2 text-cream-medium border-cream-medium px-6 text-sm p-2  bg-cream-dark_light cursor-pointer "
-            >
-              ارسال
-            </button>
-          </div>
+            <NewsletterForm>
+                <div className="flex items-center justify-between  w-full rounded-xl overflow-hidden   border border-gray-500 ">
+                    <input
+                        type="email"
+                        name="email"
+                        placeholder={t("emailPlaceholder")}
+                        className="rounded-xl border-0 bg-transparent outline-none w-full mx-1 placeholder:text-sm"
+                    />
+                    <button
+                        type="submit"
+                        className="rounded-xl border-2 text-cream-medium border-cream-medium px-6 text-sm p-2  bg-cream-dark_light cursor-pointer "
+                    >
+                        {t("send")}
+                    </button>
+                </div>
+            </NewsletterForm>
+
         </div>
       </div>
       <div className="w-full max-lg:h-24"></div>
