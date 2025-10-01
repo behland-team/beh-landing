@@ -13,7 +13,6 @@ export const ChartData = [
                 },
             ],
         },
-
         icon: "/images/charticon/ranking.svg",
         percentage: 10,
         color: "text-chart-ranking",
@@ -38,7 +37,7 @@ export const ChartData = [
         icon: "/images/charticon/people.svg",
         percentage: 35,
         color: "text-chart-people",
-        description: "۳۵٪ کاربران یادگیرنده و استخراج‌کننده",
+        description: "کاربران یادگیرنده و استخراج‌کننده",
         bg: "bg-[#FF7B001A]",
         borderColor: "border-chart-people",
     },
@@ -143,7 +142,7 @@ export const ChartData = [
         icon: "/images/charticon/personalcard.svg",
         percentage: 10,
         color: "text-chart-idCard",
-        description: "۱۰٪ فروش مرحله ای",
+        description: "فروش مرحله ای ۱۰%",
         bg: "bg-[#CF1D001A]",
         borderColor: "border-chart-idCard",
     },
@@ -171,13 +170,13 @@ export const SemiCircleChartData = {
 
 import Amirali from "../assets/Images/TeamMemebers/Amirali2.png";
 import Mehdi from "../assets/Images/TeamMemebers/Mehdi2.png";
-// import Amirhossein from "../assets/Images/TeamMemebers/Amirhossein.png";
-// import Nasrin from "../assets/Images/TeamMemebers/Narges.png";
+import Amirhossein from "../assets/Images/TeamMemebers/Amirhossein.png";
+import Nasrin from "../assets/Images/TeamMemebers/Narges.png";
 import Shiva from "../assets/Images/TeamMemebers/Shiva.png";
 import Davood from "../assets/Images/TeamMemebers/David.png";
 import Parham from "../assets/Images/TeamMemebers/parham.png";
 import Alireza from "../assets/Images/TeamMemebers/Alireza.png";
-// import Yassaman from "../assets/Images/TeamMemebers/Yassaman.png";
+import Yassaman from "../assets/Images/TeamMemebers/Yassaman.png";
 import Abbasi from "../assets/Images/TeamMemebers/Abbasi.png";
 import discount from "../assets/Images/discount.png";
 
@@ -474,33 +473,33 @@ export const phases = [
 export const SocialMedia = [
     {
         name: "instagram",
-        link: "https://www.instagram.com/behlandofficial/",
+        link: "https://www.instagram.com/behland.official/",
         disable: true,
     },
     {
         name: "twitter",
-        link: "https://x.com/BehLandOfficial",
+        link: "https://www.instagram.com/behland.official/",
         disable: true,
     },
     {
         name: "telegram",
-        link: "https://t.me/BehLand_gp",
-        disable: true,
+        link: "https://t.me/BehLand_Official",
+        disable: false,
     },
     {
         name: "linkedin",
-        link: "#",
+        link: "https://www.instagram.com/behland.official/",
         disable: true,
     },
-    
 ];
 
 
-export const faqs  = [
+export const faqs = [
     {
         title: "به‌لند دقیقاً چیه؟",
         content: "به‌لند یک پلتفرم آموزش مالی بازی‌محوره که همزمان با یادگیری، می‌تونی درآمد هم داشته باشی. هر مرحله مثل یک بازی طراحی شده و تو رو قدم‌به‌قدم به سمت تحلیلگر حرفه‌ای و استقلال مالی می‌بره."
-    }, {
+    },
+    , {
         title: "چرا اسمش به‌لند انتخاب شده؟",
         content: "چون به‌لند یک «سرزمین» جدیده؛ جایی که دانش، بازی و اقتصاد کنار هم قرار گرفتن و آینده مالی در اون ساخته می‌شه."
     },
@@ -560,7 +559,8 @@ export const faqTabs = [
         questions: [
             {
                 title: "چه فرقی با بقیه پلتفرم‌های آموزشی داره؟",
-                description: ".به‌لند خشک و تئوری نیست. اینحا همه چیز بازی‌محوره؛ پر از ماموریت، چالش و پاداش. یاد میگیری، عمل میکنی همزمان می تونی درآمد هم داشته باشی.\n" 
+                description: "به‌لند خشک و کلاسیک نیست. آموزش اینجا بازی‌محوره، پاداش‌محوره و با اقتصاد واقعی توکنی ترکیب شده. یعنی هم سرگرم می‌شی، هم رشد می‌کنی و هم فرصت‌های درآمد واقعی به دست میاری.\n" +
+                    "علاوه بر این، به‌لند تلاش می‌کنه بازارهای مختلف و سبک‌های معاملاتی متنوع رو بهت معرفی کنه تا بتونی تجربه کنی، درک بهتری به دست بیاری و در نهایت به استراتژی شخصی خودت برسی؛ چیزی که معمولاً در پلتفرم‌های آموزشی دیگه جاش خالیه.\n"
             }, {
                 title: "سطح‌بندی کاربران چطوریه؟",
                 description: "کاربرها از سطح «VIP0 – تازه‌وارد» شروع می‌کنن و بعد به‌تدریج به VIP1، VIP2 و VIP3 می‌رسن. هر سطح آموزش عمیق‌تر و فرصت‌های بیشتری برای درآمد داره. در نهایت می‌تونی به یک تحلیلگر حرفه‌ای تبدیل بشی"
@@ -569,7 +569,7 @@ export const faqTabs = [
                 description: "خیر. به‌لند از مفاهیم پایه شروع می‌کنه و قدم‌به‌قدم مسیر یادگیری رو پیش می‌بره. حتی اگه هیچ پیش‌زمینه‌ای نداری، می‌تونی از صفر وارد بشی."
             }, {
                 title: "چه بازارهایی در به‌لند آموزش داده می‌شن؟",
-                description: "سه بازار اصلی: رمزارزها،فارکس، سهام  هر کا"
+                description: "سه بازار اصلی : رمزارزها , فارکس , سهام"
             }, {
                 title: "اگر بازار رمزارز یا فارکس ریسک بالایی داره، به‌لند چه کمکی می‌کنه؟",
                 description: "بیش از ۸۰٪ افراد به خاطر نداشتن آموزش درست سرمایه‌شون رو از دست می‌دن. به‌لند با آموزش بازی‌محور، مدیریت ریسک و شبیه‌سازی معاملات کمک می‌کنه قبل از ورود جدی، تجربه و دانش کافی به دست بیاری"
@@ -611,4 +611,3 @@ export const faqTabs = [
         ]
     }
 ]
-

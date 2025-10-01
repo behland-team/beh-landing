@@ -17,7 +17,7 @@ export default function Banner() {
           <h3 className="">{t("title21")} </h3>
           <h3 className="md:bg-text-bg  p-1">{t("title22")} </h3>
         </span>
-        <p dir="rtl" className="text-center mt-4 md:mt-5 lg:mt-10 w-full px-7 md:w-2/3 lg:w-2/4 text-text-light_black font-[400] md:font-medium  lg:text-xl z-20">
+        <p className="text-center mt-4 md:mt-5 lg:mt-10 w-full px-7 md:w-2/3 lg:w-2/4 text-text-light_black font-[400] md:font-medium  lg:text-xl z-20">
           {t("description")}
         </p>
 {/* 

@@ -25,7 +25,7 @@ function Banner() {
                     </div>
                 </div>
                 <div className="md:w-1/2 relative flex items-center justify-center ">
-                    <Image src={bannerImage} alt={"about banner"} className="max-w-72 xxs:max-w-96 mx-auto md:mx-0 lg:max-w-[500px]"/>
+                    <Image src={bannerImage} alt={"about banner"} className="max-w-96 mx-auto md:mx-0 lg:max-w-[500px]"/>
                 </div>
                 <p className="absolute left-[clac(50%-30px)] opacity-20  font-bold text-7xl lg:text-9xl tracking-wide z-[1] max-md:hidden   bottom-0 text-white">
                     BEHLAND

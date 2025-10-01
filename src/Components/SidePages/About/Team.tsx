@@ -1,5 +1,5 @@
 "use client";
-import React from 'react';
+import React, {useCallback, useEffect, useState} from 'react';
 import Amirali from "@/assets/Images/TeamMemebers/Amirali2.png";
 import Mehdi from "@/assets/Images/TeamMemebers/Mehdi2.png";
 // import Amirhossein from "@/assets/Images/TeamMemebers/Amirhossein.png";
@@ -15,7 +15,6 @@ import classNames from "classnames";
 import Image from "next/image";
 import {useTranslations} from "next-intl";
 import {Carousel, CarouselApi, CarouselContent, CarouselItem} from "@/Components/UI/carousel";
-import {useCarousel} from "@/hooks/useCarousel";
 
 
 const teamQuote = [
@@ -108,8 +107,30 @@ const teamQuote = [
 
 function Team() {
     const t = useTranslations("aboutPage.team");
+    const [selectedIndex, setSelectedIndex] = useState(0);
     const [api, setApi] = React.useState<CarouselApi>()
-    const {selectedIndex, onPrevButtonClick , onNextButtonClick} = useCarousel(api);
+
+    const onPrevButtonClick = useCallback(() => {
+        if (!api) return
+        api.scrollPrev()
+    }, [api])
+
+    const onNextButtonClick = useCallback(() => {
+        if (!api) return
+        api.scrollNext()
+    }, [api])
+
+    useEffect(() => {
+        if (!api) return;
+        const onSelect = () => {
+            setSelectedIndex(api?.selectedScrollSnap())
+        }
+        api.on("select", onSelect)
+        onSelect()
+        return () => {
+            api.off("select", onSelect);
+        };
+    }, [api])
     return (
         <section className="my-20 bg-storyBg bg-no-repeat">
             <div className=" flex flex-col gap-10 py-10">

@@ -1,6 +1,6 @@
 "use client";
 import {useTranslations} from "next-intl";
-import React from "react";
+import React, {useCallback, useEffect, useState} from "react";
 import Image from "next/image";
 import {Teams} from "@/utils/data";
 import Bg from "@/assets/Images/TeamIBg.svg";
@@ -10,12 +10,39 @@ import {
     CarouselContent,
     CarouselItem,
 } from "@/Components/UI/carousel";
-import {useCarousel} from "@/hooks/useCarousel";
+import {EmblaCarouselType} from "embla-carousel";
 
 export default function Team() {
     const t = useTranslations("team");
     const [api, setApi] = React.useState<CarouselApi>()
-    const {prevBtnDisabled , nextBtnDisabled, onPrevButtonClick , onNextButtonClick} = useCarousel(api);
+    const [prevBtnDisabled, setPrevBtnDisabled] = useState(true)
+    const [nextBtnDisabled, setNextBtnDisabled] = useState(true)
+
+    const onPrevButtonClick = useCallback(() => {
+        if (!api) return
+        api.scrollPrev()
+    }, [api])
+
+    const onNextButtonClick = useCallback(() => {
+        if (!api) return
+        api.scrollNext()
+    }, [api])
+
+    const onSelect = useCallback((emblaApi: EmblaCarouselType) => {
+        setPrevBtnDisabled(!emblaApi.canScrollPrev())
+        setNextBtnDisabled(!emblaApi.canScrollNext())
+    }, [])
+
+    useEffect(() => {
+        if (!api) return
+
+        onSelect(api)
+        api.on('reInit', onSelect).on('select', onSelect)
+
+        return ()=>{
+            api.off('reInit', onSelect).off('select', onSelect)
+        }
+    }, [api, onSelect])
     return (
         <div
             dir="rtl"
