@@ -36,7 +36,7 @@ function RecentNewsSlider({className, ...props}: ComponentProps<"div">) {
                                         <div className="flex items-center justify-between">
                                             <div className="flex items-center gap-4 max-md:justify-between max-md:flex-1">
                                                 <div className="flex items-center gap-2">
-                                                    <span className="icon icon-calendar text-cream-medium"></span>
+                                                    <span className="icon icon-clock text-cream-medium"></span>
                                                     <span className="text-gray-500 text-sm">8 دقیقه</span>
                                                 </div>
                                                 <div className="flex items-center gap-2">

@@ -56,7 +56,7 @@ function NewestArticle() {
                                         <div className="space-y-2">
                                             <h5 className="font-bold text-sm ">بهلند مسیر یادگیری جدیدی ارائه داد است ؟</h5>
                                             <div className="text-sm text-[#848484] flex items-center gap-2">
-                                                <span className="icon icon-calendar"></span>
+                                                <span className="icon icon-clock"></span>
                                                 <p>۸ دقیقه زمان برای خواندن این مقاله</p>
                                             </div>
                                         </div>
