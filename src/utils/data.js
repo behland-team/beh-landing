@@ -13,6 +13,7 @@ export const ChartData = [
                 },
             ],
         },
+
         icon: "/images/charticon/ranking.svg",
         percentage: 10,
         color: "text-chart-ranking",
@@ -37,7 +38,7 @@ export const ChartData = [
         icon: "/images/charticon/people.svg",
         percentage: 35,
         color: "text-chart-people",
-        description: "کاربران یادگیرنده و استخراج‌کننده",
+        description: "۳۵٪ کاربران یادگیرنده و استخراج‌کننده",
         bg: "bg-[#FF7B001A]",
         borderColor: "border-chart-people",
     },
@@ -142,7 +143,7 @@ export const ChartData = [
         icon: "/images/charticon/personalcard.svg",
         percentage: 10,
         color: "text-chart-idCard",
-        description: "فروش مرحله ای ۱۰%",
+        description: "۱۰٪ فروش مرحله ای",
         bg: "bg-[#CF1D001A]",
         borderColor: "border-chart-idCard",
     },
@@ -473,24 +474,25 @@ export const phases = [
 export const SocialMedia = [
     {
         name: "instagram",
-        link: "https://www.instagram.com/behland.official/",
+        link: "https://www.instagram.com/behlandofficial/",
         disable: true,
     },
     {
         name: "twitter",
-        link: "https://www.instagram.com/behland.official/",
+        link: "https://x.com/BehLandOfficial",
         disable: true,
     },
     {
         name: "telegram",
-        link: "https://t.me/BehLand_Official",
-        disable: false,
+        link: "https://t.me/BehLand_gp",
+        disable: true,
     },
     {
         name: "linkedin",
-        link: "https://www.instagram.com/behland.official/",
+        link: "#",
         disable: true,
     },
+    
 ];
 
 
@@ -558,8 +560,7 @@ export const faqTabs = [
         questions: [
             {
                 title: "چه فرقی با بقیه پلتفرم‌های آموزشی داره؟",
-                description: "به‌لند خشک و کلاسیک نیست. آموزش اینجا بازی‌محوره، پاداش‌محوره و با اقتصاد واقعی توکنی ترکیب شده. یعنی هم سرگرم می‌شی، هم رشد می‌کنی و هم فرصت‌های درآمد واقعی به دست میاری.\n" +
-                    "علاوه بر این، به‌لند تلاش می‌کنه بازارهای مختلف و سبک‌های معاملاتی متنوع رو بهت معرفی کنه تا بتونی تجربه کنی، درک بهتری به دست بیاری و در نهایت به استراتژی شخصی خودت برسی؛ چیزی که معمولاً در پلتفرم‌های آموزشی دیگه جاش خالیه.\n"
+                description: ".به‌لند خشک و تئوری نیست. اینحا همه چیز بازی‌محوره؛ پر از ماموریت، چالش و پاداش. یاد میگیری، عمل میکنی همزمان می تونی درآمد هم داشته باشی.\n" 
             }, {
                 title: "سطح‌بندی کاربران چطوریه؟",
                 description: "کاربرها از سطح «VIP0 – تازه‌وارد» شروع می‌کنن و بعد به‌تدریج به VIP1، VIP2 و VIP3 می‌رسن. هر سطح آموزش عمیق‌تر و فرصت‌های بیشتری برای درآمد داره. در نهایت می‌تونی به یک تحلیلگر حرفه‌ای تبدیل بشی"
@@ -568,7 +569,7 @@ export const faqTabs = [
                 description: "خیر. به‌لند از مفاهیم پایه شروع می‌کنه و قدم‌به‌قدم مسیر یادگیری رو پیش می‌بره. حتی اگه هیچ پیش‌زمینه‌ای نداری، می‌تونی از صفر وارد بشی."
             }, {
                 title: "چه بازارهایی در به‌لند آموزش داده می‌شن؟",
-                description: "سه بازار اصلی : رمزارزها , فارکس , سهام"
+                description: "سه بازار اصلی: رمزارزها،فارکس، سهام  هر کا"
             }, {
                 title: "اگر بازار رمزارز یا فارکس ریسک بالایی داره، به‌لند چه کمکی می‌کنه؟",
                 description: "بیش از ۸۰٪ افراد به خاطر نداشتن آموزش درست سرمایه‌شون رو از دست می‌دن. به‌لند با آموزش بازی‌محور، مدیریت ریسک و شبیه‌سازی معاملات کمک می‌کنه قبل از ورود جدی، تجربه و دانش کافی به دست بیاری"
@@ -610,3 +611,4 @@ export const faqTabs = [
         ]
     }
 ]
+
