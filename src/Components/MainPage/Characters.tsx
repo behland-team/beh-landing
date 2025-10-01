@@ -1,6 +1,6 @@
 "use client";
 import { useTranslations } from "next-intl";
-import React, { useCallback, useState } from "react";
+import React, { useCallback } from "react";
 import Image, { StaticImageData } from "next/image";
 import {
   Carousel,
@@ -13,11 +13,11 @@ import coming from "@/assets/Images/beh/coming.png";
 import coming2 from "@/assets/Images/beh/coming2.png";
 import behdonk from "@/assets/Images/beh/Behdank.png";
 
-// ایمپورت کامپوننت مدال (CharacterModalContent)
+
+
 import CharacterModalContent from "../UI/CharacterModalContent"; // مسیر صحیح به کامپوننت CharacterModalContent
 import Modal from "react-responsive-modal";
 import "react-responsive-modal/styles.css";
-
 
 // تعریف تایپ کاراکتر با اضافه شدن فیلد Image
 interface CharacterItem {
@@ -69,22 +69,22 @@ const characters: CharacterItem[] = [
 export default function Characters() {
   const t = useTranslations("characters");
   const [api, setApi] = React.useState<CarouselApi>();
-  
-  // ۱. تعریف حالت مدال و کاراکتر انتخاب شده
-  const [isModalOpen, setIsModalOpen] = useState(false);
-  const [selectedCharacter, setSelectedCharacter] = useState<CharacterItem | null>(null);
 
-  // ۲. توابع باز و بسته کردن مدال
-  const openModal = (character: CharacterItem) => {
+  // START: کدهای مهمی که برای رفع ارور اضافه شده‌اند
+  const [selectedCharacter, setSelectedCharacter] = React.useState<CharacterItem | null>(null);
+  const [isModalOpen, setIsModalOpen] = React.useState(false);
+
+  const openModal = useCallback((character: CharacterItem) => {
     setSelectedCharacter(character);
     setIsModalOpen(true);
-  };
+  }, []);
 
-  const closeModal = () => {
-    setIsModalOpen(false);
+  const closeModal = useCallback(() => {
     setSelectedCharacter(null);
-  };
-  
+    setIsModalOpen(false);
+  }, []);
+  // END: کدهای اضافه شده
+
   const onPrevButtonClick = useCallback(() => {
     if (!api) return;
     api.scrollPrev();
@@ -121,7 +121,7 @@ export default function Characters() {
               >
                 <div
                   className="bg-card bg-no-repeat bg-contain bg-center w-56 xl:w-[280px] xl:h-96 h-80 mx-auto flex justify-center relative shrink-0 bg-transparent cursor-pointer"
-                  onClick={() => openModal(item)} // فراخوانی openModal هنگام کلیک
+                  onClick={() => openModal(item)} // فراخوانی تابع اضافه شده
                 >
                   <div className="absolute md:top-1 lg:top-0 xl:-top-1 px-4 py-3 lg:p-5 flex justify-between items-center gap-5">
                     <p className="text-white font-black lg:text-stroke-orange text-[20px] lg:text-2xl">
