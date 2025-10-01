@@ -3,6 +3,10 @@ import Image from "next/image";
 import logo from "../../../public/images/Logo.png";
 import {useTranslations} from "next-intl";
 import Link from 'next/link';
+<<<<<<< HEAD
+=======
+import MenuLink from './MenuLink';
+>>>>>>> e33d79e (Revert "Modal")
 
 function Menu() {
     const t = useTranslations("header");

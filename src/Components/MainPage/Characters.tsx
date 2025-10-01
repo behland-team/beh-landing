@@ -13,7 +13,27 @@ import coming from "@/assets/Images/beh/coming.png";
 import coming2 from "@/assets/Images/beh/coming2.png";
 import behdonk from "@/assets/Images/beh/Behdank.png";
 
+<<<<<<< HEAD
 const characters = [
+=======
+
+
+import CharacterModalContent from "../UI/CharacterModalContent"; // مسیر صحیح به کامپوننت CharacterModalContent
+import Modal from "react-responsive-modal";
+import "react-responsive-modal/styles.css";
+import { useCarousel } from '@/hooks/useCarousel';
+
+
+// تعریف تایپ کاراکتر با اضافه شدن فیلد Image
+interface CharacterItem {
+  name: string;
+  image: StaticImageData;
+  title: string; // استفاده به عنوان EnglishName
+  imagePath?: string; // مسیر واقعی تصویر
+}
+
+const characters: CharacterItem[] = [
+>>>>>>> e33d79e (Revert "Modal")
   {
     name: "به کو",
     image: behcow,

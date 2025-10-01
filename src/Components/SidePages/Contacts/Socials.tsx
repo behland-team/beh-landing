@@ -18,43 +18,79 @@ const links = [
     {
         title: "یوتوب",
         icon: youtube,
+<<<<<<< HEAD
+        link: "https://www.youtube.com/@BehLandOfficial",
+        disable: false
+=======
         link: "#",
         disable : true
+>>>>>>> fc6e3ea (Revert "Modal")
     }, {
         title: "کانال تلگرام",
         icon: telegram,
         link: "https://t.me/BehLand_Official",
+<<<<<<< HEAD
+        disable: false
+    }, {
+        title: "اینستاگرام",
+        icon: instagram,
+        link: "https://www.instagram.com/behlandofficial/",
+        disable: false
+=======
         disable : false
     }, {
         title: "اینستاگرام",
         icon: instagram,
         link: "#",
         disable : true
+>>>>>>> fc6e3ea (Revert "Modal")
     }, {
         title: "لینکدین",
         icon: linkdin,
         link: "#",
+<<<<<<< HEAD
+        disable: true
+    }, {
+        title: "توییتر(X)",
+        icon: x,
+        link: "https://x.com/BehLandOfficial",
+        disable: false
+=======
         disable : true
     }, {
         title: "توییتر(X)",
         icon: x,
         link: "#",
         disable : true
+>>>>>>> fc6e3ea (Revert "Modal")
     }, {
         title: "دیسکورد",
         icon: discord,
         link: "#",
+<<<<<<< HEAD
+        disable: true
+=======
         disable : true
+>>>>>>> fc6e3ea (Revert "Modal")
     }, {
         title: "واتساپ",
         icon: whatsup,
         link: "#",
+<<<<<<< HEAD
+        disable: true
+    }, {
+        title: "ایمیل ها",
+        icon: gmail,
+        link: "mailto:support@beh.land",
+        disable: false
+=======
         disable : true
     }, {
         title: "ایمیل ها",
         icon: gmail,
         link: "#",
         disable : true
+>>>>>>> fc6e3ea (Revert "Modal")
     },
 ]
 
@@ -73,9 +109,15 @@ function Socials() {
                 <div className="grid xxs:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-6 gap-y-8 md:gap-y-12">
                     {
                         links.map((item, i) => (
+<<<<<<< HEAD
+                            <a href={item.link} key={i} rel="noopener noreferrer" target="_blank" className={item.disable ? "pointer-events-none" :""}>
+                                <div
+                                    className={classNames("md:border rounded-lg  flex flex-col sm:flex-row h-40 sm:h-24 w-48 max-sm:mx-auto sm:w-full relative" , item.disable  ?  "bg-black/70 text-gray-800 " : "border-cream-medium bg-cream-light ")}>
+=======
                             <a href={item.link} key={i} target="_blank">
                                 <div
                                     className={classNames("md:border rounded-lg  flex flex-col sm:flex-row h-40 sm:h-24 w-48 max-sm:mx-auto sm:w-full relative" , item.disable  ?  "bg-black/70 text-gray-800" : "border-cream-medium bg-cream-light ")}>
+>>>>>>> fc6e3ea (Revert "Modal")
                                     <div className="sm:w-1/3 relative h-20 sm:h-fit ">
                                         <Image src={badge} alt={"badge"} className={classNames("absolute -top-3 right-1/2 translate-x-1/2" , item.disable && "contrast-0")}/>
                                         <Image src={item.icon} alt={"icon"}
