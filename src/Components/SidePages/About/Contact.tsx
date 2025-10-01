@@ -16,9 +16,9 @@ function Contact() {
                     <h3 className="text-lg md:text-xl lg:text-3xl font-bold text-center ">{t("title")}</h3>
                     <p className="text-center text-text-gray">{t("description")}
                     </p>
-                    <div className=" mt-4 flex items-center justify-center gap-6 max-md:w-full">
+                    <div className=" mt-4 flex items-center justify-center gap-6 ">
                         <Link href="/contacts"
-                            className="py-1.5 max-md:flex-1 px-3 lg:px-12 rounded-lg border w-fit border-cream-medium shadow-main shadow-cream-medium  text-cream-medium flex items-center justify-center gap-2">
+                            className="py-1.5 max-md:flex-1 px-12 rounded-lg border w-fit border-cream-medium shadow-main shadow-cream-medium  text-cream-medium flex items-center justify-center gap-2">
                             <span>{t("contact")}</span>
                             <span className="icon icon-call"></span>
                         </Link>
