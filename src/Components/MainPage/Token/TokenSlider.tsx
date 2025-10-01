@@ -1,18 +1,41 @@
 "use client";
-import React from 'react';
+import React, {useCallback, useEffect, useState} from 'react';
 import classNames from "classnames";
 import Image from "next/image";
 import WhyBehBg from "@/assets/Images/WhyBehMobile.png";
 import Crown from "@/assets/Images/WhyBehCrown.svg";
 import {useTranslations} from "next-intl";
 import {Carousel, CarouselApi, CarouselContent, CarouselItem} from "@/Components/UI/carousel";
-import {useCarousel} from "@/hooks/useCarousel";
+import {EmblaCarouselType} from "embla-carousel";
 
 
 function TokenSlider({stages}: { stages: Stage[] }) {
     const t = useTranslations("token");
     const [api, setApi] = React.useState<CarouselApi>()
-    const {prevBtnDisabled , nextBtnDisabled, onPrevButtonClick , onNextButtonClick} = useCarousel(api);
+    const [prevBtnDisabled, setPrevBtnDisabled] = useState(true)
+    const [nextBtnDisabled, setNextBtnDisabled] = useState(true)
+
+    const onPrevButtonClick = useCallback(() => {
+        if (!api) return
+        api.scrollPrev()
+    }, [api])
+
+    const onNextButtonClick = useCallback(() => {
+        if (!api) return
+        api.scrollNext()
+    }, [api])
+
+    const onSelect = useCallback((emblaApi: EmblaCarouselType) => {
+        setPrevBtnDisabled(!emblaApi.canScrollPrev())
+        setNextBtnDisabled(!emblaApi.canScrollNext())
+    }, [])
+
+    useEffect(() => {
+        if (!api) return
+
+        onSelect(api)
+        api.on('reInit', onSelect).on('select', onSelect)
+    }, [api, onSelect])
     return (
         <>
             <div
