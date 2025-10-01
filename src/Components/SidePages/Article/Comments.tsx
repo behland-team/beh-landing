@@ -112,7 +112,7 @@ function Comments() {
                                            render={({field}) => (
                                                <FormItem className="flex items-center gap-2 space-y-0">
                                                    <FormControl>
-                                                            <Checkbox id="rememberMe" checked={field.value} onCheckedChange={field.onChange}/>
+                                                            <Checkbox id="rememberMe" checked={field.value} onCheckedChange={field.onChange} className="data-[state=checked]:bg-cream-medium border-cream-medium"/>
                                                    </FormControl>
                                                    <FormLabel  htmlFor="rememberMe" className="text-sm text-[#404040] ">{t("saveInfo")}</FormLabel>
                                                    <FormMessage/>
