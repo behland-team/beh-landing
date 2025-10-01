@@ -6,15 +6,14 @@ import click from "@/assets/Images/contacts/click.png"
 import Image from "next/image";
 import {useTranslations} from "next-intl";
 import {toast} from "sonner";
+import Toast from "@/Components/Layout/Toast";
 
 function ContactForm() {
     const t = useTranslations("contactPage.form");
     const handleSubmit = (e : FormEvent<HTMLFormElement>)=>{
         e.preventDefault();
         toast.custom(()=>(
-            <div className="border-2 border-cream-medium flex items-center relative bg-[#FEECD8] px-12 py-2 rounded-lg min-h-16">
-                <p className="text-sm font-semibold">در اسرا وقت پیام شما پیگیری میشود 🙏 </p>
-            </div>
+            <Toast message={"در اسرا وقت پیام شما پیگیری میشود 🙏"}/>
         ))
     }
     return (
