@@ -60,7 +60,7 @@ function Share() {
                         :
                         <button
                             onClick={handleCopy}
-                            className="border-2 shadow-main rounded-lg bg-white border-text-dark_Orange text-text-orange px-4 py-1 shadow-cream-medium">{t("copy")}</button>
+                            className="border-2 shadow-main rounded-lg bg-white border-text-dark_Orange text-text-orange px-2 text-sm xxs:text-base xxs:px-4 py-1 shadow-cream-medium">{t("copy")}</button>
                 }
 
 

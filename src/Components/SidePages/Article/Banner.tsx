@@ -32,7 +32,7 @@ function Banner() {
                                 مراحل اولیه درآمدزایی داشته باشند. این مسیر جدید به‌گونه‌ای طراحی شده که تجربه یادگیری
                                 هم سرگرم‌کننده باشد و هم عملی، تا کاربران بتوانند مهارت واقعی بازار را در کنار درآمدزایی
                                 کسب کنند.</p>
-                            <ul className="mt-5 flex items-center gap-2 text-sm md:text-base">
+                            <ul className="mt-5 flex xxs:items-center gap-2 flex-col xxs:flex-row text-xs xss:text-sm md:text-base">
                                 <li className="border-cream-medium border bg-cream-dark_light  px-2 py-1.5 rounded-lg flex items-center gap-2">
                                     <span className="icon icon-calendar text-cream-medium"></span>
                                     <p className="text-text-gray">1404 / اردیبهشت / 04</p>
