@@ -31,7 +31,7 @@ interface CharacterData {
 }
 
 const getFullCharacterData = (character: any): CharacterData => {
-    const data: CharacterData = {
+    return {
         name: character.name || "به بول",
         englishName: character.title || "Behbull",
         rank: 1,
@@ -39,13 +39,12 @@ const getFullCharacterData = (character: any): CharacterData => {
         description: "من سال‌هاست در بازارهای مختلف حضور دارم و افت‌وخیزهاش رو از نزدیک تجربه کردم. نظم و دیسیپلین برای من اصل جدیه، چون باور دارم موفقیت بدون برنامه‌ریزی دقیق هیچ معنایی نداره. تو به‌لند، من مربی ارشد تحلیل و استراتژی‌ام؛ اینجایم تا مسیر درست رو نشون بدم و راهنمایی‌های پیشرفته بهتون بدم تا با دید بازتر و اعتماد به نفس بیشتر حرکت کنید.",
         highlightedRole: "مربی ارشد تحلیل و استراتژی‌ام",
         attributes: [
-            { text: "به‌کو و به‌بو را به یادگیری عمیق‌تر تشویق می‌کند" },
-            { text: "نقش مهمی در تعیین جهت بازار دارد" },
-            { text: "سعی می‌کند دیسیپلین مالی را آموزش دهد" },
+            {text: "به‌کو و به‌بو را به یادگیری عمیق‌تر تشویق می‌کند"},
+            {text: "نقش مهمی در تعیین جهت بازار دارد"},
+            {text: "سعی می‌کند دیسیپلین مالی را آموزش دهد"},
         ],
         imagePath: character.imagePath || '/images/beh/behcow.png',
     };
-    return data;
 };
 
 const highlightText = (text: string, target: string) => {
@@ -119,7 +118,7 @@ export default function CharacterModalContent({ characterData, onClose }: { char
                         {/* نام کاراکتر و عنوان انگلیسی */}
                         <div className="flex flex-col items-end justify-center">
                             <span className="font-kalameh text-[20px] font-bold leading-none">{fullData.name}</span>
-                            <span className="font-yekan text-base font-bold text-gray-700 leading-none">{fullData.englishName}</span>
+                            <span className=" text-base font-bold text-gray-700 leading-none">{fullData.englishName}</span>
                         </div>
                     </div>
                 </div>
@@ -128,7 +127,7 @@ export default function CharacterModalContent({ characterData, onClose }: { char
                     <p className="leading-[38px] font-yekan font-semibold text-[14px]">{fullData.goal}</p>
                 </div>
                 {/* پاراگراف توضیحات */}
-                <p className="w-full max-w-[calc(100%-32px)] text-justify font-yekan font-semibold text-[12px] leading-[25px] text-[#404040] mb-6">
+                <p className="w-full max-w-[calc(100%-32px)] text-justify  font-semibold text-[12px] leading-[25px] text-[#404040] mb-6">
                     {highlightText(fullData.description, fullData.highlightedRole)}
                 </p>
                 {/* Attribute Boxes - **مرتب شده زیر هم و راست‌چین** */}
@@ -136,7 +135,7 @@ export default function CharacterModalContent({ characterData, onClose }: { char
                     {fullData.attributes.map((attr, index) => (
                         <div key={index} className="w-full max-w-[280px] flex items-center p-1 rounded-lg flex-row shadow-md bg-white/50 backdrop-blur-sm h-10">
                             <img src={ATTRIBUTE_ICON_PATH} alt="Attribute Icon" width={32} height={32} className="w-8 h-8 rounded-full border-2 border-white bg-white shadow-sm flex-shrink-0 mr-1" />
-                            <p className="text-[#222222] font-yekan font-normal text-[11px] text-right flex-1 leading-none whitespace-nowrap" style={{ letterSpacing: '-0.02em', lineHeight: '100%' }}>
+                            <p className="text-[#222222]  font-normal text-[11px] text-right flex-1 leading-none whitespace-nowrap" style={{ letterSpacing: '-0.02em', lineHeight: '100%' }}>
                                 {attr.text}
                             </p>
                         </div>
@@ -175,21 +174,21 @@ export default function CharacterModalContent({ characterData, onClose }: { char
                     <span className="font-kalameh text-[32px] font-bold text-[#222222] leading-none block">
                         {fullData.name}
                     </span>
-                    <span className="font-yekan text-xl font-bold text-gray-700 leading-none block">
+                    <span className=" text-xl font-bold text-gray-700 leading-none block">
                         {fullData.englishName}
                     </span>
                 </div>
 
                 {/* Goal box */}
                 <div
-                    className="absolute top-[239px] left-[650px] w-[450px] h-[54px] z-30 border border-[#00000042] p-2 pr-4 rounded-tl-lg rounded-tr-lg rounded-br-lg rounded-bl-none font-yekan font-semibold text-sm text-[#404040] bg-[#FEECD8] flex items-start justify-center"
+                    className="absolute top-[239px] left-[650px] w-[450px] h-[54px] z-30 border border-[#00000042] p-2 pr-4 rounded-tl-lg rounded-tr-lg rounded-br-lg rounded-bl-none  font-semibold text-sm text-[#404040] bg-[#FEECD8] flex items-start justify-center"
                     style={{ boxShadow: '2px 4px 0px 0px #CC6D14' }}
                 >
-                    <p className="items-center font-yekan font-semibold text-[15px] leading-[38px] whitespace-nowrap">{fullData.goal}</p>
+                    <p className="items-center  font-semibold text-[15px] leading-[38px] whitespace-nowrap">{fullData.goal}</p>
                 </div>
 
                 {/* Description Paragraph */}
-                <p className="absolute top-[305px] left-[704px] w-[624px] h-[190px] z-30 text-justify font-yekan font-semibold text-[18px] leading-[38px] text-[#404040]">
+                <p className="absolute top-[305px] left-[704px] w-[624px] h-[190px] z-30 text-justify  font-semibold text-[18px] leading-[38px] text-[#404040]">
                     {highlightText(fullData.description, fullData.highlightedRole)}
                 </p>
 
@@ -204,7 +203,7 @@ export default function CharacterModalContent({ characterData, onClose }: { char
                                 className="absolute top-[32px] left-0 w-[167px] h-[96px] border border-[#00000042] bg-[#FEECD8] rounded-lg flex items-end justify-center pb-3"
                                 style={{ boxShadow: '2px 4px 0px 0px #CC6D14' }}
                             >
-                                <p className="w-[151px] text-[#222222] font-yekan font-normal text-[17px] text-center leading-[100%] tracking-[-0.02em]">
+                                <p className="w-[151px] text-[#222222]  font-normal text-[17px] text-center leading-[100%] tracking-[-0.02em]">
                                     {attr.text}
                                 </p>
                             </div>
