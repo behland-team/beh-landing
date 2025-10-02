@@ -31,7 +31,7 @@ interface CharacterData {
 }
 
 const getFullCharacterData = (character: any): CharacterData => {
-    const data: CharacterData = {
+    return {
         name: character.name || "به بول",
         englishName: character.title || "Behbull",
         rank: 1,
@@ -45,7 +45,6 @@ const getFullCharacterData = (character: any): CharacterData => {
         ],
         imagePath: character.imagePath || '/images/beh/behcow.png',
     };
-    return data;
 };
 
 const highlightText = (text: string, target: string) => {
@@ -80,7 +79,7 @@ export default function CharacterModalContent({ characterData, onClose }: { char
         backgroundSize: 'cover',
         backgroundPosition: 'center top',
         backgroundRepeat: 'no-repeat',
-       
+
     };
 
     return (
@@ -122,7 +121,7 @@ export default function CharacterModalContent({ characterData, onClose }: { char
                 </div>
                 {/* goal box */}
                 <div className="w-full max-w-[calc(100%-32px)] border border-[#00000042] p-2 pr-4 rounded-tl-lg rounded-tr-lg rounded-br-lg rounded-bl-none font-semibold text-sm text-[#404040] mb-4 bg-[#FEECD8]" style={{ boxShadow: '2px 4px 0px 0px #CC6D14' }}>
-                    <p className="items-center leading-[35px] text-[8px] whitespace-nowrap">{fullData.goal}</p>
+                    <p className="text-center leading-[35px] text-[8px] xxs:text-[10px] whitespace-nowrap">{fullData.goal}</p>
                 </div>
                 {/* Paragraph */}
                 <p className="w-full max-w-[calc(100%-32px)] text-justify font-semibold text-[12px] leading-[25px] text-[#404040] mb-6">
@@ -175,10 +174,10 @@ export default function CharacterModalContent({ characterData, onClose }: { char
                 </div>
                 {/* Goal box */}
                 <div
-                    className="absolute top-[239px] left-[650px] w-[450px] h-[56px] z-30 border border-[#00000042] p-2 pr-4 rounded-tl-lg rounded-tr-lg rounded-br-lg rounded-bl-none font-yekan font-semibold text-sm text-[#404040] bg-[#FEECD8] flex items-start justify-center"
+                    className="absolute top-[239px] left-[600px] w-[430px] h-[56px] z-30 border border-[#00000042] p-2 pr-4 rounded-tl-lg rounded-tr-lg rounded-br-lg rounded-bl-none  font-semibold text-sm text-[#404040] bg-[#FEECD8] flex items-start justify-center"
                     style={{ boxShadow: '2px 4px 0px 0px #CC6D14' }}
                 >
-                    <p className="items-center font-semibold text-l leading-[38px] whitespace-nowrap">{fullData.goal}</p>
+                    <p className="items-center font-semibold text-l leading-[38px] text-center whitespace-nowrap">{fullData.goal}</p>
                 </div>
                 {/* Description Paragraph */}
                 <p className="absolute top-[305px] left-[704px] w-[624px] h-[190px] z-30 text-justify font-semibold text-[18px] leading-[38px] text-[#404040]">

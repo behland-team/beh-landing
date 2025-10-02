@@ -13,7 +13,6 @@ export const ChartData = [
                 },
             ],
         },
-
         icon: "/images/charticon/ranking.svg",
         percentage: 10,
         color: "text-chart-ranking",
@@ -474,25 +473,24 @@ export const phases = [
 export const SocialMedia = [
     {
         name: "instagram",
-        link: "https://www.instagram.com/behlandofficial/",
-        disable: true,
+        link: "https://www.instagram.com/behland.official/",
+        disable: false,
     },
     {
         name: "twitter",
         link: "https://x.com/BehLandOfficial",
-        disable: true,
+        disable: false,
     },
     {
         name: "telegram",
-        link: "https://t.me/BehLand_gp",
-        disable: true,
+        link: "https://t.me/BehLand_Official",
+        disable: false,
     },
     {
         name: "linkedin",
-        link: "#",
+        link: "https://www.instagram.com/behland.official/",
         disable: true,
     },
-    
 ];
 
 
@@ -560,7 +558,7 @@ export const faqTabs = [
         questions: [
             {
                 title: "چه فرقی با بقیه پلتفرم‌های آموزشی داره؟",
-                description: ".به‌لند خشک و تئوری نیست. اینحا همه چیز بازی‌محوره؛ پر از ماموریت، چالش و پاداش. یاد میگیری، عمل میکنی همزمان می تونی درآمد هم داشته باشی.\n" 
+                description: ".به‌لند خشک و تئوری نیست. اینحا همه چیز بازی‌محوره؛ پر از ماموریت، چالش و پاداش. یاد میگیری، عمل میکنی همزمان می تونی درآمد هم داشته باشی.\n"
             }, {
                 title: "سطح‌بندی کاربران چطوریه؟",
                 description: "کاربرها از سطح «VIP0 – تازه‌وارد» شروع می‌کنن و بعد به‌تدریج به VIP1، VIP2 و VIP3 می‌رسن. هر سطح آموزش عمیق‌تر و فرصت‌های بیشتری برای درآمد داره. در نهایت می‌تونی به یک تحلیلگر حرفه‌ای تبدیل بشی"
@@ -569,7 +567,7 @@ export const faqTabs = [
                 description: "خیر. به‌لند از مفاهیم پایه شروع می‌کنه و قدم‌به‌قدم مسیر یادگیری رو پیش می‌بره. حتی اگه هیچ پیش‌زمینه‌ای نداری، می‌تونی از صفر وارد بشی."
             }, {
                 title: "چه بازارهایی در به‌لند آموزش داده می‌شن؟",
-                description: "سه بازار اصلی: رمزارزها،فارکس، سهام  هر کا"
+                description: "سه بازار اصلی : رمزارزها , فارکس , سهام"
             }, {
                 title: "اگر بازار رمزارز یا فارکس ریسک بالایی داره، به‌لند چه کمکی می‌کنه؟",
                 description: "بیش از ۸۰٪ افراد به خاطر نداشتن آموزش درست سرمایه‌شون رو از دست می‌دن. به‌لند با آموزش بازی‌محور، مدیریت ریسک و شبیه‌سازی معاملات کمک می‌کنه قبل از ورود جدی، تجربه و دانش کافی به دست بیاری"
@@ -611,4 +609,3 @@ export const faqTabs = [
         ]
     }
 ]
-
