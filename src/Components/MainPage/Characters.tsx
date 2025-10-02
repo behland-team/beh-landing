@@ -79,12 +79,8 @@ export default function Characters() {
   const openModal = useCallback((character: CharacterItem) => {
     setSelectedCharacter(character);
     setIsModalOpen(true);
-  }, [setSelectedCharacter, setIsModalOpen]);
+  }, []);
 
-  const closeModal = useCallback(() => {
-    setSelectedCharacter(null);
-    setIsModalOpen(false);
-  }, [setSelectedCharacter, setIsModalOpen]);
   // END: کدهای اضافه شده
 
 
@@ -167,7 +163,7 @@ export default function Characters() {
           {selectedCharacter && (
               <Modal
                   open={isModalOpen}
-                  onClose={closeModal}
+                  onClose={() => setIsModalOpen(false)}
                   center
                   classNames={{
                       modalContainer: 'flex justify-center items-center w-full h-full p-4 lg:p-0',
@@ -184,13 +180,15 @@ export default function Characters() {
                           maxWidth: '95vw',
                           maxHeight: '95vh',
                           margin: 'auto',
-
-                      }
+                  },
+                      closeIcon: {
+                      visibility: 'hidden'
+                  }
                   }}
               >
                   <CharacterModalContent
                       characterData={selectedCharacter}
-                      onClose={closeModal}
+                      onClose={() => setIsModalOpen(false)}
                   />
               </Modal>
           )}

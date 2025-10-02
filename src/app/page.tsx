@@ -7,6 +7,7 @@ import Team from "@/Components/MainPage/Team";
 import {Token} from "@/Components/MainPage/Token/Token";
 import WhyBeh from "@/Components/MainPage/WhyBeh";
 import Header from "@/Components/Layout/Header";
+import Comments from "@/Components/SidePages/Article/Comments";
 
 
 export default function Home() {
