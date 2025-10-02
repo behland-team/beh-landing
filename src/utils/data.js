@@ -474,12 +474,12 @@ export const SocialMedia = [
     {
         name: "instagram",
         link: "https://www.instagram.com/behland.official/",
-        disable: true,
+        disable: false,
     },
     {
         name: "twitter",
-        link: "https://www.instagram.com/behland.official/",
-        disable: true,
+        link: "https://x.com/BehLandOfficial",
+        disable: false,
     },
     {
         name: "telegram",

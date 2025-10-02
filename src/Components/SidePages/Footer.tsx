@@ -5,8 +5,8 @@ import classNames from "classnames";
 import { useTranslations } from "next-intl";
 import alga from "@/assets/Images/alga.png";
 import Image from "next/image";
-import { toast } from "sonner";
 import Link from "next/link";
+import NewsletterForm from "@/Components/Layout/Newsletter-Form";
 
 function Footer() {
   const t = useTranslations("footer");
@@ -20,7 +20,7 @@ function Footer() {
         />
         <div className="absolute left-1/2 -translate-x-1/2 bottom-0  rounded-t-xl  bg-white px-3">
           <p className="text-xs xxs:text-sm md:text-base text-center opacity-50 max-lg:hidden">
-            کلیه حقوق برای به‌لند محفوظ است
+              {t("copyRight")}
           </p>
         </div>
         <div className="grid max-sm:grid-cols-4 grid-cols-2  lg:grid-cols-3 lg:grid-rows-2 max-sm:gap-x-0 gap-7 lg:gap-5 items-start xl:max-w-screen-2xl xl:mx-auto">
@@ -65,7 +65,7 @@ function Footer() {
                   </li>
                   <li>
                     <Link
-                      href="/news"
+                      href="/blog"
                       className="text-sm font-semibold text-text-gray"
                     >
                       {t("news")}
@@ -83,11 +83,12 @@ function Footer() {
               {SocialMedia.map((item, index) => (
                 <a
                   href={item.link}
+                  target="_blank"
                   key={index}
                   className={classNames(
                     "flex gap-3 border-2  shadow-icon  p-2 rounded-xl",
                     item.disable
-                      ? "text-text-gray shadow shadow-text-gray border-text-gray"
+                      ? "text-text-gray shadow shadow-text-gray border-text-gray pointer-events-none"
                       : "text-cream-medium border-cream-medium bg-white "
                   )}
                 >
@@ -109,28 +110,21 @@ function Footer() {
           </div>
           <div className="col-span-full md:col-span-1   space-y-1 ">
             <p className="text-base font-semibold">{t("newslatter")}</p>
-            <div className="flex items-center justify-between  w-full rounded-lg overflow-hidden   border p-1  bg-white border-gray-500 ">
-              <input
-                type="email"
-                placeholder="ایمیل خود را وارد کنید"
-                className="rounded-full border-0 bg-transparent outline-none w-full mx-1 placeholder:text-sm"
-              />
-              <button
-                type="button"
-                onClick={() => {
-                  toast.custom((t) => (
-                    <div className="border-2 border-cream-medium flex items-center relative overflow-hidden bg-[#FEECD8] px-12 py-2 rounded-lg min-h-16">
-                      <p className="text-sm font-semibold">
-                        ایمیل شما با موفقیت ثبت شد ✔️
-                      </p>
-                    </div>
-                  ));
-                }}
-                className="rounded-lg border-2 text-cream-medium border-cream-medium px-6 text-sm p-1 m-0.5 bg-cream-dark_light cursor-pointer "
-              >
-                ارسال
-              </button>
-            </div>
+              <NewsletterForm>
+                  <div className="flex items-center justify-between  w-full rounded-lg overflow-hidden   border p-1  bg-white border-gray-500 ">
+                      <input
+                          type="email"
+                          placeholder={t("emailPlaceholder")}
+                          className="rounded-full border-0 bg-transparent outline-none w-full mx-1 placeholder:text-sm"
+                      />
+                      <button
+                          type="button"
+                          className="rounded-lg border-2 text-cream-medium border-cream-medium px-6 text-sm p-1 m-0.5 bg-cream-dark_light cursor-pointer "
+                      >
+                          {t("send")}
+                      </button>
+                  </div>
+              </NewsletterForm>
           </div>
         </div>
       </div>
