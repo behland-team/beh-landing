@@ -18,6 +18,7 @@ import littleGrass from "@/assets/Images/faq/grass2.png"
 import FaqAccordion from "@/Components/UI/FaqAccordion";
 import { faqs } from "@/utils/data";
 import { useTranslations } from "next-intl";
+import Link from "next/link";
 
 export default function FAQ() {
   const t = useTranslations("faq");
@@ -75,8 +76,13 @@ export default function FAQ() {
                               className=" absolute right-5 -z-10 bottom-0 "
                           />
                           <div className="absolute -top-3">
-                              <Image src={board} alt={"board"} />
-                              <p className="absolute z-20 text-xl xxs:text-3xl text-center  left-1/2 -translate-x-1/2 text-white font-bold top-10 text-nowrap">سوالات متداول</p>
+                              <Link href="/faq">
+                                <Image src={board} alt={"board"} className="cursor-pointer" />
+                                <p className="absolute z-20 text-xl xxs:text-3xl text-center  left-1/2 -translate-x-1/2 text-white font-bold top-10 text-nowrap cursor-pointer">
+                                 <span className="icon icon-navigate rotate-180 "></span>
+                                  سوالات متداول
+                                </p>
+                              </Link>
                           </div>
                           <Image
                               src={grass}
