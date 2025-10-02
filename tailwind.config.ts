@@ -22,7 +22,8 @@ const config: Config = {
     			main: '0px 4px 0px 0px rgba(0, 0, 0, 0.46)',
     			roadMap: '0 4px 0 0 #BD5300;',
     			news: '2px 4px 0px 0px #CC6D14',
-    			icon: '0px 4px 0px 0px #CC6D14'
+    			icon: '0px 4px 0px 0px #CC6D14',
+				Attributes_boxes: '2px 4px 0px 0px #CC6D14'
     		},
     		backgroundImage: {
     			header: "url('/images/headerBg.svg')",
@@ -71,7 +72,9 @@ const config: Config = {
     				bg: '#CC6D144F',
     				orange: '#CC6D14',
     				dark_Orange: '#B83A36',
-    				dark_brown: '#893D1B'
+    				dark_brown: '#893D1B',
+					dark_gray:'#222222',
+					Bt_Orange: "#BD5300"
     			},
     			cream: {
     				light: '#FEF2E4',
