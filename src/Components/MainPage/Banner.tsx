@@ -3,6 +3,7 @@ import { useTranslations } from "next-intl";
 import Image from "next/image";
 import CloudLeft from "@/assets/Images/cloud-left.svg"
 import CloudRight from "@/assets/Images/cloud-right.svg"
+import logo from "../../../public/images/Logo.png";
 export default function Banner() {
   const t = useTranslations("Banner");
   const tHeader = useTranslations("header");
@@ -12,6 +13,7 @@ export default function Banner() {
         <Image src={CloudRight} alt={"cloud-right"} className={"absolute right-0 top-[232px] md:hidden"} />
         <Image src={CloudLeft} alt={"cloud-left"} className={"absolute left-0 top-[382px] md:hidden "} />
       <div className="h-1/2 flex flex-col items-center font-semibold mt-[83px] md:mt-0  ">
+          <Image src={logo} alt={"logo"} className="lg:hidden w-24  mb-6"/>
         <h3 className="text-sm xxs:text-[18px] md:text-2xl lg:text-3xl text-text-dark_Orange">{t("title1")}</h3>
         <span className="flex flex-row-reverse xxs:text-[22px] md:text-3xl lg:text-4xl text-text-black md:mt-3">
           <h3 className="">{t("title21")} </h3>
