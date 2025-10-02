@@ -78,12 +78,12 @@ export default function RoadMap() {
                         <Image
                             src={wood}
                             alt="wood left"
-                            className=" absolute left-6 z-0 bottom-0 lg:-bottom-2"
+                            className=" absolute left-6 z-0 -bottom-3"
                         />
                         <Image
                             src={wood}
                             alt="wood right"
-                            className=" absolute right-6 z-0 bottom-0  lg:-bottom-2"
+                            className=" absolute right-6 z-0 -bottom-3 "
                         />
                     </div>
                 </div>
