@@ -8,8 +8,8 @@ import {z} from "zod";
 import {commentsSchema} from "@/Schemas/CommentsSchema";
 import {zodResolver} from "@hookform/resolvers/zod";
 import {Form, FormControl, FormField, FormItem, FormLabel, FormMessage} from "@/Components/UI/form";
-import {Checkbox} from "@/Components/UI/checkbox";
 import {dateFormatter, numberFormatter} from "@/utils/helpers";
+import StarRating from "@/Components/Layout/StarRating";
 
 function Comments() {
     const t = useTranslations("articlePage");
@@ -18,12 +18,14 @@ function Comments() {
         defaultValues: {
             name: "",
             email: "",
-            comment: ""
+            comment: "",
+            rate: 0
         }
     });
 
     const handleSubmit = (data: z.infer<typeof commentsSchema>) => {
         console.log(data);
+        form.reset();
     }
     return (
         <div className="space-y-10 my-5">
@@ -48,7 +50,11 @@ function Comments() {
                                 <span className="text-[#848484] tracking-tight">{numberFormatter(4.5)}</span>
                             </div>
                         </div>
-                        <p className="text-[#848484] tracking-tight max-lg:hidden">{dateFormatter( 1759473653000, "fa" , {day :"2-digit" , month :"long" , year : "2-digit" })}</p>
+                        <p className="text-[#848484] tracking-tight max-lg:hidden">{dateFormatter(1759473653000, "fa", {
+                            day: "2-digit",
+                            month: "long",
+                            year: "2-digit"
+                        })}</p>
                     </div>
                     <hr className="border-b border-gray-400 border-dashed "/>
                     <div className="space-y-2">
@@ -57,7 +63,11 @@ function Comments() {
                             چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است، و برای شرایط فعلی
                             تکنولوژی مورد نیاز، و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد، </p>
                         <div className="flex items-center justify-between">
-                            <p className="text-[#848484] text-sm tracking-tight lg:hidden">{dateFormatter( 1759473653000, "fa" , {day :"2-digit" , month :"long" , year : "2-digit"})}</p>
+                            <p className="text-[#848484] text-sm tracking-tight lg:hidden">{dateFormatter(1759473653000, "fa", {
+                                day: "2-digit",
+                                month: "long",
+                                year: "2-digit"
+                            })}</p>
                             <button
                                 className="block border border-[#8C8C8C] text-[#8C8C8C] px-4  py-2 rounded-lg font-semibold mr-auto">
                                 {t("replay")}
@@ -108,19 +118,17 @@ function Comments() {
                                    )}/>
                         <div
                             className="flex flex-col sm:flex-row items-center justify-between gap-6  sm:gap-2 col-span-full">
-                                <FormField name={"saveInfo"}
-                                           control={form.control}
-                                           render={({field}) => (
-                                               <FormItem className="flex items-center gap-2 space-y-0">
-                                                   <FormControl>
-                                                            <Checkbox id="rememberMe" checked={field.value} onCheckedChange={field.onChange} className="data-[state=checked]:bg-cream-medium border-cream-medium"/>
-                                                   </FormControl>
-                                                   <FormLabel  htmlFor="rememberMe" className="text-sm text-[#404040] ">{t("saveInfo")}</FormLabel>
-                                                   <FormMessage/>
-                                               </FormItem>
-                                           )}/>
+                            <FormField control={form.control} render={({field}) => (
+                                <FormItem className="flex items-center gap-2 space-y-0">
+                                    <FormControl>
+                                        <StarRating value={field.value ?? 0} onChange={field.onChange}/>
+                                    </FormControl>
+                                    <FormLabel className="text-sm text-[#404040]">{t("registerRate")}</FormLabel>
+                                </FormItem>
+                            )} name={"rate"}/>
+
                             <button disabled={form.formState.disabled}
-                                className="max-sm:w-full px-6 py-2 rounded-lg border-2 text-nowrap text-sm lg:text-base disabled:text-text-gray disabled:border-text-gray border-cream-medium text-cream-medium bg-[#FEECD8] shadow-main shadow-cream-medium font-semibold">
+                                    className="max-sm:w-full px-6 py-2 rounded-lg border-2 text-nowrap text-sm lg:text-base disabled:text-text-gray disabled:border-text-gray border-cream-medium text-cream-medium bg-[#FEECD8] shadow-main shadow-cream-medium font-semibold">
                                 {t("send")}
                             </button>
                         </div>
