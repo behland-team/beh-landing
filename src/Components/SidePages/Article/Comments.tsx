@@ -9,6 +9,7 @@ import {commentsSchema} from "@/Schemas/CommentsSchema";
 import {zodResolver} from "@hookform/resolvers/zod";
 import {Form, FormControl, FormField, FormItem, FormLabel, FormMessage} from "@/Components/UI/form";
 import {Checkbox} from "@/Components/UI/checkbox";
+import {dateFormatter, numberFormatter} from "@/utils/helpers";
 
 function Comments() {
     const t = useTranslations("articlePage");
@@ -44,10 +45,10 @@ function Comments() {
                             <p className="font-semibold">مریم السادات حسینی موسوی</p>
                             <div className="flex items-center gap-1">
                                 <span className="icon icon-star text-yellow-600"></span>
-                                <span className="text-[#848484] tracking-tight">4/5</span>
+                                <span className="text-[#848484] tracking-tight">{numberFormatter(4.5)}</span>
                             </div>
                         </div>
-                        <p className="text-[#848484] tracking-tight max-lg:hidden">{"1404/اردیبهشت / 04"}</p>
+                        <p className="text-[#848484] tracking-tight max-lg:hidden">{dateFormatter( 1759473653000, "fa" , {day :"2-digit" , month :"long" , year : "2-digit" })}</p>
                     </div>
                     <hr className="border-b border-gray-400 border-dashed "/>
                     <div className="space-y-2">
@@ -56,7 +57,7 @@ function Comments() {
                             چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است، و برای شرایط فعلی
                             تکنولوژی مورد نیاز، و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد، </p>
                         <div className="flex items-center justify-between">
-                            <p className="text-[#848484] text-sm tracking-tight lg:hidden">{"1404/اردیبهشت / 04"}</p>
+                            <p className="text-[#848484] text-sm tracking-tight lg:hidden">{dateFormatter( 1759473653000, "fa" , {day :"2-digit" , month :"long" , year : "2-digit"})}</p>
                             <button
                                 className="block border border-[#8C8C8C] text-[#8C8C8C] px-4  py-2 rounded-lg font-semibold mr-auto">
                                 {t("replay")}

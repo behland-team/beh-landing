@@ -3,6 +3,7 @@ import classNames from "classnames";
 import {Tabs, TabsContent, TabsList, TabsTrigger} from "@/Components/UI/tabs";
 import Link from "next/link";
 import {useTranslations} from "next-intl";
+import {dateFormatter, numberFormatter} from "@/utils/helpers";
 
 function RecentNewsTab({className, ...props}: ComponentProps<"div">) {
     const data = Array.from({length: 3})
@@ -42,11 +43,11 @@ function RecentNewsTab({className, ...props}: ComponentProps<"div">) {
                                 <div className="flex items-center gap-2 xxs:gap-4">
                                     <div className="flex items-center gap-2">
                                         <span className="icon icon-clock text-cream-medium"></span>
-                                        <span className="text-gray-500 text-xs xxs:text-sm">8 دقیقه</span>
+                                        <span className="text-gray-500 text-xs xxs:text-sm">{numberFormatter(8).concat(`  ${t("min")}`)}</span>
                                     </div>
                                     <div className="flex items-center gap-2">
                                         <span className="icon icon-calendar text-cream-medium"></span>
-                                        <span className="text-gray-500 text-xs xxs:text-sm">1404/04/07</span>
+                                        <span className="text-gray-500 text-xs xxs:text-sm">{dateFormatter( 1759473653000)}</span>
                                     </div>
                                 </div>
                                 <Link href={"/blog/article/crypto/14"}>
