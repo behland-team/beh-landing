@@ -30,7 +30,7 @@ interface CharacterData {
 }
 
 const getFullCharacterData = (character: any): CharacterData => {
-    const data: CharacterData = {
+    return {
         name: character.name || "به بول",
         englishName: character.title || "Behbull",
         rank: 1,
@@ -44,7 +44,6 @@ const getFullCharacterData = (character: any): CharacterData => {
         ],
         imagePath: character.imagePath || '/images/beh/behcow.png',
     };
-    return data;
 };
 
 const highlightText = (text: string, target: string) => {
@@ -79,6 +78,7 @@ export default function CharacterModalContent({ characterData, onClose }: { char
         backgroundSize: 'cover',
         backgroundPosition: 'bottom right',
         backgroundRepeat: 'no-repeat',
+
     };
 
     return (
@@ -206,7 +206,7 @@ export default function CharacterModalContent({ characterData, onClose }: { char
                     className="w-full max-w-[calc(100%-32px)] border border-[#00000042] p-2 pr-4 rounded-tl-lg rounded-tr-lg rounded-br-lg rounded-bl-none font-semibold text-sm text-[#404040] mb-4 bg-[#FEECD8]" 
                     style={{ boxShadow: '2px 4px 0px 0px #CC6D14' }}
                 >
-                    <p className="items-center leading-[35px] text-[8px] sm:text-[10px] whitespace-nowrap">
+                    <p className="text-center leading-[35px] text-[8px] xxs:text-[10px] whitespace-nowrap">
                         {fullData.goal}
                     </p>
                 </div>

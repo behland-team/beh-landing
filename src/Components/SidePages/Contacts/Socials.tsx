@@ -11,6 +11,7 @@ import star from "@/assets/Images/contacts/Star_perspective_matte.svg"
 import Image from "next/image";
 import badge from "@/assets/Images/aboutBadge.svg";
 import {useTranslations} from "next-intl";
+import classNames from "classnames";
 
 
 const links = [
@@ -18,42 +19,42 @@ const links = [
         title: "یوتوب",
         icon: youtube,
         link: "https://www.youtube.com/@BehLandOfficial",
-        disable: true
+        disable: false
     }, {
         title: "کانال تلگرام",
         icon: telegram,
         link: "https://t.me/BehLand_Official",
-        disable: true
+        disable: false
     }, {
         title: "اینستاگرام",
         icon: instagram,
         link: "https://www.instagram.com/behlandofficial/",
-        disable: true
+        disable: false
     }, {
         title: "لینکدین",
         icon: linkdin,
         link: "#",
-        disable: false
+        disable: true
     }, {
         title: "توییتر(X)",
         icon: x,
         link: "https://x.com/BehLandOfficial",
-        disable: true
+        disable: false
     }, {
         title: "دیسکورد",
         icon: discord,
         link: "#",
-        disable: false
+        disable: true
     }, {
         title: "واتساپ",
         icon: whatsup,
         link: "#",
-        disable: false
+        disable: true
     }, {
         title: "ایمیل ها",
         icon: gmail,
-        link: "support@beh.land",
-        disable: true
+        link: "mailto:support@beh.land",
+        disable: false
     },
 ]
 
@@ -62,23 +63,23 @@ function Socials() {
     return (
         <section className="my-20">
             <div className="max-w-[75rem] mx-auto flex flex-col gap-16 px-6 md:px-24">
-                    <div className="space-y-4">
-                        <div className="flex items-center gap-2 max-md:justify-center">
-                            <Image src={star} alt={"star"} className="size-12 max-md:hidden"/>
-                            <h3 className="text-2xl md:text-3xl font-semibold tracking-tight">{t("title")}</h3>
-                        </div>
-                        <p className="font-semibold md:text-lg text-sm max-md:text-text-gray max-md:text-center">{t("des")}</p>
+                <div className="space-y-4">
+                    <div className="flex items-center gap-2 max-md:justify-center">
+                        <Image src={star} alt={"star"} className="size-12 max-md:hidden"/>
+                        <h3 className="text-2xl md:text-3xl font-semibold tracking-tight">{t("title")}</h3>
                     </div>
+                    <p className="font-semibold md:text-lg text-sm max-md:text-text-gray max-md:text-center">{t("des")}</p>
+                </div>
                 <div className="grid xxs:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-6 gap-y-8 md:gap-y-12">
                     {
                         links.map((item, i) => (
-                            <a href={item.link} key={i}>
+                            <a href={item.link} key={i} rel="noopener noreferrer" target="_blank" className={item.disable ? "pointer-events-none" :""}>
                                 <div
-                                     className="md:border border-cream-medium bg-cream-light rounded-lg  flex flex-col sm:flex-row h-40 sm:h-24 w-48 max-sm:mx-auto sm:w-full ">
+                                    className={classNames("md:border rounded-lg  flex flex-col sm:flex-row h-40 sm:h-24 w-48 max-sm:mx-auto sm:w-full relative" , item.disable  ?  "bg-black/70 text-gray-800 " : "border-cream-medium bg-cream-light ")}>
                                     <div className="sm:w-1/3 relative h-20 sm:h-fit ">
-                                        <Image src={badge} alt={"badge"} className="absolute -top-3 right-1/2 translate-x-1/2"/>
+                                        <Image src={badge} alt={"badge"} className={classNames("absolute -top-3 right-1/2 translate-x-1/2" , item.disable && "contrast-0")}/>
                                         <Image src={item.icon} alt={"icon"}
-                                               className="md:size-8 lg:size-12 absolute -top-1 right-[calc(50%-2px)] translate-x-1/2"/>
+                                               className={classNames("md:size-8 lg:size-12 absolute -top-1 right-[calc(50%-2px)] translate-x-1/2" ,  item.disable && "contrast-50")}/>
                                     </div>
                                     <div className="flex items-center justify-between sm:w-2/3 px-2 py-4 max-sm:mt-4">
                                         <p className="text-center sm:text-right  text-lg font-semibold ">
@@ -86,7 +87,11 @@ function Socials() {
                                         </p>
                                         <span className="icon icon-arrow-back -rotate-[135deg]"  ></span>
                                     </div>
-
+                                    {item.disable && (
+                                        <p className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-10 font-semibold text-xl text-white ">به
+                                            زودی...</p>
+                                    )
+                                    }
                                 </div>
                             </a>
 

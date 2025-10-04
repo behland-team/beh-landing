@@ -1,10 +1,29 @@
+"use client";
 import React from 'react';
 import badge from "@/assets/Images/Article/badge.svg";
 import Image from "next/image";
 import {useTranslations} from "next-intl";
+import {useForm} from "react-hook-form";
+import {z} from "zod";
+import {commentsSchema} from "@/Schemas/CommentsSchema";
+import {zodResolver} from "@hookform/resolvers/zod";
+import {Form, FormControl, FormField, FormItem, FormLabel, FormMessage} from "@/Components/UI/form";
+import {Checkbox} from "@/Components/UI/checkbox";
 
 function Comments() {
     const t = useTranslations("articlePage");
+    const form = useForm<z.infer<typeof commentsSchema>>({
+        resolver: zodResolver(commentsSchema),
+        defaultValues: {
+            name: "",
+            email: "",
+            comment: ""
+        }
+    });
+
+    const handleSubmit = (data: z.infer<typeof commentsSchema>) => {
+        console.log(data);
+    }
     return (
         <div className="space-y-10 my-5">
             <div
@@ -53,26 +72,59 @@ function Comments() {
                         t("writeYourComments")
                     }</p>
                 </div>
-                <form className="grid grid-cols-2 gap-6">
-                    <p className="col-span-full text-sm font-semibold text-text-gray">{t("privacy")}</p>
-                    <input placeholder={t("fullName")}
-                           className="col-span-full sm:col-span-1 rounded-lg border border-black outline-none px-6 py-3"/>
-                    <input placeholder={t("email")}
-                           className="col-span-full sm:col-span-1 rounded-lg border border-black outline-none px-6 py-3"/>
-                    <textarea placeholder={t("message")} rows={6}
-                              className="col-span-full rounded-lg border border-black outline-none px-6 py-3"></textarea>
-                    <div
-                        className="flex flex-col sm:flex-row items-center justify-between gap-6  sm:gap-2 col-span-full">
-                        <div className="flex items-center gap-2">
-                            <input id="rememberMe" type="checkbox"/>
-                            <label htmlFor="rememberMe" className="text-sm text-[#404040]">{t("saveInfo")}</label>
+                <Form {...form}>
+                    <form className="grid grid-cols-2 gap-6" onSubmit={form.handleSubmit(handleSubmit)}>
+                        <p className="col-span-full text-sm font-semibold text-text-gray">{t("privacy")}</p>
+                        <FormField name={"name"}
+                                   render={({field}) => (
+                                       <FormItem className="col-span-full sm:col-span-1">
+                                           <FormControl>
+                                               <input placeholder={t("fullName")}
+                                                      className=" rounded-lg border w-full border-black outline-none px-6 py-3" {...field}/>
+                                           </FormControl>
+                                           <FormMessage/>
+                                       </FormItem>
+                                   )}/>
+                        <FormField name={"email"}
+                                   render={({field}) => (
+                                       <FormItem className="col-span-full sm:col-span-1">
+                                           <FormControl>
+                                               <input placeholder={t("email")}
+                                                      className="col-span-full sm:col-span-1 rounded-lg border border-black outline-none px-6 py-3 w-full" {...field}/>
+                                           </FormControl>
+                                           <FormMessage/>
+                                       </FormItem>
+                                   )}/>
+                        <FormField name={"comment"}
+                                   render={({field}) => (
+                                       <FormItem className="col-span-full">
+                                           <FormControl>
+                                                <textarea placeholder={t("message")} rows={6}
+                                                          className="col-span-full rounded-lg border border-black outline-none px-6 py-3 w-full" {...field}></textarea>
+                                           </FormControl>
+                                           <FormMessage/>
+                                       </FormItem>
+                                   )}/>
+                        <div
+                            className="flex flex-col sm:flex-row items-center justify-between gap-6  sm:gap-2 col-span-full">
+                                <FormField name={"saveInfo"}
+                                           control={form.control}
+                                           render={({field}) => (
+                                               <FormItem className="flex items-center gap-2 space-y-0">
+                                                   <FormControl>
+                                                            <Checkbox id="rememberMe" checked={field.value} onCheckedChange={field.onChange} className="data-[state=checked]:bg-cream-medium border-cream-medium"/>
+                                                   </FormControl>
+                                                   <FormLabel  htmlFor="rememberMe" className="text-sm text-[#404040] ">{t("saveInfo")}</FormLabel>
+                                                   <FormMessage/>
+                                               </FormItem>
+                                           )}/>
+                            <button disabled={form.formState.disabled}
+                                className="max-sm:w-full px-6 py-2 rounded-lg border-2 text-nowrap text-sm lg:text-base disabled:text-text-gray disabled:border-text-gray border-cream-medium text-cream-medium bg-[#FEECD8] shadow-main shadow-cream-medium font-semibold">
+                                {t("send")}
+                            </button>
                         </div>
-                        <button
-                            className="max-sm:w-full px-6 py-2 rounded-lg border-2 text-nowrap text-sm lg:text-base border-cream-medium text-cream-medium bg-[#FEECD8] shadow-main shadow-cream-medium font-semibold">
-                            {t("send")}
-                        </button>
-                    </div>
-                </form>
+                    </form>
+                </Form>
             </div>
         </div>
     );

@@ -12,7 +12,7 @@ function Author() {
                     <Image src={abbasi} alt={"abbasi"} className="size-10 md:size-14 rounded-full bg-red-800"/>
                     <h4 className="font-semibold md:text-lg ">فاطمه عباسی</h4>
                 </div>
-                <button className="rounded-lg px-4 py-3 text-cream-medium/70 bg-[#FBF7F5] text-sm">{t("authorArticles")}
+                <button className="rounded-lg px-2 xxs:px-4 py-1 xxs:py-3 text-cream-medium/70 bg-[#FBF7F5] text-xs xxs:text-sm">{t("authorArticles")}
                 </button>
             </div>
             <p className="text-sm md:text-base text-justify text-[#404040] leading-8">«نوشتن، قفل‌هایی را باز میکند که به ظاهر غیرقابل‌‌نفوذ هستند». این باور نیکان او

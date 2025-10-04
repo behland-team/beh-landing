@@ -15,7 +15,7 @@ function EditorChoice() {
             <div className="3xl:max-w-[85rem] mx-auto 3xl:px-0 px-6 lg:px-10 xl:px-28 py-10 space-y-10">
                 <div className="md:flex md:flex-col md:gap-3 md:items-center space-y-2">
                     <div className="flex max-md:flex-col items-center justify-center gap-2">
-                        <span className="icon icon-language text-text-dark_Orange text-xl max-md:text-3xl font-semibold"></span>
+                        <span className="icon icon-bitcoin text-text-dark_Orange text-4xl max-md:text-3xl font-semibold"></span>
                         <h2 className=" font-semibold text-2xl tracking-tight">{t("editorChoice")}</h2>
                     </div>
                     <p className="text-center text-cream-medium md:hidden">{t("newestArticleDes")}</p>
@@ -59,7 +59,7 @@ function EditorChoice() {
                                         <hr className="border border-dashed border-[#CCCDF4] max-md:hidden"/>
                                         <div className="flex items-center justify-between max-md:absolute max-md:top-4 max-md:left-2 max-md:w-[calc(100%-106px)] max-md:p-2">
                                             <div className="flex items-center gap-2">
-                                                <span className="icon icon-calendar text-text-dark_Orange"></span>
+                                                <span className="icon icon-clock text-text-dark_Orange"></span>
                                                 <span className="text-[#848484] text-sm">8 دقیقه</span>
                                             </div>
                                             <div className="flex items-center gap-2">
