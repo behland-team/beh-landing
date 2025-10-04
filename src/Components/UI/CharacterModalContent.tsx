@@ -12,8 +12,7 @@ const fullModalBackgroundStyle = {
     backgroundSize: 'cover',
     backgroundPosition: 'center',
     backgroundRepeat: 'no-repeat',
-}
-
+};
 
 interface Attribute {
     text: string;
@@ -27,7 +26,7 @@ interface CharacterData {
     description: string;
     highlightedRole: string;
     attributes: Attribute[];
-    imagePath: string; // 
+    imagePath: string;
 }
 
 const getFullCharacterData = (character: any): CharacterData => {
@@ -60,11 +59,11 @@ const highlightText = (text: string, target: string) => {
     );
 };
 
-// --- کامپوننت اصلی ---
+// Main component
 export default function CharacterModalContent({ characterData, onClose }: { characterData: any, onClose: () => void }) {
     const fullData = getFullCharacterData(characterData);
 
-    // استایل‌های پس‌زمینه موبایل 
+    // Mobile background styles
     const mobileCardStyle = {
         backgroundImage: `url('${CARD_BACKGROUND_MOBILE_PATH}')`,
         backgroundSize: 'cover',
@@ -74,7 +73,7 @@ export default function CharacterModalContent({ characterData, onClose }: { char
         boxShadow: '0px -6px 0px 0px #FEECD8',
     };
 
-    // استایل‌های کانتینر نارنجی دسکتاپ
+    // Desktop orange container styles
     const desktopContainerStyle = {
         backgroundImage: `url('${CARD_BACKGROUND_DESKTOP_PATH}')`,
         backgroundSize: 'cover',
@@ -88,7 +87,7 @@ export default function CharacterModalContent({ characterData, onClose }: { char
             className="relative mx-auto h-auto w-full max-w-lg lg:w-[1440px] lg:h-[672px] lg:max-w-none lg:bg-white lg:p-0 flex-shrink-0 lg:overflow-visible"
             style={fullModalBackgroundStyle}
         >
-            {/* Back Button (Outside box - Bottom Left) */}
+            {/* Back Button (Outside orange box - Bottom Left) */}
             <button
                 onClick={onClose}
                 className="hidden lg:flex absolute text-2xl bottom-[5px] left-[90px] items-center justify-center gap-2 bg-transparent p-0 text-text-Bt_Orange transition-colors focus:outline-none focus:ring-0 z-30"
@@ -98,7 +97,7 @@ export default function CharacterModalContent({ characterData, onClose }: { char
                 <span className="icon icon-navigate" />
             </button>
 
-            {/* Orange container/desktop only*/}
+            {/* Orange container (Desktop only) */}
             <div
                 className="hidden lg:block fixed w-[1185px] h-[511px] bottom-0 right-0 rounded-tl-2xl z-10"
                 style={desktopContainerStyle}
@@ -117,8 +116,13 @@ export default function CharacterModalContent({ characterData, onClose }: { char
                     }}
                     loading="eager" 
                 />
+
                 {/* Medal (Positioned higher up, centered over the border line) */}
-                <img src={MEDAL_ICON_PATH} alt={`Rank ${fullData.rank}`} className="absolute w-[105px] h-[117px] top-[-58px] right-[17%] translate-x-[50%] z-30" />
+                <img 
+                    src={MEDAL_ICON_PATH} 
+                    alt={`Rank ${fullData.rank}`} 
+                    className="absolute w-[105px] h-[117px] top-[-58px] right-[17%] translate-x-[50%] z-30" 
+                />
                 
                 {/* Name & English Name and Goal box in same line */}
                 <div className="absolute top-[80px] right-[50px] text-right z-30 flex items-center gap-6">
@@ -137,7 +141,9 @@ export default function CharacterModalContent({ characterData, onClose }: { char
                         className="w-[500px] h-[56px] border border-[#00000042] p-2 pr-4 rounded-tl-lg rounded-tr-lg rounded-br-lg rounded-bl-none font-yekan font-semibold text-sm text-[#404040] bg-[#FEECD8] flex items-center justify-start overflow-hidden"
                         style={{ boxShadow: '2px 4px 0px 0px #CC6D14' }}
                     >
-                        <p className="font-semibold text-base leading-[38px] whitespace-nowrap text-ellipsis overflow-hidden">{fullData.goal}</p>
+                        <p className="font-semibold text-base leading-[38px] whitespace-nowrap text-ellipsis overflow-hidden">
+                            {fullData.goal}
+                        </p>
                     </div>
                 </div>
                 
@@ -151,11 +157,15 @@ export default function CharacterModalContent({ characterData, onClose }: { char
                     {fullData.attributes.map((attr, index) => (
                         <div key={index} className="w-[167px] h-[128px] relative flex items-center justify-center">
                             <div className="absolute top-0 right-[50px] w-[58px] h-[59px] rounded-full overflow-hidden z-40 border-2 border-white shadow-sm bg-white flex items-center justify-center">
-                                <img src={ATTRIBUTE_ICON_PATH} alt="Attribute Icon" width={58} height={59} className="w-full h-full object-cover transform" />
+                                <img 
+                                    src={ATTRIBUTE_ICON_PATH} 
+                                    alt="Attribute Icon" 
+                                    width={58} 
+                                    height={59} 
+                                    className="w-full h-full object-cover transform" 
+                                />
                             </div>
-                            <div
-                                className="absolute top-[32px] left-0 w-[167px] h-[96px] border border-[#00000042] bg-[#FEECD8] rounded-lg flex items-end justify-center pb-3 shadow-Attributes_boxes"
-                            >
+                            <div className="absolute top-[32px] left-0 w-[167px] h-[96px] border border-[#00000042] bg-[#FEECD8] rounded-lg flex items-end justify-center pb-3 shadow-Attributes_boxes">
                                 <p className="w-[151px] text-[#222222] font-normal text-[17px] text-center leading-[100%] tracking-[-0.02em]">
                                     {attr.text}
                                 </p>
@@ -171,7 +181,7 @@ export default function CharacterModalContent({ characterData, onClose }: { char
                 style={mobileCardStyle}
             >
                 <div className="w-full flex justify-between items-start mb-6 pl-2 pr-2">
-                    {/* container */}
+                    {/* Container */}
                     <div className="flex items-center gap-2">
                         {/* Medal */}
                         <img
@@ -190,25 +200,40 @@ export default function CharacterModalContent({ characterData, onClose }: { char
                         </div>
                     </div>
                 </div>
-                {/* goal box */}
-                <div className="w-full max-w-[calc(100%-32px)] border border-[#00000042] p-2 pr-4 rounded-tl-lg rounded-tr-lg rounded-br-lg rounded-bl-none font-semibold text-sm text-[#404040] mb-4 bg-[#FEECD8]" style={{ boxShadow: '2px 4px 0px 0px #CC6D14' }}>
-                    <p className="items-center leading-[35px] text-[8px] sm:text-[10px] whitespace-nowrap">{fullData.goal}</p>
+
+                {/* Goal box */}
+                <div 
+                    className="w-full max-w-[calc(100%-32px)] border border-[#00000042] p-2 pr-4 rounded-tl-lg rounded-tr-lg rounded-br-lg rounded-bl-none font-semibold text-sm text-[#404040] mb-4 bg-[#FEECD8]" 
+                    style={{ boxShadow: '2px 4px 0px 0px #CC6D14' }}
+                >
+                    <p className="items-center leading-[35px] text-[8px] sm:text-[10px] whitespace-nowrap">
+                        {fullData.goal}
+                    </p>
                 </div>
+
                 {/* Paragraph */}
                 <p className="w-full max-w-[calc(100%-32px)] text-justify font-semibold text-[12px] sm:text-[14px] leading-[25px] text-[#404040] mb-6">
                     {highlightText(fullData.description, fullData.highlightedRole)}
                 </p>
+
                 {/* Attribute Boxes */}
                 <div className="w-full max-w-[calc(100%-32px)] flex flex-col gap-3 items-start mb-4">
                     {fullData.attributes.map((attr, index) => (
                         <div key={index} className="w-full max-w-[280px] sm:max-w-[320px] flex items-center p-1 rounded-lg flex-row shadow-md bg-white/50 backdrop-blur-sm h-10 sm:h-12">
-                            <img src={ATTRIBUTE_ICON_PATH} alt="Attribute Icon" width={32} height={32} className="w-8 h-8 sm:w-10 sm:h-10 rounded-full border-2 border-white bg-white shadow-sm flex-shrink-0 mr-1" />
+                            <img 
+                                src={ATTRIBUTE_ICON_PATH} 
+                                alt="Attribute Icon" 
+                                width={32} 
+                                height={32} 
+                                className="w-8 h-8 sm:w-10 sm:h-10 rounded-full border-2 border-white bg-white shadow-sm flex-shrink-0 mr-1" 
+                            />
                             <p className="dark-gray font-normal text-[12px] sm:text-[14px] text-right flex-1 leading-none tracking-[-0.02em]">
                                 {attr.text}
                             </p>
                         </div>
                     ))}
                 </div>
+
                 {/* Character Image */}
                 <img
                     src={fullData.imagePath}
@@ -218,6 +243,7 @@ export default function CharacterModalContent({ characterData, onClose }: { char
                     className="absolute bottom-[-25px] left-[20px] w-[180px] h-[284px] sm:w-[200px] sm:h-[315px] object-contain z-20"
                     loading="eager"
                 />
+
                 {/* Back Button */}
                 <button
                     onClick={onClose}
@@ -228,8 +254,6 @@ export default function CharacterModalContent({ characterData, onClose }: { char
                     <span className='icon icon-navigate' />
                 </button>
             </div>
-            
-            {/* ...existing mobile content... */}
         </div>
     );
 }
