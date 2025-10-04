@@ -4,6 +4,7 @@ import {Carousel, CarouselApi, CarouselContent, CarouselItem} from "@/Components
 import {useCarousel} from "@/hooks/useCarousel";
 import classNames from "classnames";
 import {useTranslations} from "next-intl";
+import {dateFormatter, numberFormatter} from "@/utils/helpers";
 
 function EditorChoice() {
     const t = useTranslations("blogPage");
@@ -60,11 +61,11 @@ function EditorChoice() {
                                         <div className="flex items-center justify-between max-md:absolute max-md:top-4 max-md:left-2 max-md:w-[calc(100%-106px)] max-md:p-2">
                                             <div className="flex items-center gap-2">
                                                 <span className="icon icon-clock text-text-dark_Orange"></span>
-                                                <span className="text-[#848484] text-sm">8 دقیقه</span>
+                                                <span className="text-[#848484] text-sm">{numberFormatter(8).concat(`  ${t("min")}`)}</span>
                                             </div>
                                             <div className="flex items-center gap-2">
                                                 <span className="icon icon-calendar text-text-dark_Orange"></span>
-                                                <span className="text-[#848484] text-sm">1404/04/07</span>
+                                                <span className="text-[#848484] text-sm">{dateFormatter( 1759473653000)}</span>
                                             </div>
                                         </div>
                                     </div>

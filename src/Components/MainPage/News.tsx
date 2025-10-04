@@ -12,6 +12,7 @@ import newsOne from "@/assets/Images/news/news-2.png";
 import newsTwo from "@/assets/Images/news/news-1.png";
 import newsThree from "@/assets/Images/news/news-3.png";
 import {useCarousel} from "@/hooks/useCarousel";
+import {dateFormatter, numberFormatter} from "@/utils/helpers";
 
 
 const headNews = {
@@ -19,24 +20,24 @@ const headNews = {
     description: "یادگیری مثل یک بازی، نه یک کلاس خشک\n" +
         "به‌لند یک دانشگاه سنتی نیست. اینجا هیچ خبری از کلاس‌های خسته‌کننده و پر از فرمول‌های خشک نیست. یادگیری در به‌لند شبیه یک بازی ماجراجویانه است؛ پر از مأموریت، چالش و پاداش. هر کاربر مسیر شخصی خودش را طی می‌کند، از نقطه‌ی صفر شروع می‌کند و قدم‌به‌قدم به یک تحلیلگر مستقل و توانمند در بازارهای مالی تبدیل می‌شود.",
     image: mainNewsPic,
-    create_at: "1404/07/03"
+    create_at: 1759473653000
 }
 const allNews = [
     {
         title: " چرا به‌لند ساخته شد؟",
         description: "دنیای مالی امروز با سرعتی سرسام‌آور در حال تغییره. هر روز مفاهیم تازه‌ای متولد می‌شن و خیلی از دانسته‌های دیروز به‌سرعت بی‌اعتبار می‌شن. توی این شرایط یه سؤال اساسی پیش روی همه ماست: چطور می‌تونیم در این دنیای پرشتاب نه‌تنها عقب نمونیم، بلکه جلوتر هم حرکت کنیم؟پاسخ ما «به‌لند»ه؛ سرزمینی نو که یادگیری مالی، رشد شخصی و کسب درآمد واقعی رو در کنار هم معنا می‌کنه.",
         image: newsOne,
-        create_at: "1404/07/03"
+        create_at:  1749473653000
     }, {
         title: " اقتصاد نوین به‌لند؛ مدلی که نمی‌تواند شکست بخورد",
         description: "هر پلتفرم آموزشی می‌تواند محتوایی تولید کند و هر پروژه بلاکچینی می‌تواند یک توکن بسازد. اما واقعیت این است که بیشتر آن‌ها یا به دلیل نداشتن مدل اقتصادی پایدار شکست می‌خورند، یا خیلی زود جذابیتشان را از دست می‌دهند. به‌لند دقیقاً برعکس این مسیر طراحی شده است؛ یک اکوسیستم زنده و خودکفا که از همان ابتدا بر پایه نیاز واقعی کاربران و مصرف مداوم توکن بنا شده است.",
         image: newsTwo,
-        create_at: "1404/07/03"
+        create_at:  1739473653000
     }, {
         title: " چشم‌انداز به‌لند",
         description: "به‌لند فقط یک پلتفرم آموزشی نیست؛یک سرزمین در حال شکل‌گیریه.سرزمینی که از روز اول با نگاه به آینده ساخته شد و مأموریت اصلیش تغییر در نحوه یادگیری و تجربه مالیه. چشم‌انداز به‌لند چیزی فراتر از یک وب‌سایت یا اپلیکیشنه؛ هدف ما خلق یک اکوسیستم جهانیه که در اون دانش، سرگرمی و درآمد در هم تنیده می‌شن.",
         image: newsThree,
-        create_at: "1404/07/03"
+        create_at:  1758473653000
     },
 ]
 
@@ -82,7 +83,7 @@ export default function News() {
                             className="md:border-t border-dashed border-text-orange w-full flex justify-between items-center flex-row-reverse px-2 py-4 md:py-5 ">
                             <div className=" flex justify-center items-center">
                                 <p className="font-normal text-text-gray md:text-text-orange text-sm ">
-                                    {headNews.create_at}
+                                    {dateFormatter(headNews.create_at)}
                                 </p>
                                 <span className="icon icon-calendar text-text-orange mr-2"></span>
                             </div>
@@ -94,7 +95,7 @@ export default function News() {
                             </div>
                             <div className=" flex justify-center items-center gap-1 md:hidden">
                                 <Image src={clock} alt={"clock"}/>
-                                <p className="font-normal text-text-gray  text-sm">8 دقیقه</p>
+                                <p className="font-normal text-text-gray  text-sm">{numberFormatter(8)+t("min")}</p>
                             </div>
                         </div>
                     </div>
@@ -129,7 +130,7 @@ export default function News() {
                                             className="md:border-t border-dashed border-text-orange w-full flex justify-between items-center flex-row-reverse px-2 py-4 md:py-5 ">
                                             <div className=" flex justify-center items-center">
                                                 <p className="font-normal text-text-gray md:text-text-orange text-sm ">
-                                                    {item.create_at}
+                                                    {dateFormatter(item.create_at)}
                                                 </p>
                                                 <span className="icon icon-calendar text-text-orange mr-2"></span>
                                             </div>
@@ -141,7 +142,7 @@ export default function News() {
                                             </div>
                                             <div className=" flex justify-center items-center gap-1 md:hidden">
                                                 <Image src={clock} alt={"clock"}/>
-                                                <p className="font-normal text-text-gray  text-sm">8 دقیقه</p>
+                                                <p className="font-normal text-text-gray  text-sm">{numberFormatter(8).concat(`  ${t("min")}`)}</p>
                                             </div>
                                         </div>
                                     </div>

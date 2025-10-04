@@ -1,8 +1,11 @@
 import React from 'react';
 import Image from "next/image";
 import banner from "@/assets/Images/article/banner.svg";
+import {dateFormatter, numberFormatter} from "@/utils/helpers";
+import {useTranslations} from "next-intl";
 
 function Banner() {
+    const t = useTranslations("articlePage")
     return (
         <section className=" bg-[#FBF7F5]">
             <div className="space-y-10 3xl:max-w-[75rem] mx-auto max-3xl:px-20 max-lg:px-10 max-md:px-6 pt-5 pb-20">
@@ -35,15 +38,15 @@ function Banner() {
                             <ul className="mt-5 flex xxs:items-center gap-2 flex-col xxs:flex-row text-xs xss:text-sm md:text-base">
                                 <li className="border-cream-medium border bg-cream-dark_light  px-2 py-1.5 rounded-lg flex items-center gap-2">
                                     <span className="icon icon-calendar text-cream-medium"></span>
-                                    <p className="text-text-gray">1404 / اردیبهشت / 04</p>
+                                    <p className="text-text-gray">{dateFormatter( 1759473653000, "fa" , {day :"2-digit" , month :"long" , year : "2-digit"})}</p>
                                 </li>
                                 <li className="border-cream-medium border bg-cream-dark_light  px-2 py-1.5 rounded-lg flex items-center gap-2">
                                     <span className="icon icon-clock text-cream-medium"></span>
-                                    <p className="text-text-gray">8 دقیقه</p>
+                                    <p className="text-text-gray">{numberFormatter(8).concat(`  ${t("min")}`)}</p>
                                 </li>
                                 <li className="border-cream-medium border bg-cream-dark_light  px-2 py-1.5 rounded-lg flex items-center gap-2">
                                     <span className="icon icon-comments text-cream-medium"></span>
-                                    <p className="text-text-gray">2 دیدگاه</p>
+                                    <p className="text-text-gray">{numberFormatter(8).concat(`  ${t("comments")}`)}</p>
                                 </li>
                             </ul>
                         </div>

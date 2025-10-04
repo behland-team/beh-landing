@@ -4,6 +4,7 @@ import {Carousel, CarouselApi, CarouselContent, CarouselItem} from "@/Components
 import {useCarousel} from "@/hooks/useCarousel";
 import classNames from "classnames";
 import {useTranslations} from "next-intl";
+import {dateFormatter, numberFormatter} from "@/utils/helpers";
 
 function CryptoNews() {
     const t = useTranslations("blogPage");
@@ -64,15 +65,15 @@ function CryptoNews() {
                                             <div className="flex items-center justify-between">
                                                 <div className="flex items-center gap-2">
                                                     <span className="icon icon-clock text-text-dark_Orange"></span>
-                                                    <span className="text-[#848484] text-sm">8 دقیقه</span>
+                                                    <span className="text-[#848484] text-sm">{numberFormatter(8).concat(`  ${t("min")}`)}</span>
                                                 </div>
                                                 <div className="flex items-center gap-2">
                                                     <span className="icon icon-comments text-text-dark_Orange"></span>
-                                                    <span className="text-[#848484] text-sm">10 دیدگاه</span>
+                                                    <span className="text-[#848484] text-sm">{numberFormatter(8).concat(`  ${t("comments")}`)}</span>
                                                 </div>
                                                 <div className="flex items-center gap-2">
                                                     <span className="icon icon-calendar text-text-dark_Orange"></span>
-                                                    <span className="text-[#848484] text-sm">1404/04/07</span>
+                                                    <span className="text-[#848484] text-sm">{dateFormatter( 1759473653000)}</span>
                                                 </div>
                                             </div>
                                         </div>

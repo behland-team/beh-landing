@@ -1,5 +1,6 @@
 import React from 'react';
 import {useTranslations} from "next-intl";
+import {dateFormatter, numberFormatter} from "@/utils/helpers";
 
 function SimilarArticle() {
     const t = useTranslations("articlePage");
@@ -34,15 +35,15 @@ function SimilarArticle() {
                                 <div className="flex items-center justify-between">
                                     <div className="flex items-center gap-2">
                                         <span className="icon icon-clock text-cream-medium"></span>
-                                        <span className="text-text-gray/60">۸ دقیقه</span>
+                                        <span className="text-text-gray/60">{numberFormatter(8).concat(`  ${t("min")}`)}</span>
                                     </div>
                                     <div className="flex items-center gap-2">
                                         <span className="icon icon-calendar text-cream-medium"></span>
-                                        <span className="text-text-gray/60">1404 /04/07</span>
+                                        <span className="text-text-gray/60">{dateFormatter( 1759473653000)}</span>
                                     </div>
                                     <div className="flex items-center gap-2">
                                         <span className="icon icon-comments text-cream-medium"></span>
-                                        <span className="text-text-gray/60">2 دیدگاه</span>
+                                        <span className="text-text-gray/60">{numberFormatter(8).concat(`  ${t("comments")}`)}</span>
                                     </div>
                                 </div>
                             </div>
