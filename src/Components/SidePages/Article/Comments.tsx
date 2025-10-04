@@ -75,43 +75,50 @@ function Comments() {
                                     چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است، و برای شرایط
                                     فعلی
                                     تکنولوژی مورد نیاز، و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد، </p>
-                                <AnimatePresence>
+                                <AnimatePresence  mode={"wait"}>
                                     {
                                         index === replyId
-                                        &&
-                                        <motion.div className={classNames("space-y-4 w-full pt-4")}
-                                                    key={`reply-${index}`}
-                                                    initial={{ height: 0, opacity: 0 }}
-                                                    animate={{ height: "auto", opacity: 1 }}
-                                                    exit={{ height: 0, opacity: 0 }}
-                                                    transition={{ duration: 0.3 }} >
-                                            <hr className="border-b border-gray-400 border-dashed "/>
-                                            <form className="flex flex-col gap-2" onSubmit={handleReply}>
-                                                <label className="tracking-tight text-[#8C8C8C]">شما در حال پاسخ به
-                                                    دیدگاه رها مرادیان فر هستید : </label>
-                                                <textarea rows={3}
-                                                          className="rounded-lg border border-[#CCCFD4] p-2 outline-none"></textarea>
-                                                <button
-                                                    className="bg-cream-light border-2 border-cream-medium shadow-main shadow-cream-medium py-1 px-6 rounded-lg text-cream-medium w-fit mr-auto">ارسال
-                                                    دیدگاه
+                                            ?
+                                            <motion.div className={classNames("space-y-4 w-full pt-4")}
+                                                        key={`reply-${index}`}
+                                                        layout={true}
+                                                        initial={{height: 0, opacity: 0}}
+                                                        animate={{height: "auto", opacity: 1}}
+                                                        exit={{height: 0, opacity: 0}}
+                                                        transition={{duration: 0.3 ,ease: "easeInOut"}}>
+                                                <hr className="border-b border-gray-400 border-dashed "/>
+                                                <form className="flex flex-col gap-2" onSubmit={handleReply}>
+                                                    <label className="tracking-tight text-[#8C8C8C]">شما در حال پاسخ به
+                                                        دیدگاه رها مرادیان فر هستید : </label>
+                                                    <textarea rows={3}
+                                                              className="rounded-lg border border-[#CCCFD4] p-2 outline-none"></textarea>
+                                                    <button
+                                                        className="bg-cream-light border-2 border-cream-medium shadow-main shadow-cream-medium py-1 px-6 rounded-lg text-cream-medium w-fit mr-auto">ارسال
+                                                        دیدگاه
+                                                    </button>
+                                                </form>
+                                            </motion.div>
+                                            :
+                                            <motion.div
+                                                key={`button-${index}`}
+                                                initial={{ opacity: 0 }}
+                                                animate={{ opacity: 1 }}
+                                                exit={{ opacity: 0 }}
+                                                transition={{duration : 0.2}}
+                                                className="flex items-center justify-between">
+                                                <p className="text-[#848484] text-sm tracking-tight lg:hidden">{dateFormatter(1759473653000, "fa", {
+                                                    day: "2-digit",
+                                                    month: "long",
+                                                    year: "2-digit"
+                                                })}</p>
+                                                <button onClick={() => setReplyId(index)}
+                                                        className="block border border-[#8C8C8C] text-[#8C8C8C] px-4  py-2 rounded-lg font-semibold mr-auto">
+                                                    {t("replay")}
                                                 </button>
-                                            </form>
-                                        </motion.div>
+                                            </motion.div>
                                     }
                                 </AnimatePresence>
-                                {index !== replyId &&
-                                    <div className="flex items-center justify-between">
-                                        <p className="text-[#848484] text-sm tracking-tight lg:hidden">{dateFormatter(1759473653000, "fa", {
-                                            day: "2-digit",
-                                            month: "long",
-                                            year: "2-digit"
-                                        })}</p>
-                                        <button onClick={() => setReplyId(index)}
-                                                className="block border border-[#8C8C8C] text-[#8C8C8C] px-4  py-2 rounded-lg font-semibold mr-auto">
-                                            {t("replay")}
-                                        </button>
-                                    </div>
-                                }
+
 
                             </div>
                         </div>
