@@ -1,5 +1,5 @@
 "use client";
-import React from 'react';
+import React, {FormEvent, useState} from 'react';
 import badge from "@/assets/Images/Article/badge.svg";
 import Image from "next/image";
 import {useTranslations} from "next-intl";
@@ -10,8 +10,12 @@ import {zodResolver} from "@hookform/resolvers/zod";
 import {Form, FormControl, FormField, FormItem, FormLabel, FormMessage} from "@/Components/UI/form";
 import {dateFormatter, numberFormatter} from "@/utils/helpers";
 import StarRating from "@/Components/Layout/StarRating";
+import classNames from "classnames";
+import {AnimatePresence, motion} from "motion/react";
 
 function Comments() {
+    const [replyId, setReplyId] = useState<string | number | null>(null);
+    const data = Array.from({length: 4});
     const t = useTranslations("articlePage");
     const form = useForm<z.infer<typeof commentsSchema>>({
         resolver: zodResolver(commentsSchema),
@@ -27,6 +31,11 @@ function Comments() {
         console.log(data);
         form.reset();
     }
+
+    const handleReply = (e: FormEvent<HTMLFormElement>) => {
+        e.preventDefault();
+        setReplyId(null);
+    }
     return (
         <div className="space-y-10 my-5">
             <div
@@ -38,43 +47,77 @@ function Comments() {
                 <div>
                     <h3 className="font-bold md:hidden">{t("yourComments")} </h3>
                 </div>
-                <div
-                    className="bg-[#FBF7F5] md:bg-white rounded-xl p-4 flex flex-col gap-4 md:gap-2 border border-[#CCCFD4]">
-                    <div className="flex items-center justify-between ">
-                        <div className="flex items-center gap-2.5">
-                            <div className="bg-sky-300 size-8 rounded-full">
+                {
+                    data.map((_, index) => (
+                        <div key={index}
+                             className="bg-[#FBF7F5] md:bg-white rounded-xl p-4 flex flex-col gap-4 md:gap-2 border border-[#CCCFD4]">
+                            <div className="flex items-center justify-between ">
+                                <div className="flex items-center gap-2.5">
+                                    <div className="bg-sky-300 size-8 rounded-full">
+                                    </div>
+                                    <p className="font-semibold">مریم السادات حسینی موسوی</p>
+                                    <div className="flex items-center gap-1">
+                                        <span className="icon icon-star text-yellow-600"></span>
+                                        <span className="text-[#848484] tracking-tight">{numberFormatter(4.5)}</span>
+                                    </div>
+                                </div>
+                                <p className="text-[#848484] tracking-tight max-lg:hidden">{dateFormatter(1759473653000, "fa", {
+                                    day: "2-digit",
+                                    month: "long",
+                                    year: "2-digit"
+                                })}</p>
                             </div>
-                            <p className="font-semibold">مریم السادات حسینی موسوی</p>
-                            <div className="flex items-center gap-1">
-                                <span className="icon icon-star text-yellow-600"></span>
-                                <span className="text-[#848484] tracking-tight">{numberFormatter(4.5)}</span>
+                            <hr className="border-b border-gray-400 border-dashed "/>
+                            <div className="space-y-2">
+                                <p className="text-sm md:text-base text-justify text-text-gray"> ورم ایپسوم متن ساختگی
+                                    با تولید
+                                    سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک است،
+                                    چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است، و برای شرایط
+                                    فعلی
+                                    تکنولوژی مورد نیاز، و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد، </p>
+                                <AnimatePresence>
+                                    {
+                                        index === replyId
+                                        &&
+                                        <motion.div className={classNames("space-y-4 w-full pt-4")}
+                                                    key={`reply-${index}`}
+                                                    initial={{ height: 0, opacity: 0 }}
+                                                    animate={{ height: "auto", opacity: 1 }}
+                                                    exit={{ height: 0, opacity: 0 }}
+                                                    transition={{ duration: 0.3 }} >
+                                            <hr className="border-b border-gray-400 border-dashed "/>
+                                            <form className="flex flex-col gap-2" onSubmit={handleReply}>
+                                                <label className="tracking-tight text-[#8C8C8C]">شما در حال پاسخ به
+                                                    دیدگاه رها مرادیان فر هستید : </label>
+                                                <textarea rows={3}
+                                                          className="rounded-lg border border-[#CCCFD4] p-2 outline-none"></textarea>
+                                                <button
+                                                    className="bg-cream-light border-2 border-cream-medium shadow-main shadow-cream-medium py-1 px-6 rounded-lg text-cream-medium w-fit mr-auto">ارسال
+                                                    دیدگاه
+                                                </button>
+                                            </form>
+                                        </motion.div>
+                                    }
+                                </AnimatePresence>
+                                {index !== replyId &&
+                                    <div className="flex items-center justify-between">
+                                        <p className="text-[#848484] text-sm tracking-tight lg:hidden">{dateFormatter(1759473653000, "fa", {
+                                            day: "2-digit",
+                                            month: "long",
+                                            year: "2-digit"
+                                        })}</p>
+                                        <button onClick={() => setReplyId(index)}
+                                                className="block border border-[#8C8C8C] text-[#8C8C8C] px-4  py-2 rounded-lg font-semibold mr-auto">
+                                            {t("replay")}
+                                        </button>
+                                    </div>
+                                }
+
                             </div>
                         </div>
-                        <p className="text-[#848484] tracking-tight max-lg:hidden">{dateFormatter(1759473653000, "fa", {
-                            day: "2-digit",
-                            month: "long",
-                            year: "2-digit"
-                        })}</p>
-                    </div>
-                    <hr className="border-b border-gray-400 border-dashed "/>
-                    <div className="space-y-2">
-                        <p className="text-sm md:text-base text-justify text-text-gray"> ورم ایپسوم متن ساختگی با تولید
-                            سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک است،
-                            چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است، و برای شرایط فعلی
-                            تکنولوژی مورد نیاز، و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد، </p>
-                        <div className="flex items-center justify-between">
-                            <p className="text-[#848484] text-sm tracking-tight lg:hidden">{dateFormatter(1759473653000, "fa", {
-                                day: "2-digit",
-                                month: "long",
-                                year: "2-digit"
-                            })}</p>
-                            <button
-                                className="block border border-[#8C8C8C] text-[#8C8C8C] px-4  py-2 rounded-lg font-semibold mr-auto">
-                                {t("replay")}
-                            </button>
-                        </div>
-                    </div>
-                </div>
+                    ))
+                }
+
             </div>
             <div className="border border-[#CCCFD4] bg-[#FBF7F5] px-6 pb-8 pt-20 relative rounded-xl">
                 <div className="absolute -top-2 right-6 w-64">
@@ -136,7 +179,8 @@ function Comments() {
                 </Form>
             </div>
         </div>
-    );
+    )
+        ;
 }
 
 export default Comments;
