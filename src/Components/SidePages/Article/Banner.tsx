@@ -1,6 +1,7 @@
 import React from 'react';
 import Image from "next/image";
-import banner from "@/assets/Images/article/banner.svg";
+import banner from "../../../assets/Images/Article/banner.svg";
+
 
 function Banner() {
     return (
