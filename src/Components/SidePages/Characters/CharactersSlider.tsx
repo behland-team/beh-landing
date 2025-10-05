@@ -22,23 +22,23 @@ function CharactersSlider() {
         onDotBtnClick
     } = useCarousel(api)
     return (
-        <section className="my-28">
-            <div className="lg:max-w-[75rem] 3xl:max-w-[85rem] mx-auto flex flex-col gap-20 px-6">
-                <div className="flex items-end gap-6  justify-center min-h-56 flex-wrap">
+        <section className="my-20 lg:my-28">
+            <div className="lg:max-w-[75rem] 3xl:max-w-[85rem] mx-auto flex flex-col gap-8 md:gap-12 lg:gap-20 xxs:px-6">
+                <div className="flex items-end gap-4 xxs:gap-6  justify-center min-h-56 flex-wrap gap-y-16 md:gap-y-20 max-xxs:px-4">
                     {
                         characters.map((character, index) => (
-                            <div className={classNames("rounded-2xl bg-[#FEECD8] min-w-44  relative pb-6 shrink-0 flex-1 transition-all duration-300 ease-in-out cursor-pointer" ,index !==selectedIndex ? " pt-12" : "flex flex-col-reverse items-center border border-cream-medium gap-3 py-4")} onClick={()=>onDotBtnClick(index)}>
-                                <p className="text-lg font-bold text-center w-fit mx-auto">{character.name} {character.title}</p>
+                            <div className={classNames("rounded-2xl bg-[#FEECD8] min-w-32 md:min-w-44  relative pb-6 shrink-0 flex-1 transition-all duration-500 ease-in cursor-pointer" ,index !==selectedIndex ? " pt-12" : "flex flex-col-reverse items-center border border-cream-medium gap-3 py-4")} onClick={()=>onDotBtnClick(index)}>
+                                <p className="text-sm md:text-lg md:font-bold text-center w-fit mx-auto">{character.name} {character.title}</p>
                                 <div
-                                       className={classNames("rounded-full size-24  flex items-center justify-center p-2" , selectedIndex === index  ? "bg-white" : "bg-gray-200 absolute -top-16 left-1/2 -translate-x-1/2")}>
+                                       className={classNames("rounded-full size-[72px] md:size-24  flex items-center justify-center p-2" , selectedIndex === index  ? "bg-white" : "bg-gray-200 absolute -top-10 md:-top-16 left-1/2 -translate-x-1/2")}>
                                     <Image src={character.image} alt={character.name} />
                                 </div>
                             </div>
                         ))
                     }
                 </div>
-                <div className="flex flex-col gap-16">
-                    <div className="flex items-center justify-between">
+                <div className="flex flex-col gap-12 lg:gap-16">
+                    <div className="flex items-center justify-between max-md:hidden">
                         <div className="flex items-center gap-4">
                             <span className="icon icon-quote text-gray-300 text-5xl"/>
                             <div>
@@ -69,7 +69,15 @@ function CharactersSlider() {
                                 characters.map((character, index) => (
                                     <CarouselItem key={index} >
                                         <div
-                                            className="rounded-xl grid grid-cols-[1.3fr_1fr_1.5fr] bg-gray-200 p-8   shadow-inner shadow-black/40">
+                                            className="rounded-xl grid lg:grid-cols-[1.3fr_1fr_1.5fr] max-sm:gap-4 max-lg:gap-6 bg-gray-200 p-3 pb-0 xxs:p-6 xxs:pb-0 lg:p-8   shadow-inner shadow-black/40">
+                                            <div className="lg:hidden flex items-center gap-2 relative" >
+                                                <Image src={character.image} alt={character.title} className="size-16 rounded-full p-2 ring ring-gray-400 bg-white shadow shadow-black/50" />
+                                                <div>
+                                                    <h3 className="text-xl font-bold">به کو  Behcow : </h3>
+                                                    <p className="text-sm">هیچ راهی سخت نیست وقتی کسی کنارت باشه.</p>
+                                                </div>
+                                                <span className="absolute top-0 left-0 icon icon-quote text-white/60 text-3xl"></span>
+                                            </div>
                                             <div className="bg-white p-4 space-y-2.5 rounded-lg">
                                                 <h4 className="tracking-tight font-bold">داستان گذشته به کو :‌</h4>
                                                 <p className="text-justify text-sm text-[#606060]"> در یک خانواده ساده و پرتلاش بزرگ شد.
@@ -86,10 +94,10 @@ function CharactersSlider() {
                                                     همیشه دوست داشت پلی باشد بین تازه‌کارها و دنیای بزرگ بازار. با اینکه سن کمی دارد، با
                                                     گوش‌دادن به مشکلات دیگران و روحیه حمایت‌گرانه‌اش جایگاه خاصی در بهلند پیدا کرده است.</p>
                                             </div>
-                                            <div>
+                                            <div className="max-lg:hidden">
                                                 <Image src={behDank} alt={"behdank"}/>
                                             </div>
-                                            <div className="flex flex-col gap-6">
+                                            <div className="flex flex-col gap-6 max-sm:gap-4">
                                                 <div className="bg-white rounded-lg p-4 space-y-2">
                                                     <div className="flex justify-between items-center">
                                                         <div className="flex items-center gap-2">
@@ -127,16 +135,22 @@ function CharactersSlider() {
                                                 <div className="bg-white rounded-lg p-4">
                                                     <p className="text-sm text-[#606060]"><span className="text-base font-bold text-black">نقطه ضعف شخصیتی: </span>اعتیاد به ریسک و بی‌توجهی به هشدارها.</p>
                                                 </div>
-                                                <div className="space-y-4">
-                                                    <h5 className="font-bold">رابطه با دیگر کاراکترها:</h5>
-                                                    <ul className="grid grid-cols-2 gap-6 ">
-                                                        <li className="py-4 rounded-lg text-center text-[#606060] text-sm bg-white text-nowrap">
-                                                            باعث نگرانی به‌کو و به‌شیپ
-                                                        </li>
-                                                        <li className="py-4 rounded-lg text-center text-[#606060] text-sm bg-white text-nowrap">
-                                                            درگیر بحث ریسک با به‌بول و به‌بیر.
-                                                        </li>
-                                                    </ul>
+                                                <div className="grid max-lg:grid-cols-[1fr_2fr]">
+                                                    <div className="lg:hidden">
+                                                        <Image src={behDank} alt={"behDank"} />
+                                                    </div>
+                                                    <div className="space-y-4">
+                                                        <h5 className="font-bold">رابطه با دیگر کاراکترها:</h5>
+                                                        <ul className="grid lg:grid-cols-2 gap-6 max-lg:gap-y-2 ">
+                                                            <li className="py-4 rounded-lg text-center text-[#606060] text-sm bg-white text-nowrap">
+                                                                باعث نگرانی به‌کو و به‌شیپ
+                                                            </li>
+                                                            <li className="py-4 rounded-lg text-center text-[#606060] text-sm bg-white text-nowrap">
+                                                                درگیر بحث ریسک با به‌بول و به‌بیر.
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+
                                                 </div>
                                             </div>
 

@@ -39,9 +39,9 @@ function CharacterSymbol() {
                                 data.map((_, index) => (
                                     <li key={index}
                                         className="bg-white rounded-xl border border-cream-medium py-3 px-4 flex items-center gap-4">
-                                        <div className="rounded-full size-14 md:size-16 bg-cream-medium shrink-0"></div>
+                                        <div  className="rounded-full size-14 md:size-16 bg-gray-200 shrink-0" />
                                         <div className="space-y-2.5">
-                                            <h5 className="text-sm xxs:text-base md:text-lg font-semibold">به کو Behcow : </h5>
+                                            <h5 className="text-sm xxs:text-base md:text-lg font-semibold">به‌بول  Behbull : </h5>
                                             <p className="text-xs xxs:text-sm md:text-base font-semibold text-[#848484] xxs:text-nowrap">نشان‌دهنده قدرت،
                                                 حمایت و مسیر یادگیری تازه‌واردها</p>
                                         </div>
