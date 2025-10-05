@@ -9,7 +9,7 @@ function FAQCharacter() {
     const t = useTranslations("characterPage.faq")
     return (
         <section className="mt-10 md:my-20 bg-storyBg">
-            <div className="3xl:max-w-[85rem] lg::max-w-[75rem] mx-auto px-3 xxs:px-6 md:px-12 lg:px-24 3xl:px-0 py-12 flex flex-col  gap-6 lg:gap-14 ">
+            <div className="xl:max-w-[75rem] mx-auto px-3 xxs:px-6 md:px-12 lg:px-24 3xl:px-0 py-12 flex flex-col  gap-6 lg:gap-14 ">
                 <div className="md:space-y-2">
                     <div className="flex items-center max-sm:justify-center gap-2">
                         <Image src={faqIcon} alt="faq icon" className="size-10 md:size-12"/>

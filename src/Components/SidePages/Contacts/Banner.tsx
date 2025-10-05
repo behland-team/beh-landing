@@ -6,7 +6,7 @@ import {useTranslations} from "next-intl";
 function Banner() {
     const t = useTranslations("contactPage.banner");
     return (
-        <section className="my-10 md:my-20 px-6 md:px-0">
+        <section className="my-10  px-6 md:px-0">
             <div
                 className="border-cream-medium border rounded-3xl mx-auto w-full md:w-4/5 xl:max-w-[75rem] bg-[#FEECD8]  flex flex-col md:flex-row relative ">
                 <div
