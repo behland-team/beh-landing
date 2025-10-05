@@ -9,9 +9,11 @@ import userSquare from "@/assets/Images/user-square.svg";
 import calenderTick from "@/assets/Images/calendar-tick.svg"
 import userOctagon from "@/assets/Images/user-octagon.svg"
 import classNames from "classnames";
+import {useTranslations} from "next-intl";
 
 
 function CharactersSlider() {
+    const t = useTranslations("characterPage.slider");
     const [api, setApi] = useState<CarouselApi>()
     const {
         selectedIndex,
@@ -23,15 +25,19 @@ function CharactersSlider() {
     } = useCarousel(api)
     return (
         <section className="my-20 lg:my-28">
-            <div className="lg:max-w-[75rem] 3xl:max-w-[85rem] mx-auto flex flex-col gap-8 md:gap-12 lg:gap-20 xxs:px-6">
-                <div className="flex items-end gap-4 xxs:gap-6  justify-center min-h-56 flex-wrap gap-y-16 md:gap-y-20 max-xxs:px-4">
+            <div
+                className="lg:max-w-[75rem] 3xl:max-w-[85rem] mx-auto flex flex-col gap-8 md:gap-12 lg:gap-20 xxs:px-6">
+                <div
+                    className="flex items-end gap-4 xxs:gap-6  justify-center min-h-56 flex-wrap gap-y-16 md:gap-y-20 max-xxs:px-4">
                     {
                         characters.map((character, index) => (
-                            <div className={classNames("rounded-2xl bg-[#FEECD8] min-w-32 md:min-w-44  relative pb-6 shrink-0 flex-1 transition-all duration-500 ease-in cursor-pointer" ,index !==selectedIndex ? " pt-12" : "flex flex-col-reverse items-center border border-cream-medium gap-3 py-4")} onClick={()=>onDotBtnClick(index)}>
+                            <div
+                                className={classNames("rounded-2xl bg-[#FEECD8] min-w-32 md:min-w-44  relative pb-6 shrink-0 flex-1 transition-all duration-500 ease-in cursor-pointer", index !== selectedIndex ? " pt-12" : "flex flex-col-reverse items-center border border-cream-medium gap-3 py-4")}
+                                onClick={() => onDotBtnClick(index)}>
                                 <p className="text-sm md:text-lg md:font-bold text-center w-fit mx-auto">{character.name} {character.title}</p>
                                 <div
-                                       className={classNames("rounded-full size-[72px] md:size-24  flex items-center justify-center p-2" , selectedIndex === index  ? "bg-white" : "bg-gray-200 absolute -top-10 md:-top-16 left-1/2 -translate-x-1/2")}>
-                                    <Image src={character.image} alt={character.name} />
+                                    className={classNames("rounded-full size-[72px] md:size-24  flex items-center justify-center p-2", selectedIndex === index ? "bg-white" : "bg-gray-200 absolute -top-10 md:-top-16 left-1/2 -translate-x-1/2")}>
+                                    <Image src={character.image} alt={character.name}/>
                                 </div>
                             </div>
                         ))
@@ -63,36 +69,50 @@ function CharactersSlider() {
                             </button>
                         </div>
                     </div>
-                    <Carousel setApi={setApi} opts={{direction : "rtl"}} >
+                    <Carousel setApi={setApi} opts={{direction: "rtl"}}>
                         <CarouselContent>
                             {
                                 characters.map((character, index) => (
-                                    <CarouselItem key={index} >
+                                    <CarouselItem key={index}>
                                         <div
                                             className="rounded-xl grid lg:grid-cols-[1.3fr_1fr_1.5fr] max-sm:gap-4 max-lg:gap-6 bg-gray-200 p-3 pb-0 xxs:p-6 xxs:pb-0 lg:p-8   shadow-inner shadow-black/40">
-                                            <div className="lg:hidden flex items-center gap-2 relative" >
-                                                <Image src={character.image} alt={character.title} className="size-16 rounded-full p-2 ring ring-gray-400 bg-white shadow shadow-black/50" />
+                                            <div className="lg:hidden flex items-center gap-2 relative">
+                                                <Image src={character.image} alt={character.title}
+                                                       className="size-16 rounded-full p-2 ring ring-gray-400 bg-white shadow shadow-black/50"/>
                                                 <div>
-                                                    <h3 className="text-xl font-bold">به کو  Behcow : </h3>
+                                                    <h3 className="text-xl font-bold">به کو Behcow : </h3>
                                                     <p className="text-sm">هیچ راهی سخت نیست وقتی کسی کنارت باشه.</p>
                                                 </div>
-                                                <span className="absolute top-0 left-0 icon icon-quote text-white/60 text-3xl"></span>
+                                                <span
+                                                    className="absolute top-0 left-0 icon icon-quote text-white/60 text-3xl"></span>
                                             </div>
                                             <div className="bg-white p-4 space-y-2.5 rounded-lg">
-                                                <h4 className="tracking-tight font-bold">داستان گذشته به کو :‌</h4>
-                                                <p className="text-justify text-sm text-[#606060]"> در یک خانواده ساده و پرتلاش بزرگ شد.
+                                                <h4 className="tracking-tight font-bold">{t("story")} به کو</h4>
+                                                <p className="text-justify text-sm text-[#606060]"> در یک خانواده ساده و
+                                                    پرتلاش بزرگ شد.
                                                     همیشه دوست داشت پلی باشد بین تازه‌کارها و دنیای
-                                                    بزرگ بازار. با اینکه سن کمی دارد، با گوش‌دادن به مشکلات دیگران و روحیه حمایت‌گرانه‌اش
-                                                    جایگاه خاصی در بهلند پیدا کرده است.در یک خانواده ساده و پرتلاش بزرگ شد. همیشه دوست داشت
-                                                    پلی باشد بین تازه‌کارها و دنیای بزرگ بازار. با اینکه سن کمی دارد، با گوش‌دادن به مشکلات
-                                                    دیگران و روحیه حمایت‌گرانه‌اش جایگاه خاصی در بهلند پیدا کرده است.در یک خانواده ساده و
-                                                    پرتلاش بزرگ شد. همیشه دوست داشت پلی باشد بین تازه‌کارها و دنیای بزرگ بازار. با اینکه سن
-                                                    کمی دارد، با گوش‌دادن به مشکلات دیگران و روحیه حمایت‌گرانه‌اش جایگاه خاصی در بهلند پیدا
-                                                    کرده است.در یک خانواده ساده و پرتلاش بزرگ شد. همیشه دوست داشت پلی باشد بین تازه‌کارها و
-                                                    دنیای بزرگ بازار. با اینکه سن کمی دارد، با گوش‌دادن به مشکلات دیگران و روحیه
-                                                    حمایت‌گرانه‌اش جایگاه خاصی در بهلند پیدا کرده است.در یک خانواده ساده و پرتلاش بزرگ شد.
-                                                    همیشه دوست داشت پلی باشد بین تازه‌کارها و دنیای بزرگ بازار. با اینکه سن کمی دارد، با
-                                                    گوش‌دادن به مشکلات دیگران و روحیه حمایت‌گرانه‌اش جایگاه خاصی در بهلند پیدا کرده است.</p>
+                                                    بزرگ بازار. با اینکه سن کمی دارد، با گوش‌دادن به مشکلات دیگران و
+                                                    روحیه حمایت‌گرانه‌اش
+                                                    جایگاه خاصی در بهلند پیدا کرده است.در یک خانواده ساده و پرتلاش بزرگ
+                                                    شد. همیشه دوست داشت
+                                                    پلی باشد بین تازه‌کارها و دنیای بزرگ بازار. با اینکه سن کمی دارد، با
+                                                    گوش‌دادن به مشکلات
+                                                    دیگران و روحیه حمایت‌گرانه‌اش جایگاه خاصی در بهلند پیدا کرده است.در
+                                                    یک خانواده ساده و
+                                                    پرتلاش بزرگ شد. همیشه دوست داشت پلی باشد بین تازه‌کارها و دنیای بزرگ
+                                                    بازار. با اینکه سن
+                                                    کمی دارد، با گوش‌دادن به مشکلات دیگران و روحیه حمایت‌گرانه‌اش جایگاه
+                                                    خاصی در بهلند پیدا
+                                                    کرده است.در یک خانواده ساده و پرتلاش بزرگ شد. همیشه دوست داشت پلی
+                                                    باشد بین تازه‌کارها و
+                                                    دنیای بزرگ بازار. با اینکه سن کمی دارد، با گوش‌دادن به مشکلات دیگران
+                                                    و روحیه
+                                                    حمایت‌گرانه‌اش جایگاه خاصی در بهلند پیدا کرده است.در یک خانواده ساده
+                                                    و پرتلاش بزرگ شد.
+                                                    همیشه دوست داشت پلی باشد بین تازه‌کارها و دنیای بزرگ بازار. با اینکه
+                                                    سن کمی دارد، با
+                                                    گوش‌دادن به مشکلات دیگران و روحیه حمایت‌گرانه‌اش جایگاه خاصی در
+                                                    بهلند پیدا کرده است.</p>
                                             </div>
                                             <div className="max-lg:hidden">
                                                 <Image src={behDank} alt={"behdank"}/>
@@ -102,45 +122,53 @@ function CharactersSlider() {
                                                     <div className="flex justify-between items-center">
                                                         <div className="flex items-center gap-2">
                                                             <Image src={userOctagon} alt={"gender"} className="size-8"/>
-                                                            <h6 className="font-semibold text-sm">جنسیت و گونه:</h6>
+                                                            <h6 className="font-semibold text-sm">{t("gender")}</h6>
                                                         </div>
-                                                        <p className="text-sm tracking-tight text-text-gray"> الاغ نر پرهیجان</p>
+                                                        <p className="text-sm tracking-tight text-text-gray"> الاغ نر
+                                                            پرهیجان</p>
                                                     </div>
                                                     <hr className="border-b border-dashed border-gray-400"/>
                                                     <div className="flex justify-between items-center">
                                                         <div className="flex items-center gap-2">
                                                             <Image src={calenderTick} alt={"age"} className="size-8"/>
-                                                            <h6 className="font-semibold text-sm"> سن: </h6>
+                                                            <h6 className="font-semibold text-sm">{t("age")}</h6>
                                                         </div>
                                                         <p className="text-sm tracking-tight text-text-gray">۲۰ سال</p>
                                                     </div>
                                                     <hr className="border-b border-dashed border-gray-400"/>
                                                     <div className="flex justify-between items-center">
                                                         <div className="flex items-center gap-2">
-                                                            <Image src={userSquare} alt={"character"} className="size-8"/>
-                                                            <h6 className="font-semibold text-sm">شخصیت کلی: </h6>
+                                                            <Image src={userSquare} alt={"character"}
+                                                                   className="size-8"/>
+                                                            <h6 className="font-semibold text-sm">{t("character")}</h6>
                                                         </div>
-                                                        <p className="text-sm tracking-tight text-text-gray"> عاشق هیجان، پرریسک، بی‌پروا</p>
+                                                        <p className="text-sm tracking-tight text-text-gray"> عاشق
+                                                            هیجان، پرریسک، بی‌پروا</p>
                                                     </div>
                                                 </div>
                                                 <div className="bg-white rounded-lg p-4">
-                                                    <h5 className="font-bold">نقش در بهلند:</h5>
+                                                    <h5 className="font-bold">{t("position")}</h5>
                                                     <p className="text-sm text-[#606060]">
-                                                        نمونه زنده ریسک‌های کنترل‌نشده؛ کاربران با دیدن اشتباهات او مفهوم مدیریت ریسک را می‌آموزند.
+                                                        نمونه زنده ریسک‌های کنترل‌نشده؛ کاربران با دیدن اشتباهات او
+                                                        مفهوم مدیریت ریسک را می‌آموزند.
                                                     </p>
                                                 </div>
                                                 <div className="bg-white rounded-lg p-4">
-                                                    <p className="text-sm text-[#606060]"><span className="text-base font-bold text-black">هدف شخصی: </span>رسیدن به یک معامله بزرگ که او را ثروتمند کند.</p>
+                                                    <p className="text-sm text-[#606060]"><span
+                                                        className="text-base font-bold text-black">{t("goal")}</span>رسیدن
+                                                        به یک معامله بزرگ که او را ثروتمند کند.</p>
                                                 </div>
                                                 <div className="bg-white rounded-lg p-4">
-                                                    <p className="text-sm text-[#606060]"><span className="text-base font-bold text-black">نقطه ضعف شخصیتی: </span>اعتیاد به ریسک و بی‌توجهی به هشدارها.</p>
+                                                    <p className="text-sm text-[#606060]"><span
+                                                        className="text-base font-bold text-black">{t("weakness")}</span>اعتیاد
+                                                        به ریسک و بی‌توجهی به هشدارها.</p>
                                                 </div>
                                                 <div className="grid max-lg:grid-cols-[1fr_2fr]">
                                                     <div className="lg:hidden">
-                                                        <Image src={behDank} alt={"behDank"} />
+                                                        <Image src={behDank} alt={"behDank"}/>
                                                     </div>
                                                     <div className="space-y-4">
-                                                        <h5 className="font-bold">رابطه با دیگر کاراکترها:</h5>
+                                                        <h5 className="font-bold">{t("relationship")}</h5>
                                                         <ul className="grid lg:grid-cols-2 gap-6 max-lg:gap-y-2 ">
                                                             <li className="py-4 rounded-lg text-center text-[#606060] text-sm bg-white text-nowrap">
                                                                 باعث نگرانی به‌کو و به‌شیپ
@@ -159,11 +187,13 @@ function CharactersSlider() {
                                 ))
                             }
                         </CarouselContent>
-                        <div className="flex items-center justify-center gap-1.5 bg-[#FCECDB] p-1.5 w-fit mt-4 rounded-lg mx-auto">
+                        <div
+                            className="flex items-center justify-center gap-1.5 bg-[#FCECDB] p-1.5 w-fit mt-4 rounded-lg mx-auto">
                             {
                                 characters.map((character, index) => (
-                                    <span onClick={()=>onDotBtnClick(index)}
-                                        key={index} className={classNames("rounded-full cursor-pointer size-2.5 transition-all duration-300 ease-in-out  ", index ===selectedIndex ? "bg-cream-medium w-9" : "bg-white")}></span>
+                                    <span onClick={() => onDotBtnClick(index)}
+                                          key={index}
+                                          className={classNames("rounded-full cursor-pointer size-2.5 transition-all duration-300 ease-in-out  ", index === selectedIndex ? "bg-cream-medium w-9" : "bg-white")}></span>
                                 ))
                             }
                         </div>
