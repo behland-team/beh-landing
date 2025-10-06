@@ -9,6 +9,7 @@ import rewords from "@/assets/Images/services/rewords.png";
 import grow from "@/assets/Images/services/grow.png";
 import badge from "@/assets/Images/aboutBadge.svg";
 import classNames from "classnames";
+import {useTranslations} from "next-intl";
 
 const services = [
     {
@@ -35,24 +36,16 @@ const services = [
 ]
 
 function WhyUs() {
+    const t = useTranslations("servicesPage.whyUs");
     return (
         <section className="my-10">
             <div className="mx-auto xl:max-w-[75rem] space-y-10 px-3 xxs:px-6 md:px-10 xl:px-0">
                 <div className="flex flex-col-reverse md:flex-row gap-16 items-center">
                     <div className="flex-1 space-y-6">
-                        <h2 className="text-xl font-bold">چرا آموزش با به‌لند؟</h2>
-                        <p className="text-[#4d4d4d] text-justify leading-8">به‌لند فراتر از یک پلتفرم آموزشی ساده است؛
-                            ما تجربه‌ای طراحی کرده‌ایم که یادگیری را به مهارت
-                            عملی و فرصت واقعی تبدیل می‌کند. مسیر آموزشی ما از تازه‌کار تا حرفه‌ای به صورت مرحله‌ای، شفاف
-                            و قابل اندازه‌گیری است و هر مرحله با ابزارهای عملی و شبیه‌سازی بازار پشتیبانی می‌شود تا
-                            آموزش کاربردی و ارزش‌آفرین باشد.
-                            تیم ما با درک عمیق از نیاز کاربران و بازار، روش‌های نوین و تعاملی آموزشی را به‌کار می‌گیرد
-                            تا یادگیری جذاب، عملی و انگیزه‌بخش شود. خدمات به‌لند شامل ابزارهای مالی، آموزش با کاراکترها،
-                            پاداش در مسیر یادگیری و مسیر مرحله‌ای رشد است.
-                            با به‌لند، یادگیری تنها آسان و سرگرم‌کننده نیست، بلکه تجربه‌ای نتیجه‌بخش و ارزش‌آفرین است که
-                            دانش شما را به مهارت و دارایی واقعی تبدیل می‌کند.</p>
+                        <h2 className="text-xl font-bold">{t("title")}</h2>
+                        <p className="text-[#4d4d4d] text-justify leading-8">{t("des")}</p>
                     </div>
-                    <div className="flex flex-1 items-center justify-center relative">
+                    <div className="flex flex-1 items-center justify-center relative max-sm:px-4">
                         <Image src={banner} alt={"banner"}/>
                         <Image src={vector} alt={"vector"}
                                className="absolute -z-10 top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2"/>

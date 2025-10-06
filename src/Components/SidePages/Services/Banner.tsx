@@ -3,20 +3,20 @@ import Image from "next/image";
 import {useTranslations} from "next-intl";
 import Link from 'next/link';
 function Banner() {
-    const t = useTranslations("aboutPage.banner")
+    const t = useTranslations("servicesPage.banner")
     return (
         <section className="my-6 px-3 xxs:px-6 xl:px-0">
             <div
                 className="border-cream-medium border rounded-3xl mx-auto w-full  xl:max-w-[75rem] bg-[#FEECD8]  flex flex-col md:flex-row  relative ">
                 <div className="flex flex-col items-center md:items-start gap-4 w-full md:w-1/2 px-6 py-8 sm:pl-14 md:pl-0 sm:pr-14 sm:pt-12 sm:pb-20 relative z-[2] ">
-                    <p className="text-sm xxs:text-base md:text-lg lg:text-xl font-semibold text-cream-medium"> با خدمات ما در به‌لند آشنا شوید</p>
+                    <p className="text-sm xxs:text-base md:text-lg lg:text-xl font-semibold text-cream-medium"> {t("subtitle")}</p>
                     <h2 className="text-lg md:text-xl lg:text-2xl xl:text-3xl font-semibold xl:leading-10">
-                        یادگیری متفاوت،
-                        <span className="bg-cream-medium/30">فرصتی برای رشد و درآمد</span>
+                        {t("educate")}،
+                        <span className="bg-cream-medium/30">{t("opportunity")}</span>
                     </h2>
                     <div className="flex flex-col gap-8 items-center md:items-start">
                         <p className="text-sm lg:text-base text-justify">
-                            {t("description")}
+                            {t("des")}
                         </p>
                         <Link href={"/contacts"}>
                             <button className="py-1.5 px-12 rounded-lg border bg-[#FEECD8]  w-fit border-cream-medium shadow-main shadow-cream-medium  text-cream-medium flex items-center justify-center gap-2">
