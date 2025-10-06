@@ -2,10 +2,10 @@ import React from 'react';
 import crown from "@/assets/Images/WhyBehCrown.svg"
 import Image from "next/image";
 import {useTranslations} from "next-intl";
+import {characters} from "@/utils/data";
 
 function CharacterSymbol() {
     const t = useTranslations("characterPage.symbol")
-    const data = Array.from({length: 5})
     return (
         <section className="my-20">
             <div
@@ -23,14 +23,13 @@ function CharacterSymbol() {
                     <div className="lg:absolute -right-64 top-8">
                         <ul className="flex flex-col gap-4">
                             {
-                                data.map((_, index) => (
+                                characters.map((character, index) => (
                                     <li key={index}
                                         className="bg-white rounded-xl border border-cream-medium py-3 px-4 flex items-center gap-4">
-                                        <div  className="rounded-full size-14 md:size-16 bg-gray-200 shrink-0" />
+                                        <Image src={character.thumbnail}  alt={character.title} className="rounded-full size-14 md:size-16 bg-gray-200 shrink-0" />
                                         <div className="space-y-2.5">
-                                            <h5 className="text-sm xxs:text-base md:text-lg font-semibold">به‌بول  Behbull : </h5>
-                                            <p className="text-xs xxs:text-sm md:text-base font-semibold text-[#848484] xxs:text-nowrap">نشان‌دهنده قدرت،
-                                                حمایت و مسیر یادگیری تازه‌واردها</p>
+                                            <h5 className="text-sm xxs:text-base md:text-lg font-semibold">{character.name} {character.title}</h5>
+                                            <p className="text-xs xxs:text-sm md:text-base font-semibold text-[#848484] xxs:text-nowrap">{character.symbol}</p>
                                         </div>
                                     </li>
                                 ))

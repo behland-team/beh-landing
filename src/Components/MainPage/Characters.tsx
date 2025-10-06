@@ -28,7 +28,7 @@ interface CharacterItem {
   imagePath: string; // مسیر واقعی تصویر
 }
 
-export const characters: CharacterItem[] = [
+const characters: CharacterItem[] = [
   {
     name: "به کو",
     image: behcow,
