@@ -35,7 +35,7 @@ function Menu() {
                     {/*    {t("services")}*/}
                     {/*</Link>*/}
                     {/*<span className="rotate-[105deg] h-px w-4 bg-gray-500"></span>*/}
-                    <MenuLink className="font-medium  lg:text-sm xl:text-base hover:text-cream-medium focus:outline-hidden" href={"/#character"}>
+                    <MenuLink className="font-medium  lg:text-sm xl:text-base hover:text-cream-medium focus:outline-hidden" href={"/characters"}>
                         {t("character")}
                     </MenuLink>
                     <span className="rotate-[105deg] h-px w-4 bg-gray-500"></span>

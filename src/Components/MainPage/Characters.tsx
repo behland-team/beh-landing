@@ -58,12 +58,6 @@ const characters: CharacterItem[] = [
     image: coming2,
     title: "Behbear",
     imagePath: coming2.src,
-  },
-  {
-    name: "به دانک",
-    image: behdonk,
-    title: "behdonk",
-    imagePath: behdonk.src,
   }
 ];
 
