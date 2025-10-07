@@ -33,8 +33,8 @@ const links = [
     }, {
         title: "لینکدین",
         icon: linkdin,
-        link: "#",
-        disable: true
+        link: "https://www.linkedin.com/in/behlandofficial/",
+        disable: false
     }, {
         title: "توییتر(X)",
         icon: x,
