@@ -2,6 +2,7 @@ import React from 'react';
 import {Tabs, TabsContent, TabsList, TabsTrigger} from "@/Components/UI/tabs";
 import classNames from "classnames";
 import {useTranslations} from "next-intl";
+import {dateFormatter, numberFormatter} from "@/utils/helpers";
 
 const tabs = [
     {
@@ -50,7 +51,7 @@ function Favorites() {
                         </TabsList>
                         <TabsContent value={"start"} className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-6 max-md:px-4">
                             {
-                                data.map((item, index) => (
+                                data.map((_, index) => (
                                     <div key={index}
                                          className="flex  flex-col gap-4 p-2 xxs:p-4 rounded-lg border border-[#848484]">
                                         <div className="flex md:flex-col gap-2 md:gap-6 max-md:border-b border-dashed border-[#848484] flex-1 pb-4">
@@ -68,11 +69,11 @@ function Favorites() {
                                         <div className="flex items-center justify-between md:hidden">
                                                 <div className="flex items-center gap-2">
                                                     <span className="icon icon-clock text-cream-medium"></span>
-                                                    <span className="text-gray-500 text-sm">8 دقیقه</span>
+                                                    <span className="text-gray-500 text-sm">{numberFormatter(8).concat(`  ${t("min")}`)}</span>
                                                 </div>
                                                 <div className="flex items-center gap-2">
                                                     <span className="icon icon-calendar text-cream-medium"></span>
-                                                    <span className="text-gray-500 text-sm">1404/04/07</span>
+                                                    <span className="text-gray-500 text-sm">{dateFormatter( 1759473653000)}</span>
                                                 </div>
                                         </div>                                    </div>
                                 ))

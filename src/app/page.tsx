@@ -7,7 +7,7 @@ import Team from "@/Components/MainPage/Team";
 import {Token} from "@/Components/MainPage/Token/Token";
 import WhyBeh from "@/Components/MainPage/WhyBeh";
 import Header from "@/Components/Layout/Header";
-import Comments from "@/Components/SidePages/Article/Comments";
+import CommentsPage from "@/Components/MainPage/CommentsPage";
 
 
 export default function Home() {
@@ -22,6 +22,7 @@ export default function Home() {
             <RoadMap/>
             <Characters/>
             <News/>
+            <CommentsPage/>
             <FAQF/>
         </>
     );
