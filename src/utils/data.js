@@ -489,7 +489,7 @@ export const SocialMedia = [
     {
         name: "linkedin",
         link: "https://www.linkedin.com/in/behlandofficial/",
-        disable: false,
+        disable: true,
     },
 ];
 
